@@ -4,5 +4,5 @@ Proje yürütücüleri;
 Gözde ÇETİNKAYA (gzdectnkya),
 Server ÇETİN (ServerCetin),
 Arda ÇEKEM (tifosiardacekem),
-Semih HATIL,
-Tolgahan ACAR.
+Semih HATIL(semihhatil),
+Tolgahan ACAR(tolgahanacar).

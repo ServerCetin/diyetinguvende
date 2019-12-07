@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Diyetin Güvende!</title>
+<title>Mesajlar-Diyetin Güvende!</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -54,6 +54,7 @@ License: Creative Commons Attribution
 				<fieldset>
 
 					<legend>Mesajlarım</legend>
+					<br>
 					<form>	
 				
 			
@@ -62,30 +63,53 @@ License: Creative Commons Attribution
 					<tr>
 						<th>Gelen Mesajlar</th>
 						<th>Kimden</th>
-						
+					    <th>Saat</th>
 					</tr>
 					<tr>
 						<td>Örnek Gelen Mesaj 1</td>
 						<td>Spor Koçu</td>
-						
+						<td>1 saat önce</td>
 					</tr>
 					<tr>
 						<td>Örnek Gelen Mesaj 2 </td>
 						<td>Hastalarım</td>
+						<td>1 gün önce</td>
 						<td></td>
 						</tr>
 					</table><br><br>
+						<table >
+					<tr>
+						<th>Hastalarım</th>
+						<th>Diyetisyeni</th>
+						<th>Mesaj</th>
+						
+					
+						
+					</tr>
+					<tr>
+						<td>Server
+						</td>
+						<td>Çetin</td>
+						<td><a href="#" class="button button-reversed">Hastaya Mesaj</a>
+						<a href="#" class="button button-reversed" style="margin-left:10px;">Spor Koçuna Mesaj</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Server
+						</td>
+						<td>Çetin</td>
+						<td><a href="#" class="button button-reversed">Hastaya Mesaj</a>
+						<a href="#" class="button button-reversed" style="margin-left:10px;">Diyetisyene Mesaj</a>
+						</td>
+					</tr>
+					
+					</table><br><br>
+						
+					
 				</form>	
 					<form action="#" method="get">
-						Hasta Mesajları:
-						<select>
-           <option value="h1">Hasta 1</option>
-           <option value="h2">Hasta 2</option>
-  <option value="h3">Hasta 3</option>
-  <option value="h4">Hasta 4</option>
-</select><br>
-					<p><br>	<input type="submit" name="send" class="formbutton" value="Spor Koçuna Mesaj" /><p>
-						<p><textarea  cols="60" rows="11" name="message" id="message" placeholder="Mesaj Yaz..." ></textarea>
+						
+					<p><textarea  cols="60" rows="11" name="message" id="message" placeholder="Mesaj Yaz..." ></textarea>
 						<input type="submit" name="send" class="formbutton" value="Gönder" />
 					</form>
 			

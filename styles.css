@@ -57,7 +57,7 @@ a:focus {
 	outline:none;
 }
 a.button { 
-    background-color: #D20000;
+    background-color:forestgreen;
     border-radius: 5px;
     color: #FFFFFF;
     display: inline-block;
@@ -71,6 +71,9 @@ a.button {
 
 a.button-reversed { 
     background-color: #333;
+}
+a.buttonekle { 
+    background-color: green;
 }
 
 fieldset {
@@ -318,6 +321,7 @@ article .article-info a {
 /** footer **/
 footer {
 	padding:20px 0px;
+	top:970px;
 }
 
 footer p {

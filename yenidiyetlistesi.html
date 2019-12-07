@@ -3,9 +3,18 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Diyetin Güvende!</title>
+<title>Diyet Listesi Oluştur-Diyetin Güvende!</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--
+agile, a free CSS web template by ZyPOP (zypopwebtemplates.com/)
 
+Download: http://zypopwebtemplates.com/
+
+License: Creative Commons Attribution
+//-->
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 </head>
 
@@ -42,7 +51,12 @@
 	    <article>
 		
 			<div class="beyaz">
-			
+			<form>
+			<h4>Yeni Diyet Listesi Oluştur</h4>
+			<h5>Notunuzu Giriniz</h5>
+			<blockquote>
+				<textarea name="diyetisyenNotu" rows="5" cols="100"></textarea>
+			</blockquote>
 			
 				<table class="diyetlistesiolustur" width="5px" height="5px">
   <tr width="5px" height="5px">
@@ -93,23 +107,42 @@
   </tr>
   
 </table>
-			
-				</div>
-				
-		</article>
-			
-		
-				
-		
+  <a href="#" class="button button-reversed">Ekle</a>
+  <a href="#" class="button buttonS" style="margin-left:80%;">Kaydet</a>
+
+<br><br><br><br>
+
+<h4> Mevcut Diyet Listeleri</h4>
+
+<table id="sporplanlari">
+  <tr>
+    <th >Liste Adı</th>
+	<th style="width:100px;">Listeyi Gör</th>
+    
+  </tr>
+  <tr>
+  <td> Liste 1</td>
+  <td > <a href="#" class="button button-reversed">Git</a></td>
+  </tr>
+  <tr>
+  <td> Liste 2</td>
+  <td > <a href="#" class="button button-reversed">Git</a></td>
+  </tr>
+  <tr>
+  <td> Liste 3</td>
+  <td > <a href="#" class="button button-reversed">Git</a></td>
+  </tr>
+  <tr>
+  <td> Liste 4</td>
+  <td > <a href="#" class="button button-reversed">Git</a></td>
+  </tr>
+
+	</form>
+	</div>
+	</article>
 
 			
-			<footer class="clear">
-								<p>&copy; 2019 Diyetin Güvende.</p>
-
-			</footer>
-
 		</section>
-
 		<div class="clear"></div>
 
 	</section>

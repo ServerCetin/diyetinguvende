@@ -6,7 +6,16 @@
 
 <title>Diyetin Güvende!</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--
+agile, a free CSS web template by ZyPOP (zypopwebtemplates.com/)
 
+Download: http://zypopwebtemplates.com/
+
+License: Creative Commons Attribution
+//-->
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" /><!-- telefona uyumlu olmasını sağlar-->
 </head>
 
@@ -42,32 +51,42 @@
                 		
 	    <article>
 <div class="beyaz" >
- <fieldset>
-            <legend>Kalori & Egzersiz Takip</legend><br>
+<fieldset>
+<legend>Kalori Takip</legend><br>
 			
-			 <legend>Bugünki Durumun</legend>
-				<form action="#" method="get">		
-				Boy: <input type="text" style="width:40px"><br> <br>
-				Kilo: <input type="text" style="width:40px"><br> <br>
-				
-				<p><label for="email">Kalori Miktari:</label>
-						<input type="text" name="kalori" id="kalori" value="" /><br /></p>
-						<p><label for="email">Kaç Adım Attın:</label>
-						<input type="text" name="yurume" id="yurume" value="" /><br /></p>
-						<p><label for="email">Kaç Metre Kostun:</label>
-						<input type="text" name="kosma" id="kosma" value="" /><br /></p>
-				Diyetisyenime Bırakmak İstediğim Ekstra Not: <p><textarea  cols="50" rows="5" name="message" id="message" placeholder="Mesaj Yaz..." ></textarea> <br>
-				Spor Hocama Bırakmak İstediğim Ekstra Not: <p><textarea  cols="50" rows="5" name="message" id="message" placeholder="Mesaj Yaz..." ></textarea> <br>
-				
-				Bugünkü Egzersiz Planıma Uydum: <input type="radio" name="radio1" value="evet"> Evet
-			    <input type="radio" name="radio1" value="hayır"> Hayır <br> <br>
-				Bugünkü Diyet Planıma Uydum: <input type="radio" name="radio2" value="evet"> Evet
-			    <input type="radio" name="radio2" value="hayır"> Hayır <br> <br>
-				<p><input type="submit" name="send" class="formbutton" value="Gönder" /> <input type="reset" name="resetle" class="formbutton" value="Sıfırla" /></p>
-					</form>
-				
-        </fieldset>    
-		
+<legend>Bugünki Durumun</legend>
+<form action="#" method="get">		
+Boy: <input type="text" style="width:40px"><br> <br>
+Kilo: <input type="text" style="width:40px"><br> <br>				
+<p><label >Kalori Miktari:</label>
+<input type="text" name="kalori" id="kalori" /><br></p>
+Diyetisyenime Bırakmak İstediğim Ekstra Not
+<br>
+<br> <p><textarea  cols="50" rows="5" name="message" id="message" placeholder="Mesaj Yaz..." ></textarea> <br>	
+Bugünkü Diyet Planıma Uydum: <input type="radio" name="radio2" value="evet"> Evet
+<input type="radio" name="radio2" value="hayır"> Hayır <br> <br>
+<p><input type="submit" name="send" class="formbutton" value="Gönder" /> <input type="reset" name="resetle" class="formbutton" value="Sıfırla" /></p>
+</form>				
+</fieldset>    
+
+
+<fieldset>
+
+<legend>Egzersiz Takip</legend><br>
+
+<legend>Bugünki Durumun</legend><br>
+<form action="#" method="get">
+<p><label for="email">Kaç Adım Attın:</label>
+<input type="text" name="yurume" id="yurume" value="" /><br></p>
+<p><label for="email">Kaç Metre Kostun:</label>
+<input type="text" name="kosma" id="kosma" value="" /><br></p>
+Spor Hocama Bırakmak İstediğim Ekstra Not
+<br><br><p><textarea  cols="50" rows="5" name="message" id="message" placeholder="Mesaj Yaz..." ></textarea> <br>
+Bugünkü Egzersiz Planıma Uydum: <input type="radio" name="radio1" value="evet"> Evet
+<input type="radio" name="radio1" value="hayır"> Hayır <br> <br>				
+<p><input type="submit" name="send" class="formbutton" value="Gönder" /> 
+<input type="reset" name="resetle" class="formbutton" value="Sıfırla" /></p>
+</form>
 
 
 				</div>

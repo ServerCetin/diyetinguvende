@@ -1,0 +1,86 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Kayit ol</title>
+<link href="./logincss/kayitol.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <style>
+    #msg {
+    visibility: hidden;
+    min-width: 250px;
+    background-color:yellow;
+    color: #000;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    right: 30%;
+    top: 30px;
+    font-size: 17px;
+	margin-right:30px;
+}
+
+#msg.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+    </style>
+</head>
+
+<body>
+<style>
+body {
+  background-image: url(./girisimg/h1.png);
+}
+</style>
+<div class="signup">
+    <form>
+    <h2 style="color: #fff;">Kayıt Ol</h2>
+	<select name="Görev">
+         <option value="diyetisyen">Diyetisyen</option>
+         <option value="sporhocasi">Spor Hocası</option>
+         <option value="ogrenci">Öğrenci</option>
+      </select>
+    <input type="text" name="username" placeholder="Ad"><br><br>
+	<input type="text" name="username" placeholder="Soyad"><br><br>
+    <input type="password" name="pass" placeholder="Şifre"><br><br>       
+    <input type="mail" placeholder="E-Posta Adresi"><br><br>
+	<input type="text" placeholder="Cinsiyet"><br><br>
+	<input type="number" placeholder="Yaş"><br><br>
+    <input type="button" value="Kayıt Ol" onclick="myFunction()"><br><br>
+        <div id="msg">Tebrikler Başarı İle Üye Oldun!</div>
+        <script>
+function myFunction() {
+    var x = document.getElementById("msg");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+        Zaten Hesabınız var mı?<a href="giris.html" style="text-decoration: none; font-family: 'Play', sans-serif; color: yellow;">&nbsp;Giriş Yap</a>
+    </form>
+    
+    </div>
+</body>
+</html>

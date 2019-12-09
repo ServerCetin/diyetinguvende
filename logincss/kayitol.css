@@ -63,8 +63,8 @@ h2
 ::placeholder {
     color:aliceblue;
     opacity: 0.8; 
-	
-	select {
+}	
+select {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
@@ -80,24 +80,24 @@ select::-ms-expand {
   display: none;
 }
 /* Custom Select */
-.select2 {
+.select {
   position: relative;
   display: flex;
-  width: 20em;
+  width: 15em;
   height: 3em;
   line-height: 3;
   background: #2c3e50;
   overflow: hidden;
   border-radius: .25em;
 }
-select2 {
+select {
   flex: 1;
   padding: 0 .5em;
   color: #fff;
   cursor: pointer;
 }
 /* Arrow */
-.select2::after {
+.select::after {
   content: '\25BC';
   position: absolute;
   top: 0;
@@ -111,7 +111,6 @@ select2 {
   transition: .25s all ease;
 }
 /* Transition */
-.select2:hover::after {
+.select:hover::after {
   color: #f39c12;
 }
-

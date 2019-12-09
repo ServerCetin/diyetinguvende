@@ -58,11 +58,15 @@ body {
 <div class="signup">
     <form>
     <h2 style="color: #fff;">Kayıt Ol</h2>
-	<select name="Görev">
-         <option value="diyetisyen">Diyetisyen</option>
-         <option value="sporhocasi">Spor Hocası</option>
-         <option value="ogrenci">Öğrenci</option>
-      </select>
+	
+	<div class="select2">
+  <select name="slct" id="slct">
+    <option selected disabled>Bir seçenek belirleyiniz.</option>
+    <option value="1">Diyetisyen</option>
+    <option value="2">Spor Hocası</option>
+    <option value="3">Öğrenci</option>
+  </select>
+</div>
     <input type="text" name="username" placeholder="Ad"><br><br>
 	<input type="text" name="username" placeholder="Soyad"><br><br>
     <input type="password" name="pass" placeholder="Şifre"><br><br>       

@@ -42,27 +42,93 @@
                 		
 	    <article>
 <div class="beyaz" >
-<h3>Diyetisyeninizin Notu:</h3>
+<h2>Diyetisyeninizin Notu:</h2>
 			<blockquote>
 						<p>
 						Programina uymaya dikkat et, sana özel ayarlandigindan aksatmamaya çalis!
 						</p>
 			</blockquote>
-				<br>
-			<h3>Mevcut Diyet Listem</h3>
+			
+			
+			
+			<table>
+			
+		    <tr>
+						<th>Saat</th>
+						<th>Bugünkü Listem<br><button id="button1">Yaptým</button> <button id="button2">Yapmadým</button></th>
+						<th>Yarýnki Listem</th>
+		    </tr>
+			<script>
+
+var listeyiYaptým=document.getElementById("button1");
+	listeyiYaptým.onclick=function()
+	{
+		window.alert("Hasta bugünkü diyetini yapmýþtýr. Diyetisyenine bilgilendirme yapýlacaktýr.");
+	}
+
+	var listeyiYapmadým=document.getElementById("button2");
+	listeyiYapmadým.onclick=function()
+	{
+		window.alert("Hasta bugünkü diyetini tam olarak yapmamýþtýr. Diyetisyenine bilgilendirme yapýlacaktýr.");
+	}
+	
+            </script>
+
+
+			<tr>
+			            <td>09.00</td>
+						<td>Kahvaltý</td>
+						<td>Kahvaltý</td>  
+			</tr>
+			
+			<tr>
+			            <td>12.00</td>
+						<td>Ara Öðün</td>
+						<td>Ara Öðün</td>  
+			</tr>
+			
+			<tr>
+			            <td>14.30</td>
+						<td>Öðle Yemeði</td>
+						<td>Öðle Yemeði</td>  
+			</tr>
+			
+			<tr>
+			            <td>17.00</td>
+						<td>Ara Öðün</td>
+						<td>Ara Öðün</td>  
+			</tr>
+			
+			<tr>
+			            <td>19.00</td>
+						<td>Akþam Yemeði</td>
+						<td>Akþam Yemeði</td>  
+			</tr>
+			
+			<tr>
+			            <td>21.00</td>
+						<td>Meyve,Kuruyemiþ</td>
+						<td>Meyve,Kuruyemiþ</td>  
+			</tr>
+			</table>
+			
+			<br>
+			<br>
+			
+			<h2>Mevcut Haftalýk Diyet Listem</h2>
 				<table>
 					<tr>
 						<th>Saat</th>
-						<th>Pzt</th>
-						<th>Sali</th>
-						<th>Çrs</th>
-						<th>Prs</th>
+						<th>Pazartesi</th>
+						<th>Salý</th>
+						<th>Çarþamba</th>
+						<th>Perþembe</th>
 						<th>Cuma</th>
-						<th>Cmt</th>
-						<th>Pzr</th>
+						<th>Cumartesi</th>
+						<th>Pazar</th>
 
 					</tr>
-						<tr>
+					<tr>
 						<td>09.00</td>
 						<td>Kahvaltý</td>
 						<td>Kahvaltý</td>
@@ -115,13 +181,13 @@
 					</tr>
 					<tr>
 						<td>21.00</td>
-						<td>Meyve,Kuru Yemiþ</td>
-						<td>Meyve,Kuru Yemiþ</td>
-						<td>Meyve,Kuru Yemiþ</td>
-						<td>Meyve,Kuru Yemiþ</td>
-						<td>Meyve,Kuru Yemiþ</td>
-						<td>Meyve,Kuru Yemiþ</td>
-						<td>Meyve,Kuru Yemiþ</td>
+						<td>Meyve,Kuruyemiþ</td>
+						<td>Meyve,Kuruyemiþ</td>
+						<td>Meyve,Kuruyemiþ</td>
+						<td>Meyve,Kuruyemiþ</td>
+						<td>Meyve,Kuruyemiþ</td>
+						<td>Meyve,Kuruyemiþ</td>
+						<td>Meyve,Kuruyemiþ</td>
 
 						
 					</tr>
@@ -130,26 +196,7 @@
 				</table>
 				<b>Ekle</b>
 				<p>&nbsp;</p>
-				<fieldset>
-
-					<legend>Bugünkü Durumun</legend>
-					<form action="#" method="get">
-						<p><label for="name">Boyun:</label>
-						<input type="text" name="boy" id="boy" value="180" /><br /></p>		
-						<p><label for="email">Kilon:</label>
-						<input type="text" name="kilo" id="kilo" value="120" /><br /></p>
-						<p><label for="email">Kalori Miktari:</label>
-						<input type="text" name="kalori" id="kalori" value="" /><br /></p>
-						<p><label for="email">Kaç Metre Yürüdün:</label>
-						<input type="text" name="yurume" id="yurume" value="" /><br /></p>
-						<p><label for="email">Kaç Metre Kostun:</label>
-						<input type="text" name="kosma" id="kosma" value="" /><br /></p>
-						<p><label for="message">Diyetisyenine birakmak istedigin notun:</label>	
-						<textarea cols="60" rows="11" name="message" id="message"></textarea><br /></p>
-						<p><input type="submit" name="send" class="formbutton" value="Gönder" /></p>
-					</form>
-	
-				</fieldset>
+				
 					
 			</div>
 		</article>

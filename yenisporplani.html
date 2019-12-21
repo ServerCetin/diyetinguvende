@@ -56,6 +56,43 @@ License: Creative Commons Attribution
 			<blockquote>
 				<textarea name="hocaNotu" rows="5" cols="100"></textarea>
 			</blockquote>
+			
+			<br>
+			<br>
+			<br>
+			<table>
+			
+			<tr>
+			<th>Adet</th>
+			<th>Bugünkü Listem<br><button id="button3">Yaptım</button> <button id="button4">Yapmadım</button></th>
+			<th>Yarınki Listem</th>
+			</tr>
+			<script>
+
+var egzersizleriYaptım=document.getElementById("button3");
+	egzersizleriYaptım.onclick=function()
+	{
+		window.alert("Hasta bugünkü egzersizlerini yapmıştır. Durum analizi için koça bilgilendirme yapılacaktır.");
+	}
+
+	var egzersizleriYapmadım=document.getElementById("button4");
+	egzersizleriYapmadım.onclick=function()
+	{
+		window.alert("Hasta bugünkü egzersizlerini tam olarak yapmamıştır. Durum analizi için koça bilgilendirme yapılacaktır.");
+	}
+	
+            </script>
+			<tr>
+			<td>-</td>
+			<td>Liste1</td>
+			<td>Liste2</td>
+			</tr>
+			
+			</table>
+			
+			<br>
+			<br>
+			
 			<h5>Yeni Listenizin Adı: </h5>
 		<input  type="text" name="listead">
 		<br><br>

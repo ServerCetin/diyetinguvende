@@ -17,11 +17,11 @@ body {
 
 /** element defaults **/
 table {
-	width:100%;
+	width:40%;
 	text-align:left;
 }
 th, td {
-	padding:5px 10px;
+	padding:2px 3px;
 }
 th {
 	color:#fff;
@@ -214,6 +214,7 @@ div.beyaz{
 	top:15%;
 	left:0%;
 	
+	
 }
 header div.tagline {
 	color:#C2D7F9;
@@ -223,7 +224,12 @@ header div.tagline a {
 	color:#ffffff;
 }
 
-
+div.yeni{
+	position:relative;
+	margin-right:50px;
+	  
+	
+}
 
 /** body **/
 section#body {
@@ -356,8 +362,63 @@ footer p a:hover { color:#333; border-bottom-color: #333; }
 	display: block;
 }
 
+#button1{
+height:30px;
+width:60px;
+color:#2F2F2F;
+background-color:#2F2F2F
 
+}
 
+#button1:hover{
+height:30px;
+width:60px;
+color:white;
+background-color:forestgreen
+}
+
+#button2{
+height:30px;
+width:70px;
+color:#2F2F2F;
+background-color:#2F2F2F
+}
+
+#button2:hover{
+height:30px;
+width:70px;
+color:white;
+background-color:red
+}
+
+#button3{
+height:30px;
+width:60px;
+color:#2F2F2F;
+background-color:#2F2F2F
+
+}
+
+#button3:hover{
+height:30px;
+width:60px;
+color:white;
+background-color:forestgreen
+}
+
+#button4{
+height:30px;
+width:70px;
+color:#2F2F2F;
+background-color:#2F2F2F
+}
+
+#button4:hover{
+height:30px;
+width:70px;
+color:white;
+background-color:red
+}
 
 
 @media screen and (max-width: 740px) {

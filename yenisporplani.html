@@ -41,7 +41,8 @@
 	    <article>
 			
 			<div class="beyaz" style="padding-top: 50px"  >
-			<form>	
+			<form>
+		
 			<h4>Yeni Spor Planı Oluştur</h4>
 			<h5>Notunuzu Giriniz</h5>
 			<blockquote>
@@ -51,85 +52,86 @@
 <head>
 	<tr>
 			<br>
-			<br>
-			<br>
+			<h5>Eski Listenizin Adı: </h5>
+		<input  type="text" name="listead" value="Liste 1">	
 			<table>
 			
 			<tr>
-			<th>Adet</th>
-			<th>Bugünkü Listem<br><button id="button3">Yaptım</button> <button id="button4">Yapmadım</button></th>
-			<th>Yarınki Listem</th>
+			<th>Egzersiz Adeti</th>
+			<th>Bugünkü Egzersiz Listem</th>
+			<th>Yarınki Egzersiz Listem</th>
 			</tr>
+			
+			<tr>
+			<td>-</td>
+			<td>Liste1<br><button id="button15">Yaptım</button> <button id="button16">Yapmadım</button></td>
+			<td>Liste2</td>
+			</tr>
+			
 			<script>
 
-var egzersizleriYaptım=document.getElementById("button3");
+var egzersizleriYaptım=document.getElementById("button15");
 	egzersizleriYaptım.onclick=function()
 	{
 		window.alert("Hasta bugünkü egzersizlerini yapmıştır. Durum analizi için koça bilgilendirme yapılacaktır.");
 	}
 
-	var egzersizleriYapmadım=document.getElementById("button4");
+	var egzersizleriYapmadım=document.getElementById("button16");
 	egzersizleriYapmadım.onclick=function()
 	{
 		window.alert("Hasta bugünkü egzersizlerini tam olarak yapmamıştır. Durum analizi için koça bilgilendirme yapılacaktır.");
 	}
 	
             </script>
-			<tr>
-			<td>-</td>
-			<td>Liste1</td>
-			<td>Liste2</td>
-			</tr>
 			
 			</table>
 			
 			<br>
 			<br>
-			
 
 			<h5>Yeni Listenizin Adı: </h5>
-		<input  type="text" name="listead">
+		<input  type="text" name="listead" value="Liste 2">
 		<br><br>
 				<table id="hastalistesi">
   <tr>
-    <th style="width:35px">Adet</th>
-	<th>Pzt</th>
+    <th style="width:35px">Egzersiz Adeti</th>
+	<th>Pazartesi</th>
     <th>Salı</th>
-	<th>Çrş</th>
-	<th>Prş</th>
+	<th>Çarşamba</th>
+	<th>Perşembe</th>
 	<th>Cuma</th>
-	<th>Cmt</th>
-	<th>Pzr</th>
+	<th>Cumartesi</th>
+	<th>Pazar</th>
   </tr>
   <tr>
     <td ><input type="text" name="Adet1" style="width:35px"></td>
-    <td ><input type="text" name="Pzt1" style="max-width:100px"></td>
+    <td ><input type="text" name="Pazartesi1" style="max-width:100px"></td>
     <td ><input type="text" name="Sali1" style="max-width:100px"></td>
-    <td ><input type="text" name="Crs1" style="max-width:100px"></td>
-    <td ><input type="text" name="Prs1" style="max-width:100px"></td>
+    <td ><input type="text" name="Carsamba1" style="max-width:100px"></td>
+    <td ><input type="text" name="Persembe1" style="max-width:100px"></td>
     <td ><input type="text" name="Cuma1" style="max-width:100px"></td>
-    <td ><input type="text" name="Cmt1" style="max-width:100px"></td>
-    <td ><input type="text" name="Pzr1" style="max-width:100px"></td>
+    <td ><input type="text" name="Cumartesi1" style="max-width:100px"></td>
+    <td ><input type="text" name="Pazar1" style="max-width:100px"></td>
   </tr>
    <tr>
     <td ><input type="text" name="Adet2" style="width:35px"></td>
-    <td ><input type="text" name="Pzt2" style="max-width:100px"></td>
+    <td ><input type="text" name="Pazartesi2" style="max-width:100px"></td>
     <td ><input type="text" name="Sali2" style="max-width:100px"></td>
-    <td ><input type="text" name="Crs2" style="max-width:100px"></td>
-    <td ><input type="text" name="Prs2" style="max-width:100px"></td>
+    <td ><input type="text" name="Carsamba2" style="max-width:100px"></td>
+    <td ><input type="text" name="Persembe2" style="max-width:100px"></td>
     <td ><input type="text" name="Cuma2" style="max-width:100px"></td>
-    <td ><input type="text" name="Cmt2" style="max-width:100px"></td>
-    <td ><input type="text" name="Pzr2" style="max-width:100px"></td>
+    <td ><input type="text" name="Cumartesi2" style="max-width:100px"></td>
+    <td ><input type="text" name="Pazar2" style="max-width:100px"></td>
   </tr>
   <tr>
     <td ><input type="text" name="Adet3" style="width:35px"></td>
-    <td ><input type="text" name="Pzt3" style="max-width:100px"></td>
-    <td ><input type="text" name="Sali" style="max-width:100px"></td>
-    <td ><input type="text" name="Crs3" style="max-width:100px"></td>
-    <td ><input type="text" name="Prs3" style="max-width:100px"></td>
+    <td ><input type="text" name="Pazartesi3" style="max-width:100px"></td>
+    <td ><input type="text" name="Sali3" style="max-width:100px"></td>
+    <td ><input type="text" name="Carsamba3" style="max-width:100px"></td>
+    <td ><input type="text" name="Persembe3" style="max-width:100px"></td>
     <td ><input type="text" name="Cuma3" style="max-width:100px"></td>
-    <td ><input type="text" name="Cmt3" style="max-width:100px"></td>
-    <td ><input type="text" name="Pzr3" style="max-width:100px"></td>
+    <td ><input type="text" name="Cumartesi3" style="max-width:100px"></td>
+    <td ><input type="text" name="Pazar3" style="max-width:100px"></td>
   </tr>
    
 

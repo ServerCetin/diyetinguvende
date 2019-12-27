@@ -1,10 +1,16 @@
+<?php
+session_start();
+ob_start();
+$ad = $_SESSION["ad"];
+$username = $_SESSION["username"];
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
-
-<title>Hastalarım-Diyetin Güvende!</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
+<title>Hastalarım-Diyetin Güvende!</title>
+
 
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 </head>
@@ -12,30 +18,8 @@
 <body>
 
 		<section id="body" class="width">
-			<aside id="sidebar" class="column-left">
-
-			<header>
-				<h1><a href="#">Diyetin Güvende!</a></h1>	
-				
-			</header>
-			<h3>  Diyetisyen Bilgileri:</h3>
+		<?php if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "diyetisyenmenu.php";}?>
 			
-
-			<nav id="mainnav">
-  				<ul>
-                            		
-                           		 	
-                           		 <li class="selected-item" style="background-color:forestgreen"><a href="diyetisyen.html"> Hastalarım</a></li>
-								 <li><a href="yenidiyetlistesi.html">Yeni Diyet Listesi Oluştur</a></li>
-                           		 <li><a href="hastakaydet.html">Hasta Kaydet</a></li>	
-                            		<li><a href="diyetisyenmesajlari.html">Mesajlarim</a></li>
-                            		<li ><a href="destek.html">Destek</a></li>
-                        	</ul>
-			</nav>
-
-			
-			
-			</aside>
 			<section id="content" class="column-right">
                 		
 	    <article>

@@ -1,3 +1,9 @@
+<?php
+session_start();
+ob_start();
+$ad = $_SESSION["ad"];
+$username = $_SESSION["username"];
+?>
 <!doctype html>
 <html>
 
@@ -13,32 +19,9 @@
 <body>
 
 		<section id="body" class="width">
-			<aside id="sidebar" class="column-left">
-
-			<header>
-				<h1><a href="#">Diyetin Güvende!</a></h1>	
-				
-			</header>
-			<h3>  Adı:</h3>
-			<h3>  Soyadı:</h3>
-			<h3>  Kullanıcı Adı:</h3>
-
-			<nav id="mainnav">
-  				<ul>
-                            		
-                           		 <li ><a href="kullaniciSayfasi.html">Güncel Diyet Listem</a></li>
-								 <li><a href="egzersizplani.html">Egzersiz Planim</a></li>
-                           		 <li><a href="kaloriegzersiztakip.html">Kalori & Egzersiz Takip</a></li>
-                            		<li class="selected-item" style="background-color:forestgreen"><a href="eskidiyet.html">Diyetlerim</a></li>
-                            		<li><a href="kulmesajlari.html">Mesajlarim</a></li>
-                        
-                            		<li><a href="kuldestek.html">Destek</a></li>
-                        	</ul>
-			</nav>
+			<?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "kullanicimenu.php";}?>
 
 			
-			
-			</aside>
 			<section id="content" class="column-right">
                 		
 	    <article>

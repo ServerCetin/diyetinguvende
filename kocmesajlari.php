@@ -1,3 +1,8 @@
+<?php
+session_start();
+ob_start();
+
+?>
 <!doctype html>
 <html>
 <head>
@@ -5,37 +10,15 @@
 
 <title>Diyetin Güvende!</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
-
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 </head>
 
 <body>
 
 		<section id="body" class="width">
-			<aside id="sidebar" class="column-left">
-
-			<header>
-				<h1><a href="#">Mesajlar-Diyetin Güvende!</a></h1>	
-				
-			</header>
-			<h3> Koç Bilgileri:</h3>
-			
-
-			<nav id="mainnav">
-  				<ul>
-                            		
-                           		 	
-                           		 <li ><a href="koc.html"> Öğrencilerim</a></li>
-								 <li><a href="yenisporplani.html">Yeni Spor Planı Oluştur</a></li>
-                           		 <li><a href="ogrencikaydet.html">Öğrenci Kaydet</a></li>	
-                            		<li class="selected-item" style="background-color:forestgreen"><a href="kocmesajlari.html">Mesajlarim</a></li>
-                            		<li ><a href="kocdestek.html">Destek</a></li>
-                        	</ul>
-			</nav>
+					<?php if($_SESSION["kullaniciTur"] == "Spor Hocası"){include "sporkocumenu.php";}?>
 
 			
-			
-			</aside>
 			<section id="content" class="column-right">
                 		
 	    <article>

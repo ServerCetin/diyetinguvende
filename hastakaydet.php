@@ -1,3 +1,8 @@
+<?php
+session_start();
+ob_start();
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -12,30 +17,8 @@
 <body>
 
 		<section id="body" class="width">
-			<aside id="sidebar" class="column-left">
-
-			<header>
-				<h1><a href="#">Diyetin Güvende!</a></h1>	
-				
-			</header>
-			<h3>  Diyetisyen Bilgileri:</h3>
-			
-
-			<nav id="mainnav">
-  				<ul>
-                            		
-                           		 <li><a href="diyetisyen.html"> Hastalarım</a></li>
-								 <li><a href="yenidiyetlistesi.html">Yeni Diyet Listesi Oluştur</a></li>
-                           		 <li class="selected-item" style="background-color:forestgreen"><a href="hastakaydet.html">Hasta Kaydet</a></li>	
-                            		<li ><a href="diyetisyenmesajlari.html">Mesajlarim</a></li>
-                            		<li ><a href="destek.html">Destek</a></li>
-                        	</ul>
-			</nav>
-
-			
-			
-			</aside>
-			<section id="content" class="column-right">
+            <?php if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "diyetisyenmenu.php";}?>
+            <section id="content" class="column-right">
                 		
 	    <article>
 			
@@ -53,7 +36,7 @@
 				<option>Liste 2</option>
 				<option>Liste 3</option>
 				<option>Liste 4</option></select>
-			<p><a href="#" class="button buttonS" style="margin-left:28%;"name="kodgonder">İstek Gönder</a>
+			<p><a href="#" class="button buttonS" style="margin-left:28%;"name="kodgonder">Ekle</a>
 "
 			
 			
@@ -79,3 +62,18 @@
 
 </body>
 </html>
+
+<?php
+if(isset($_POST['sorun'],$_POST['message'])){
+    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+    $hasta = $_POST['username'];
+    $diyetBaslangic = date("Y-m-d H:i:s");
+    $gonderenId = $_SESSION['Id'];
+    $ekle = $db->exec("INSERT INTO hastadiyet(DiyetisyenId,HastaId,DiyetBaslangic) VALUES ('$gonderenId','$hasta','$diyetBaslangic')");
+    // diyetisyenin tablosu eklenecek
+    echo  $ekle;
+    echo  $ekle;
+    echo  $ekle;
+}
+
+?>

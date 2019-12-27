@@ -1,3 +1,9 @@
+<?php
+session_start();
+ob_start();
+$ad = $_SESSION["ad"];
+$username = $_SESSION["username"];
+?>
 <!doctype html>
 <html>
 
@@ -6,16 +12,6 @@
 
 <title>Diyetin Güvende!</title>
 <link rel="stylesheet" href="styles.css" type="text/css" />
-<!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<!--
-agile, a free CSS web template by ZyPOP (zypopwebtemplates.com/)
-
-Download: http://zypopwebtemplates.com/
-
-License: Creative Commons Attribution
-//-->
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" /><!-- telefona uyumlu olmasını sağlar-->
 </head>
 
@@ -28,25 +24,7 @@ License: Creative Commons Attribution
 				<h1><a href="#">Diyetin Güvende!</a></h1>	
 				
 			</header>
-			<h3>  Adı:</h3>
-			<h3>  Soyadı:</h3>
-			<h3>  Kullanıcı Adı:</h3>
-
-			<nav id="mainnav">
-  				<ul>
-                            		
-                           		 <li ><a href="kullaniciSayfasi.html">Güncel Diyet Listem</a></li>
-								 <li><a href="egzersizplani.html">Egzersiz Planim</a></li>
-                           		 <li class="selected-item" style="background-color:forestgreen"><a href="kaloriegzersiztakip.html">Kalori & Egzersiz Takip</a></li>
-                            		<li ><a href="eskidiyet.html">Diyetlerim</a></li>
-                            		<li><a href="kulmesajlari.html">Mesajlarim</a></li>
-                            		<li><a href="kuldestek.html">Destek</a></li>
-                        	</ul>
-			</nav>
-
-			
-			
-			</aside>
+			<?php if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "diyetisyenmenu.php";}?>
 			<section id="content" class="column-right">
                 		
 	    <article>

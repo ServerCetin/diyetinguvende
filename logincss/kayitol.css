@@ -9,10 +9,10 @@ body
 {
     background:rgba(44, 62, 80, 0.7);
 	padding:40px;
-	width:250px;
+	width:245px;
 	margin:auto;
 	margin-top:80px;
-	height:650px;
+	height:700px;
 }
 {.
 	height:590px;
@@ -42,7 +42,7 @@ input
     outline: none;
     color: #fff;
 }
-input[type=button]
+input[type=submit]
 {
     border: none;
     width: 190px;
@@ -54,11 +54,12 @@ input[type=button]
     border-radius: 15px;
     cursor: pointer;
 }
-input[type=button]:hover
+input[type=submit]:hover
 {
     color: #fff;
     background-color: black;
 }
+
 h2
 {
     color: #000;

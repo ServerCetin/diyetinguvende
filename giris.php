@@ -1,4 +1,10 @@
+<?php
+session_start();
+ob_start();
 
+if(isset($_SESSION["kullaniciTur"]))
+    header("Location: /index.php");
+?>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,6 +22,10 @@
 
     <form action="" method="POST">
         <h2 style="color:#fff;">Giriş Yap</h2>
+        <?php
+        if(isset($_SESSION['LoginUyari']))
+            echo $_SESSION['LoginUyari'];
+        ?>
         <input type="text" name="username" placeholder="Kullanıcı Adı"/><br /><br />
         <input type="password" name="password" placeholder="Şifre" /><br /><br />
         <input type="submit" value="Giriş Yap" name="girisyap"/><br /><br />
@@ -36,58 +46,67 @@ if(isset($_POST['username'],$_POST['password'])){
     $username = $_POST['username'];
     $sifre = $_POST['password'];
     $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
-
+    $islem1=null;
     if (!$username|| !$sifre) {
         die("Boş alan bırakmayınız!");
     }
     else{
-        session_start();
         $sorgu1 = $db->prepare("SELECT * FROM kullanici WHERE KullaniciAdi = '$username' AND Sifre = '$sifre'");// verileri karşılaştırır.
         $sorgu1->execute(array($username,$sifre));// yazılan değişkenleri kontrol eder.
-        $islem1=$sorgu1->fetch();//girilen bilinin karşılığı varmı?
+        $islem1=$sorgu1->fetch();
 
-        $sorgu = $db->prepare("SELECT * FROM kullanici where KullaniciAdi=?");
-        $sorgu ->execute(array($username ));
-        $kisi = $sorgu->fetch();
+        if($islem1){
+            $sorgu = $db->prepare("SELECT * FROM kullanici where KullaniciAdi=?");
+            $sorgu ->execute(array($username ));
+            $kisi = $sorgu->fetch();
 
-        if($kisi [KullaniciTurId]==1)
-            $_SESSION["kullaniciTur"] = "Diyetisyen";
-        if($kisi [KullaniciTurId]==2)
-            $_SESSION["kullaniciTur"] = "Spor Hocası";
-        if($kisi [KullaniciTurId]==3)
-            $_SESSION["kullaniciTur"] = "Kullanici";
+            if($kisi [KullaniciTurId]==1)
+                $_SESSION["kullaniciTur"] = "Diyetisyen";
+            if($kisi [KullaniciTurId]==2)
+                $_SESSION["kullaniciTur"] = "Spor Hocası";
+            if($kisi [KullaniciTurId]==3)
+                $_SESSION["kullaniciTur"] = "Kullanici";
 
-        $_SESSION["username"] = $_POST['username'];
-        $_SESSION["ad"] = $kisi [Ad];
-        $_SESSION["soyad"] = $kisi [Soyad];
-        $_SESSION["cinsiyet"] = $kisi [CinsiyetId] ==1 ? "Kadın" : "Erkek";
-        $_SESSION["Id"] = $kisi [Id];
-        $_SESSION["telefon"] = $kisi [TelefonNo];
-        $_SESSION["dogumTarih"] = $kisi [DogumTarih];
-        $_SESSION["email"] = $kisi [Email];
+            $_SESSION["username"] = $_POST['username'];
+            $_SESSION["ad"] = $kisi [Ad];
+            $_SESSION["soyad"] = $kisi [Soyad];
+            $_SESSION["cinsiyet"] = $kisi [CinsiyetId] ==1 ? "Kadın" : "Erkek";
+            $_SESSION["Id"] = $kisi [Id];
+            $_SESSION["telefon"] = $kisi [TelefonNo];
+            $_SESSION["dogumTarih"] = $kisi [DogumTarih];
+            $_SESSION["email"] = $kisi [Email];
+            $_SESSION["kullaniciTurId"]=$kisi [KullaniciTurId];
 
+            if($_SESSION["kullaniciTurId"]==3){
+                $id = $kisi [Id];
 
-        if($islem1['KullaniciTurId']==1){// işlem gerçekleşiyor ise ve kulanıcı id bir ise gir içeri
-            $_SESSION['userType'] = "Diyetisyen"; // kullanıcı adını sessiona atar.
-            echo'<meta http-equiv="refresh" content="0;URL=diyetisyen.php">';
-        }
-        else if($islem1['KullaniciTurId']==2){
-            $_SESSION['userType'] = "SporHocasi";
+                $sorgu2 = $db->prepare("SELECT * FROM hastabilgi where KullaniciId=?");
+                $sorgu2 ->execute(array($id));
+                $kisi2 = $sorgu2->fetch();
 
-            echo'<meta http-equiv="refresh" content="0;URL=koc.php">';
-        }
-        else if($islem1['KullaniciTurId']==3){
-            $_SESSION['userType'] = "Kullanici";
-
-            echo'<meta http-equiv="refresh" content="0;URL=kullaniciSayfasi.php">';
-        }
-        else{
-            echo 'Kullanıcı Adı veya Şifre Hatalı!';
-
+                $_SESSION["boy"] = $kisi2 [Boy];
+                $_SESSION["kilo"] = $kisi2 [Kilo];
+                $_SESSION["yagOrani"] = $kisi2 [YagOrani];
+            }
         }
 
     }
 
+    if($islem1['KullaniciTurId']==1){
+        $_SESSION['LoginUyari'] = null;
+        header("Location: /index.php");
+    }
+    else if($islem1['KullaniciTurId']==2){
+        $_SESSION['LoginUyari'] = null;
+        header("Location: /index.php");
+    }
+    else if($islem1['KullaniciTurId']==3){
+        $_SESSION['LoginUyari'] = null;
+        header("Location: /index.php");
+    }
+    else{
+        $_SESSION['LoginUyari'] = 'Kullanıcı Adı veya Şifre Hatalı!';
+    }
 
 }
 

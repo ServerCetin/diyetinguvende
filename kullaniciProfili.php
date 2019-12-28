@@ -21,42 +21,36 @@ ob_start();
 		<section id="body" class="width">
 		 <?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "kullanicimenu.php";}
 		else if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "diyetisyenmenu.php";}
-else {include "sporkocumenu.php";}	?>
+		else {include "sporkocumenu.php";}	?>
 
 			
 			<section id="content" class="column-right">
-  <div class="yeni" >
-  <fieldset>
-<form action="#" method="get">
-                        <br>
-			    
+                <fieldset>
+                    <form action="#" method="POST">
+                <?php
+                if($_SESSION['kullaniciTur']=="Kullanici"){
+                    $boy = $_SESSION["boy"];
+                    $kilo = $_SESSION["kilo"];
+                    $yagOrani = $_SESSION["yagOrani"];
+                    echo '
+                    <div class="yeni" >
+                                                    <br>
+                                                    <p><label for="name">Boy:</label>
+                                                    <input type="text" name="boy" id="boy" value="'. $boy.'" /><br /></p>	
+                                                    <p><label for="name">Kilo:</label>
+                                                    <input type="text" name="kilo" id="kilo" value="'.$kilo.'" /><br /></p>	
+                                                    <p><label for="name">Yağ Oranı:</label>
+                                                    <input type="text" name="fat" id="fat" value="'.$yagOrani.'" /><br /></p>
+                    </div>
+                    ';
+                }?>
 
-						<p><label for="name">Boy:</label>
-						<input type="text" name="boy" id="boy" value="<?php if(isset($_SESSION['boy'])){echo $_SESSION["boy"];} ?>" /><br /></p>	
-						<p><label for="name">Kilo:</label>
-						<input type="text" name="kilo" id="kilo" value="<?php  if(isset($_SESSION['kilo'])){echo $_SESSION["kilo"];} ?>" /><br /></p>	
-						<p><label for="name">Yağ Oranı:</label>
-						<input type="text" name="fat" id="fat" value="<?php if(isset($_SESSION['yagorani'])){echo $_SESSION["yagorani"];} ?>" /><br /></p>
-						<p><label for="name">Rozet Sayısı:</label>
-						<input type="text" name="badge" id="badge" value="" /><br /></p>
-  
-</form>
-	
-				</fieldset>
-
-
-
-
-</div>  
 	    <article>
 <div class="beyaz" >
 <h3></h3>
 			
 				<br>
-			    <fieldset>
 
-					
-					<form action="#" method="POST">
 						<p><label for="name">Adı:</label>
 						<input type="text" name="ad" id="ad" value="<?php echo $_SESSION["ad"] ?>" /><br /></p>
 						<p><label for="soyad">Soyadı:</label>
@@ -100,16 +94,28 @@ if(isset($_SESSION['Id'],$_POST['ad'],$_POST['soyad'],$_POST['email'],$_POST['te
     $soyad = $_POST['soyad'];
     $email = $_POST['email'];
     $tel = $_POST['tel'];
+    $boy = $_POST['boy'];
+    $kilo = $_POST['kilo'];
+    $yagOrani = $_POST['fat'];
+
     $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
     $guncelle = $db->exec("UPDATE  kullanici SET Ad='$ad',Soyad='$soyad',Email='$email',TelefonNo='$tel' WHERE Id='$id'");
-    if($guncelle){
+    if($guncelle) {
         $_SESSION["ad"] = $ad;
         $_SESSION["soyad"] = $soyad;
         $_SESSION["email"] = $email;
         $_SESSION["telefon"] = $tel;
     }
-
-
+    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+    $guncelle = $db->exec("UPDATE  hastabilgi SET Boy='$boy',Kilo='$kilo',YagOrani='$yagOrani'WHERE KullaniciId='$id'");
+    if($guncelle){
+        $_SESSION["kilo"] = $kilo;
+        $_SESSION["boy"] = $boy;
+        $_SESSION["yagOrani"] = $yagOrani;
+        echo "başarılı";
+    }
+    if(!$guncelle)
+        echo "2 bşarızız";
 }
 
 ?>

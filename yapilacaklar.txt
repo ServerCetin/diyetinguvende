@@ -1,5 +1,0 @@
-KAyıt olduğunda giriş sayfasına yönlendirme yapmalı
-Kulllanıcı 1 ve 2 türünde olduğunda profilindeki özellikler değişmeli
-şifre sıfırla ve ifremi unuttum ile güncellemeler yapılmalı
-giriş yaparken hata alıyor ama yönlendşşrme yapıyor
-hastaya istek gönderme

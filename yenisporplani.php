@@ -27,11 +27,22 @@ $username = $_SESSION["username"];
 			<div class="beyaz" style="padding-top: 50px"  >
 			<form>	
 			<h4>Yeni Spor Planı Oluştur</h4>
+			<h5>Notunuzu Giriniz</h5>
+			<blockquote>
+				<textarea name="hocaNotu" rows="5" cols="100"></textarea>
+			</blockquote>
+			
+<head>
+	<tr>
+			<br>
+			<br>
+			<br>
+			
 			
 			<br>
 			<br>
 			
-			
+
 			<h5>Yeni Listenizin Adı: </h5>
 		<input  type="text" name="listead">
 		<br><br>

@@ -1,8 +1,8 @@
 <?php
 session_start();
 ob_start();
-
-?><html>
+?>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Kayit ol</title>
@@ -63,6 +63,9 @@ ob_start();
     <form action="" method="POST">
         <h2 style="color: #fff;">Kayıt Ol</h2>
 
+        <?php if(isset($_SESSION['Uyari']))
+                echo $_SESSION['Uyari']; ?>
+
         <div class="select">
             <select name="slct" id="slct">
                 <option selected disabled>Bir seçenek belirleyiniz.</option>
@@ -93,10 +96,9 @@ ob_start();
 
 
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-print_r(error_get_last());
-if(isset($_POST['ad'],$_POST['soyad'],$_POST['kullanici_adi'],$_POST['pass'],$_POST['pass'],$_POST['mail'],$_POST['cinsiyet'],$_POST['tel'],$_POST['dogum'],$_POST['slct'])){
+
+if(isset($_POST['ad'],$_POST['soyad'],$_POST['kullanici_adi'],$_POST['pass'],$_POST['pass'],
+    $_POST['mail'],$_POST['cinsiyet'],$_POST['tel'],$_POST['dogum'],$_POST['slct'])){
     $ad=$_POST['ad'];
     $soyad = $_POST['soyad'];
     $username = $_POST['kullanici_adi'];
@@ -108,50 +110,42 @@ if(isset($_POST['ad'],$_POST['soyad'],$_POST['kullanici_adi'],$_POST['pass'],$_P
     $Secim= $_POST['slct'];
 
     $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
-    if($db){
-        echo "Veri Tabanı bağlantısı gerçekleşti.";
-    }
-    else{
-        echo "Bağlantı başarısız.";
-    }
-    $ekle = $db->exec("INSERT INTO kullanici (Ad,Soyad,KullaniciAdi,Sifre,Email,CinsiyetId,DogumTarih,KullaniciTurId,TelefonNo) VALUES ('$ad', '$soyad','$username','$sifre','$mail','$cinsiyet','$dogum','$Secim','$tel')");
+
+    $ekle = $db->exec("INSERT INTO kullanici 
+(Ad,Soyad,KullaniciAdi,Sifre,Email,CinsiyetId,DogumTarih,KullaniciTurId,TelefonNo) 
+VALUES ('$ad', '$soyad','$username','$sifre','$mail','$cinsiyet','$dogum','$Secim','$tel')");
     if($ekle){
         if($Secim==3){
-        $sorgu = $db->prepare("SELECT * FROM kullanici where KullaniciAdi=?");
-        $sorgu ->execute(array($username));
-        $kisi = $sorgu->fetch();
-        $kisiId = $kisi['Id'];
-		/* 
-        $ekle1 = $db->query("INSERT INTO hastabilgi (KullaniciId,Boy,Kilo,YagOrani) VALUES (0,0,0,0)");
-		print_r(error_get_last());
-		 if(!$ekle1)
-			 echo 'beni düzgün kodla';
-		}
-		//header("Location: /giris.php"); */
-		$deger =0;
-		$query = $db->prepare("INSERT INTO hastabilgi SET
-		KullaniciId = ?,
-		Boy = ?,
-		Kilo = ?,
-		YagOrani = ?");
-		$insert = $query->execute(array(
-			 $kisiId, $deger, $deger, $deger
-		));$_SESSION["boy"] = $_POST['Boy'];
-			$_SESSION["kilo"] = $_POST['Kilo'];
-			$_SESSION["yagorani"] = $_POST['YagOrani'];
-		if ( $insert ){
-			$last_id = $db->lastInsertId();
-			header("Location: /giris.php");
-			
-} 
+            $sorgu = $db->prepare("SELECT * FROM kullanici where KullaniciAdi=?");
+            $sorgu ->execute(array($username));
+            $kisi = $sorgu->fetch();
+            $kisiId = $kisi['Id'];
 
+            $deger =0;
+            $query = $db->prepare("INSERT INTO hastabilgi SET
+            KullaniciId = ?,
+            Boy = ?,
+            Kilo = ?,
+            YagOrani = ?");
+
+            $insert = $query->execute(array(
+                $kisiId, $deger, $deger, $deger
+            ));
+            if ( $insert ){
+                $last_id = $db->lastInsertId();
+            }
+        }
     }
-    else{
-        echo " EKlenemedi";}
-    
+    if($Secim==3 && $ekle){
+        $_SESSION['Uyari'] = null;
+        header("Location: /index.php");
+    }
+    else if($ekle){
+        $_SESSION['Uyari'] = null;
+        header("Location: /index.php");
+    }
+    else
+        $_SESSION['Uyari'] = "Kayıt Başarısız";
 }
-
-}
-
-
+$_SESSION['Uyari'] = "Kayıt Başarısız";
 ?>

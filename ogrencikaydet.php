@@ -28,7 +28,7 @@ $username = $_SESSION["username"];
 			<div class="beyaz" style="padding-top: 50px"  >
 			
 				<fieldset>
-            <legend>Öğrenci Kaydet</legend><br>
+            <legend>Öğrenci Kaydet ve Plan Gönder</legend><br>
 				<form action="#" method="get">		
 				
 				<p>Öğrencinin Kullanıcı Adı:
@@ -39,7 +39,11 @@ $username = $_SESSION["username"];
 				<option>Liste 2</option>
 				<option>Liste 3</option>
 				<option>Liste 4</option></select>
-			<p><a href="#" class="button buttonS" style="margin-left:28%;"name="kodgonder">İstek Gönder</a>
+				<h5>Notunuzu Giriniz</h5>
+			<blockquote>
+				<textarea name="hocaNotu" rows="5" cols="80"></textarea>
+			</blockquote>
+			<p><a href="#" class="button buttonS" style="margin-left:28%;"name="kodgonder">Ekle ve Gönder</a>
 			
 				
 			</form>	

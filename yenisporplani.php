@@ -43,7 +43,7 @@ $username = $_SESSION["username"];
 			<br>
 			
 
-			<h5>Yeni Listenizin Adı: </h5>
+			<h5>Hasta Seç: </h5>
 		<input  type="text" name="listead">
 		<br><br>
 				<table id="hastalistesi">
@@ -93,31 +93,7 @@ $username = $_SESSION["username"];
   <a href="#" class="button button-reversed">Ekle</a>
   <a href="#" class="button buttonS" style="margin-left:80%;">Kaydet</a>
  <br><br><br>
-<h4> Mevcut Spor Listeleri</h4>
 
-<table id="sporplanlari">
-  <tr>
-    <th >Liste Adı</th>
-	<th style="width:100px;">Listeyi Gör</th>
-    
-  </tr>
-  <tr>
-  <td> Liste 1</td>
-  <td > <a href="#" class="button button-reversed">Git</a></td>
-  </tr>
-  <tr>
-  <td> Liste 2</td>
-  <td > <a href="#" class="button button-reversed">Git</a></td>
-  </tr>
-  <tr>
-  <td> Liste 3</td>
-  <td > <a href="#" class="button button-reversed">Git</a></td>
-  </tr>
-  <tr>
-  <td> Liste 4</td>
-  <td > <a href="#" class="button button-reversed">Git</a></td>
-  </tr>
-  
 			</form>	
 				</div>
 		</article>

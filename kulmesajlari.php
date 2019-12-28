@@ -30,37 +30,48 @@ $username = $_SESSION["username"];
 				<fieldset>
 
 					<legend>Mesajlarım</legend>
-					<form>	
-				
-			
-			
-				<table >
-					<tr>
-						<th>Gelen Mesajlar</th>
-						<th>Kimden</th>
-						
-					</tr>
-					<tr>
-						<td>Örnek Gelen Mesaj 1</td>
-						<td>Spor Koçu</td>
-						
-					</tr>
-					<tr>
-						<td>Örnek Gelen Mesaj 2 </td>
-						<td>Diyetisyen</td>
-						<td></td>
-						</tr>
-					</table>
-				</form>	
+
 					<form action="#" method="get">
-						
-						<input type="submit" name="send" class="formbutton" value="Diyetisyene Mesaj" />
-						<input type="submit" name="send" class="formbutton" value="Spor Koçuna Mesaj" /><p>
-						<p><textarea  cols="60" rows="11" name="message" id="message" placeholder="Mesaj Yaz..." ></textarea>
-						<input type="submit" name="send" class="formbutton" value="Gönder" />
+						<p><textarea  cols="70" rows="4" name="message" id="message" placeholder="Mesaj Yaz..." ></textarea><br>
+                        <input type="submit" name="kocSend" class="formbutton" value="Spor Koçuna Mesaj" /><p>
 					</form>
-	
-				</fieldset></div>	
+
+                    <form action="#" method="post">
+                        <p><textarea  cols="70" rows="4" name="message2" id="message" placeholder="Mesaj Yaz..." ></textarea><br>
+                        <input type="submit" name="diyetisyenSend" class="formbutton" value="Diyetisyene Mesaj" />
+                    </form>
+
+                    <?php
+                    $id = $_SESSION["Id"];
+                    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+                    $listele = $db->query("SELECT * FROM kullanicimesaj where AlanId='{$id}'", PDO::FETCH_ASSOC);
+                    if ( $listele->rowCount() )
+                    {
+                        foreach( $listele as $gelenveri )
+                        {
+                            echo "Mesajı:".$gelenveri['Mesaj']." Atan:". $gelenveri['GonderenId']."<br />";
+                        }
+                    }
+                    ?>
+                    <table>
+                        <tr>
+                            <th>Gelen Mesajlar</th>
+                            <th>Kimden</th>
+
+                        </tr>
+                        <tr>
+                            <td>Örnek Gelen Mesaj 1</td>
+                            <td>Spor Koçu</td>
+
+                        </tr>
+                        <tr>
+                            <td>Örnek Gelen Mesaj 2 </td>
+                            <td>Diyetisyen</td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                </fieldset></div>
 			</article>
 				<footer class="clear">
 								<p>&copy; 2019 Diyetin Güvende.</p>
@@ -76,3 +87,30 @@ $username = $_SESSION["username"];
 
 </body>
 </html>
+<?php
+if($_GET){
+    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+
+    $id = $_SESSION["Id"];
+    $sorgu = $db->prepare("SELECT * FROM hastaspor where HastaId=?");
+    $sorgu ->execute(array($id));
+    $hastatablo = $sorgu->fetch();
+    $hocaId = $hastatablo['HocaId'];
+    $mesaj = $_GET["message"];
+    $ekle = $db->exec("INSERT INTO kullanicimesaj (GonderenId,AlanId,Mesaj) VALUES ('$id', '$hocaId','$mesaj')");
+}
+if($_POST)
+{
+    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+
+    $id = $_SESSION["Id"];
+    $sorgu = $db->prepare("SELECT * FROM hastadiyet where HastaId=?");
+    $sorgu ->execute(array($id));
+    $hastatablo = $sorgu->fetch();
+    $diyetisyenId = $hastatablo['DiyetisyenId'];
+    $mesaj = $_POST["message2"];
+    $ekle = $db->exec("INSERT INTO kullanicimesaj (GonderenId,AlanId,Mesaj) VALUES ('$id', '$diyetisyenId','$mesaj')");
+    if($ekle)
+        echo "diyetisyene mesj göndeirldi!";
+}
+?>

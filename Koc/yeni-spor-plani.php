@@ -10,14 +10,14 @@ $username = $_SESSION["username"];
 <meta charset="UTF-8">
 
 <title>Spor Planı Oluştur-Diyetin Güvende!</title>
-<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="/css/styles.css" type="text/css" />
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 </head>
 
 <body>
 
 		<section id="body" class="width">
-		<?php if($_SESSION["kullaniciTur"] == "Spor Hocası"){include "sporkocumenu.php";}?>
+		<?php if($_SESSION["kullaniciTur"] == "Spor Hocası"){include "../Menus/koc-menu.php";}?>
 
 		
 			<section id="content" class="column-right">

@@ -6,7 +6,7 @@ ob_start();
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Kayit ol</title>
-    <link href="./logincss/kayitol.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./logincss/kayit-ol.css"  type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
     <style>
         #msg {
@@ -56,7 +56,11 @@ ob_start();
 <body>
 <style>
     body {
+<<<<<<< HEAD:kayit-ol.php
         background-image: url(../images/h1.png);
+=======
+        background-image: url(./images/h1.png);
+>>>>>>> 5f08b061f8148601dc6805187880824aab958b9c:kayitol.php
     }
 </style>
 <div class="signup">

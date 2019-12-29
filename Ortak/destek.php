@@ -13,7 +13,7 @@ $username = $_SESSION["username"];
 <meta charset="UTF-8">
 
 <title>Diyetin Güvende!</title>
-<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="/css/styles.css" type="text/css" />
 
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 </head>
@@ -21,9 +21,9 @@ $username = $_SESSION["username"];
 <body>
 
 		<section id="body" class="width">
-            <?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "kullanicimenu.php";}
-		else if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "diyetisyenmenu.php";}
-else {include "sporkocumenu.php";}	?>
+            <?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "../Menus/kullanici-menu.php";}
+		else if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "../Menus/diyetisyen-menu.php";}
+else {include "../Menus/koc-menu.php";}	?>
 			<section id="content" class="column-right">
                 		
 	    <article>
@@ -54,7 +54,7 @@ else {include "sporkocumenu.php";}	?>
 						<p><input type="reset" name="resetle" class="formbutton" value="Sıfırla" /></p>
 						<br>
 						<br>
-						<img src="whatsapp.png" width=50px height=50px > <h5>WhatsApp Hattı: 05** *** ****</h5>
+						<img src="../images/whatsapp.png" width=50px height=50px > <h5>WhatsApp Hattı: 05** *** ****</h5>
 					</form>
 			</fieldset>
 			

@@ -9,7 +9,11 @@ ob_start();
 <meta charset="UTF-8">
 
 <title>Hasta Kaydet-Diyetin Güvende!</title>
+<<<<<<< HEAD:Diyetisyen/hasta-kaydet.php
+<link rel="stylesheet" href="/css/styles.css" type="text/css" />
+=======
 <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+>>>>>>> b5602dcb49a0c65a80656666b187a66dbb4c3453:Diyetisyen/hasta-kaydet.php
 
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 </head>

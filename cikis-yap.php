@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header("Location: ../giris.php");
+header("Location: ../giris-yap.php");
 ?>

@@ -56,11 +56,7 @@ ob_start();
 <body>
 <style>
     body {
-<<<<<<< HEAD:kayit-ol.php
         background-image: url(../images/h1.png);
-=======
-        background-image: url(./images/h1.png);
->>>>>>> 5f08b061f8148601dc6805187880824aab958b9c:kayitol.php
     }
 </style>
 <div class="signup">
@@ -125,21 +121,21 @@ VALUES ('$ad', '$soyad','$username','$sifre','$mail','$cinsiyet','$dogum','$Seci
             $kisiId = $kisi['Id'];
 
             $deger =0;
-            echo $kisiId;
-            $ekle = $db ->exec('INSERT INTO hastabilgi (KullaniciId,Boy,Kilo,YagOrani) VALUES ($kisiId,$deger,$deger,$deger)');
+            echo $kisiId." ".$deger;
+            $ekle = $db ->exec("INSERT INTO hastabilgi (KullaniciId,Boy,Kilo,YagOrani) VALUES ('$kisiId','$deger','$deger','$deger')");
         }
     }
-    /* if($Secim==3 && $ekle){
+    if($Secim==3 && $ekle){
         $_SESSION['Uyari'] = null;
         header("Location: /index.php");
     }
-    else if($ekle){
+    else if(!$Secim==3 && $ekle){
         $_SESSION['Uyari'] = null;
         header("Location: /index.php");
     }
     else
         $_SESSION['Uyari'] = "Kayıt Başarısız";
-    */
+
 
 }
 ?>

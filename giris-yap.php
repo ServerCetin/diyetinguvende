@@ -22,10 +22,6 @@ if(isset($_SESSION["kullaniciTur"]))
 
     <form action="" method="POST">
         <h2 style="color:#fff;">Giriş Yap</h2>
-        <?php
-        if(isset($_SESSION['LoginUyari']))
-            echo $_SESSION['LoginUyari'];
-        ?>
         <input type="text" name="username" placeholder="Kullanıcı Adı"/><br /><br />
         <input type="password" name="password" placeholder="Şifre" /><br /><br />
         <input type="submit" value="Giriş Yap" name="girisyap"/><br /><br />
@@ -33,7 +29,7 @@ if(isset($_SESSION["kullaniciTur"]))
             <a href="sifresifirla.html" style=" margin-right:0px; font-size:13px; font-family:Tahoma, Geneva, sans-serif;">Şifremi Sıfırla!</a>
             <a href="sifremiunuttum.html" style=" margin-left:30px; font-size:13px; font-family:Tahoma, Geneva, sans-serif;">Şifremi Unuttum!</a>
         </div><br /><br />
-        Hesabınız Yok Mu ?<a href="kayitol.php" style="font-family:'Play', sans-serif;">&nbsp;Kayıt Ol</a>
+        Hesabınız Yok Mu ?<a href="kayit-ol.php" style="font-family:'Play', sans-serif;">&nbsp;Kayıt Ol</a>
 
     </form>
 </div>
@@ -66,6 +62,8 @@ if(isset($_POST['username'],$_POST['password'])){
                 $_SESSION["kullaniciTur"] = "Spor Hocası";
             if($kisi [KullaniciTurId]==3)
                 $_SESSION["kullaniciTur"] = "Kullanici";
+            if($kisi [KullaniciTurId]==4)
+                $_SESSION["kullaniciTur"] = "Yönetici";
 
             $_SESSION["username"] = $_POST['username'];
             $_SESSION["ad"] = $kisi [Ad];
@@ -92,20 +90,8 @@ if(isset($_POST['username'],$_POST['password'])){
 
     }
 
-    if($islem1['KullaniciTurId']==1){
-        $_SESSION['LoginUyari'] = null;
+    if($islem1['KullaniciTurId']==1 || $islem1['KullaniciTurId']== 2 || $islem1['KullaniciTurId']== 3 || $islem1['KullaniciTurId']==4){
         header("Location: /index.php");
-    }
-    else if($islem1['KullaniciTurId']==2){
-        $_SESSION['LoginUyari'] = null;
-        header("Location: /index.php");
-    }
-    else if($islem1['KullaniciTurId']==3){
-        $_SESSION['LoginUyari'] = null;
-        header("Location: /index.php");
-    }
-    else{
-        $_SESSION['LoginUyari'] = 'Kullanıcı Adı veya Şifre Hatalı!';
     }
 
 }

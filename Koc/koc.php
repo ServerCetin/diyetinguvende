@@ -25,9 +25,21 @@ ob_start();
 	    <article>
 			
 			<div class="beyaz" style="padding-top: 50px"  >
-			<form>	
+			<fieldset>
+            <legend>Öğrenci Kaydet</legend><br>
+				<form action="#" method="get">		
 				
-			
+				<p>Öğrencinin Kullanıcı Adı:
+						<input type="text" name="username" id="username" value="" /><br /></p>
+						
+			<p>Öğrencinin Diyet Listesi:
+				<br><br>
+				Liste 1 <input type="radio" name ="liste2" Value="Liste1">
+				Liste 2 <input type="radio" name ="liste2" Value="Liste2">
+				<br><br>
+			<p><a href="#" class="button buttonS" style="margin-left:28%;"name="kodgonder">Ekle</a>
+
+		
 			<h4>Öğrencilerim</h4><br>
 				<table id="hastalistesi">
   <tr>

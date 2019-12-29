@@ -25,9 +25,22 @@ $username = $_SESSION["username"];
 	    <article>
 			
 			<div class="beyaz" style="padding-top: 50px"  >
-			<form>	
-				
+			<form action="#" method="get">		
+			<fieldset>
+				 <legend>Hasta Kaydet ve Liste Gönder</legend><br><br>
 			
+			
+				
+				
+				<p>Hastanın Kullanıcı Adı:
+						<input type="text" name="username" id="username" value="" /><br /></p>
+						
+				<p>Hastanın Diyet Listesi:<br>
+				Liste 1 <input type="radio" name ="liste2" Value="Liste1">
+				Liste 2 <input type="radio" name ="liste2" Value="Liste2">
+				<br>
+			<p><a href="#" class="button buttonS" style="margin-left:80%;"name="kodgonder">Gönder</a>
+			<br><br>
 			<h4>Hastalarım</h4><br>
 				<table id="hastalistesi">
   <tr>

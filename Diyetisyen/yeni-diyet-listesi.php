@@ -24,95 +24,110 @@ $username = $_SESSION["username"];
 			<section id="content" class="column-right">
                 	
 	    <article>
-		
-			<div class="beyaz">
-			<form>
-			<h4>Yeni Diyet Listesi Oluştur</h4>
-			<h5>Notunuzu Giriniz</h5>
-			<blockquote>
-				<textarea name="diyetisyenNotu" rows="5" cols="100"></textarea>
-			</blockquote>
+	
+			<div class="beyaz">	
 			
-				<table class="diyetlistesiolustur" width="5px" height="5px">
-  <tr width="5px" height="5px">
-    <th width="5px">Saat Seç</th>
-	<th width="5px">Pazartesi</th>
-	<th width="5px">Salı</th>
-	<th width="5px">Çarşamba</th>
-	<th width="5px">Perşembe</th>
-	<th width="5px">Cuma</th>
-	<th width="5px">Cumartesi</th>
-	<th width="5px">Pazar</th>
-    
-  </tr>
-  <tr width="5px">
-    <td><input type="button" value="Seç" name="sec"></td>
-    <td width="10px"><input type="text" name="yemek"></td>
-	<td><input type="text" name="yemek"></td>
+			<form action="" method="POST">
+			<fieldset>
+			<legend>Diyet Listesi Ekle</legend><br><br>
+		  Hasta Seç:  <select>
+          <option>Hasta Kullanıcı Adı</option>
+                    </select> <br><br><br><br>
+			<h5>Notunuzu Giriniz</h5>
+<blockquote>
+<textarea name="diyetisyenNotu" rows="5" cols="100"></textarea>
+</blockquote><br><br>
+<table class="diyetlistesiolustur" width="5px" height="5px">
+<tr width="5px" height="5px">
+<th style="max-width:50px">Pazartesi</th>
+<th style="max-width:50px">Salı</th>
+<th style="max-width:50px">Çarşamba</th>
+<th style="max-width:50px">Perşembe</th>
+<th style="max-width:50px">Cuma</th>
+<th style="max-width:50px">Cumartesi</th>
+<th style="max-width:50px">Pazar</th>
+   
+</tr>
 
-  </tr>
-  <tr>
-    <td><input type="button" value="Seç" name="sec"></td> 
-    <td><input type="text" name="yemek"></td>
-	<td><input type="text" name="yemek"></td>
-  </tr>
-  <tr>
-   <td><input type="button" value="Seç" name="sec"></td>
-    <td><input type="text" name="yemek"></td>
-	<td><input type="text" name="yemek"></td>
-  </tr>
-  <tr>
-    <td><input type="button" value="Seç" name="sec"></td>
-    <td><input type="text"  name="yemek"></td>
-	<td><input type="text" name="yemek"></td>
-  </tr>
-  <tr>
-    <td><input type="button" value="Seç" name="sec"></td>  
-    <td><input type="text"  name="yemek"></td>
-	<td><input type="text" name="yemek"></td>
-  </tr>
-  <tr>
-    <td><input type="button" value="Seç" name="sec"></td> 
-    <td><input type="text" name="yemek"></td>
-	<td><input type="text" name="yemek"></td>
-  </tr>,<tr>
-    <td><input type="button" value="Seç" name="sec"></td> 
-    <td><input type="text" name="yemek"></td>
-	<td><input type="text" name="yemek"></td>
-  </tr>
-  
+
+<td><input type="text" name="pzt1"style="max-width:50px"></td>
+<td><input type="text" name="sali1" style="max-width:50px"></td>
+<td><input type="text" name="crs1" style="max-width:50px"></td>
+<td><input type="text" name="prs1"style="max-width:50px"></td>
+<td><input type="text" name="cum1"style="max-width:50px"></td>
+<td><input type="text" name="cert1"style="max-width:50px"></td>
+<td><input type="text" name="paz1"style="max-width:50px"></td>
+
+</tr>
+<tr>
+
+<td><input type="text" name="pzt2"style="max-width:50px"></td>
+<td><input type="text" name="sali2"style="max-width:50px"></td>
+<td><input type="text" name="crs2"style="max-width:50px"></td>
+<td><input type="text" name="prs2"style="max-width:50px"></td>
+<td><input type="text" name="cum2"style="max-width:50px"></td>
+<td><input type="text" name="cert2"style="max-width:50px"></td>
+<td><input type="text" name="paz2"style="max-width:50px"></td>
+</tr>
+<tr>
+
+<td><input type="text" name="pzt3" style="max-width:50px"></td>
+<td><input type="text" name="sali3" style="max-width:50px"></td>
+<td><input type="text" name="crs3" style="max-width:50px"></td>
+<td><input type="text" name="prs3" style="max-width:50px"></td>
+<td><input type="text" name="cum3" style="max-width:50px"></td>
+<td><input type="text" name="cert3" style="max-width:50px"></td>
+<td><input type="text" name="paz3" style="max-width:50px"></td>
+</tr>
+<tr>
+<td><input type="text" name="pzt4" style="max-width:50px"></td>
+<td><input type="text" name="sali4" style="max-width:50px"></td>
+<td><input type="text" name="crs14" style="max-width:50px"></td>
+<td><input type="text" name="prs4" style="max-width:50px"></td>
+<td><input type="text" name="cum4" style="max-width:50px"></td>
+<td><input type="text" name="cert4" style="max-width:50px"></td>
+<td><input type="text" name="paz4" style="max-width:50px"></td>
+</tr>
+<tr> 
+<td><input type="text" name="pzt4" style="max-width:50px"></td>
+<td><input type="text" name="sali4" style="max-width:50px"></td>
+<td><input type="text" name="crs4" style="max-width:50px"></td>
+<td><input type="text" name="prs4" style="max-width:50px"></td>
+<td><input type="text" name="cum4" style="max-width:50px"></td>
+<td><input type="text" name="cert4" style="max-width:50px"></td>
+<td><input type="text" name="paz4" style="max-width:50px"></td>
+</tr>
+<tr>
+
+<td><input type="text" name="pzt5" style="max-width:50px"></td>
+<td><input type="text" name="sali5" style="max-width:50px"></td>
+<td><input type="text" name="crs5" style="max-width:50px"></td>
+<td><input type="text" name="prs5" style="max-width:50px"></td>
+<td><input type="text" name="cum5" style="max-width:50px"></td>
+<td><input type="text" name="cert5" style="max-width:50px"></td>
+<td><input type="text" name="paz5" style="max-width:50px"></td>
+</tr>
+<tr>
+
+<td><input type="text" name="pzt6" style="max-width:50px"></td>
+<td><input type="text" name="sali6" style="max-width:50px"></td>
+<td><input type="text" name="crs6" style="max-width:50px"></td>
+<td><input type="text" name="prs6" style="max-width:50px"></td>
+<td><input type="text" name="cum6" style="max-width:50px"></td>
+<td><input type="text" name="cert6" style="max-width:50px"></td>
+<td><input type="text" name="paz6" style="max-width:50px"></td>
+
+</tr>
+
+
+  </fieldset>
 </table>
-  <a href="#" class="button button-reversed">Ekle</a>
-  <a href="#" class="button buttonS" style="margin-left:80%;">Kaydet</a>
 
-<br><br><br><br>
 
-<h4> Mevcut Diyet Listeleri</h4>
+<br><br>
+<br><a href="#" class="button buttonS" style="margin-left:80%;">Gönder</a>
 
-<table id="sporplanlari">
-  <tr>
-    <th >Liste Adı</th>
-	<th style="width:100px;">Listeyi Gör</th>
-    
-  </tr>
-  <tr>
-  <td> Liste 1</td>
-  <td > <a href="#" class="button button-reversed">Git</a></td>
-  </tr>
-  <tr>
-  <td> Liste 2</td>
-  <td > <a href="#" class="button button-reversed">Git</a></td>
-  </tr>
-  <tr>
-  <td> Liste 3</td>
-  <td > <a href="#" class="button button-reversed">Git</a></td>
-  </tr>
-  <tr>
-  <td> Liste 4</td>
-  <td > <a href="#" class="button button-reversed">Git</a></td>
-  </tr>
-
-	</form>
+</form>
 	</div>
 	</article>
 

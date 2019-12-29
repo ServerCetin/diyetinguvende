@@ -56,7 +56,7 @@ ob_start();
 <body>
 <style>
     body {
-        background-image: url(./images/h1.png);
+        background-image: url(../images/h1.png);
     }
 </style>
 <div class="signup">
@@ -96,7 +96,6 @@ ob_start();
 
 
 <?php
-
 if(isset($_POST['ad'],$_POST['soyad'],$_POST['kullanici_adi'],$_POST['pass'],$_POST['pass'],
     $_POST['mail'],$_POST['cinsiyet'],$_POST['tel'],$_POST['dogum'],$_POST['slct'])){
     $ad=$_POST['ad'];
@@ -122,30 +121,15 @@ VALUES ('$ad', '$soyad','$username','$sifre','$mail','$cinsiyet','$dogum','$Seci
             $kisiId = $kisi['Id'];
 
             $deger =0;
-            $query = $db->prepare("INSERT INTO hastabilgi SET
-            KullaniciId = ?,
-            Boy = ?,
-            Kilo = ?,
-            YagOrani = ?");
-
-            $insert = $query->execute(array(
-                $kisiId, $deger, $deger, $deger
-            ));
-            if ( $insert ){
-                $last_id = $db->lastInsertId();
-            }
+            echo $kisiId." ".$deger;
+            $ekle = $db ->exec("INSERT INTO hastabilgi (KullaniciId,Boy,Kilo,YagOrani) VALUES ('$kisiId','$deger','$deger','$deger')");
         }
     }
     if($Secim==3 && $ekle){
-        $_SESSION['Uyari'] = null;
         header("Location: /index.php");
     }
-    else if($ekle){
-        $_SESSION['Uyari'] = null;
+    else if(!$Secim==3 && $ekle){
         header("Location: /index.php");
     }
-    else
-        $_SESSION['Uyari'] = "Kayıt Başarısız";
 }
-$_SESSION['Uyari'] = "Kayıt Başarısız";
 ?>

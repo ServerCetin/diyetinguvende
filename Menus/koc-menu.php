@@ -16,8 +16,8 @@ echo '
                             		
             <li><font face="Oxygen" ><a href="../Ortak/kullanici-profili.php">'.$name.' '.$soyad.' <br>@'.$username.'</font></a></li>     		 	
             <li class="selected-item" style="background-color:forestgreen"><a href="/Koc/koc.php"> Öğrencilerim</a></li>
-			<li><a href="/Koc/yeni-spor-plani.php">Yeni Spor Planı Oluştur</a></li>
-			<li><a href="/Koc/ogrenci-kaydet.php">Öğrenci Kaydet</a></li>	
+			<li><a href="/Koc/yeni-spor-plani.php">Spor Planı Ekle</a></li>
+			<li><a href="/Koc/ogrenci-kaydet.php">Liste Güncelle</a></li>	
             <li><a href="/Koc/koc-mesajlari.php">Mesajlarim</a></li>
             <li ><a href="../Ortak/destek.php">Destek</a></li>
 			<li ><a href="../logout.php">Çıkış Yap</a></li>

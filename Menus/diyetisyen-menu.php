@@ -11,7 +11,7 @@ echo '
 
 
         <div class ="kullanicibil">
-            <h3> Kullanıcı Adı: <a href="/kullaniciprofili.php">'.$username.'</a> </h3>
+            <h3> Kullanıcı Adı: <a href="../ortak/kullaniciprofili.php">'.$username.'</a> </h3>
 
             <h3>Ad: <label>'.$name.'</label></h3>
     </header>

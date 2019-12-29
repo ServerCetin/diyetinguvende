@@ -2,28 +2,27 @@
 <?php
 $username = $_SESSION["username"];
 $name = $_SESSION["ad"];
+$soyad = $_SESSION["soyad"];
+
 echo '
 <aside id="sidebar" class="column-left">
 
-			<header>
-				<h1><a href="#">Diyetin Güvende!</a></h1>	
-				
-			</header>
-			<h3>  Kullanıcı Adı: <a href="/kullaniciprofili.php">'.$username.'</a></h3>
-			
-
-			<nav id="mainnav">
-  				<ul>
+	<header>
+		<h1><a href="#">Diyetin Güvende!</a></h1>	
+	</header>
+	
+	<nav id="mainnav">
+  		<ul>
                             		
-                           		 	
-                           		 <li class="selected-item" style="background-color:forestgreen"><a href="koc.php"> Öğrencilerim</a></li>
-								 <li><a href="yenisporplani.php">Yeni Spor Planı Oluştur</a></li>
-                           		 <li><a href="ogrencikaydet.php">Öğrenci Kaydet</a></li>	
-                            		<li><a href="kocmesajlari.php">Mesajlarim</a></li>
-                            		<li ><a href="destek.php">Destek</a></li>
-									 <li ><a href="logout.php">Çıkış Yap</a></li>
-                        	</ul>
-			</nav>
+            <li><font face="Oxygen" ><a href="../Ortak/kullanici-profili.php">'.$name.' '.$soyad.' <br>@'.$username.'</font></a></li>     		 	
+            <li class="selected-item" style="background-color:forestgreen"><a href="/Koc/koc.php"> Öğrencilerim</a></li>
+			<li><a href="/Koc/yeni-spor-plani.php">Yeni Spor Planı Oluştur</a></li>
+			<li><a href="/Koc/ogrenci-kaydet.php">Öğrenci Kaydet</a></li>	
+            <li><a href="/Koc/koc-mesajlari.php">Mesajlarim</a></li>
+            <li ><a href="../Ortak/destek.php">Destek</a></li>
+			<li ><a href="../logout.php">Çıkış Yap</a></li>
+        </ul>
+	</nav>
 
 			
 			

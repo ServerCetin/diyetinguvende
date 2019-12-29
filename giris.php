@@ -14,7 +14,7 @@ if(isset($_SESSION["kullaniciTur"]))
 </head>
 <style>
     body {
-        background-image: url(./girisimg/h1.png);
+        background-image: url(./images/h1.png);
     }
 </style>
 <body>

@@ -9,7 +9,11 @@ ob_start();
 <meta charset="UTF-8">
 
 <title>Hasta Kaydet-Diyetin Güvende!</title>
-<link rel="stylesheet" href="styles.css" type="text/css" />
+<<<<<<< HEAD:Diyetisyen/hasta-kaydet.php
+<link rel="stylesheet" href="/css/styles.css" type="text/css" />
+=======
+<link rel="stylesheet" href="../css/styles.css" type="text/css" />
+>>>>>>> b5602dcb49a0c65a80656666b187a66dbb4c3453:Diyetisyen/hasta-kaydet.php
 
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 </head>
@@ -17,7 +21,7 @@ ob_start();
 <body>
 
 		<section id="body" class="width">
-            <?php if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "diyetisyenmenu.php";}?>
+            <?php if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "../Menus/diyetisyen-menu.php";}?>
             <section id="content" class="column-right">
                 		
 	    <article>
@@ -26,7 +30,7 @@ ob_start();
 			<form>	
 				 <fieldset>
             <legend>Hasta Kaydet</legend><br>
-				<form action="#" method="get">		
+				<form action="#" method="POST">
 				
 				<p>Hastanın Kullanıcı Adı:
 						<input type="text" name="username" id="username" value="" /><br /></p>
@@ -46,7 +50,17 @@ ob_start();
 				</div>
 		</article> </fieldset>
 			
-		
+                <?php
+                if(isset($_POST['username'])){
+                    $username = $_POST['username'];
+
+                    include 'baglan.php';
+                    if($kullanici = $db->query("SELECT * FROM kullanici where KullaniciAdi ='$username'")){
+                        $kullanici['']; // düzenlenecek
+                    }
+                }
+
+                ?>
 				
 		
 

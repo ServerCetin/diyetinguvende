@@ -11,7 +11,7 @@ $username = $_SESSION["username"];
 
 
 <title>Diyetin Güvende!</title>
-<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="/css/styles.css" type="text/css" />
 
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" /><!-- telefona uyumlu olmasını sağlar-->
 </head>
@@ -19,7 +19,7 @@ $username = $_SESSION["username"];
 <body>
 
 		<section id="body" class="width">
-		<?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "kullanicimenu.php";}?>
+		<?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "../Menus/kullanici-menu.php";}?>
 
 			
 			<section id="content" class="column-right">

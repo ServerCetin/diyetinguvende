@@ -126,16 +126,10 @@ VALUES ('$ad', '$soyad','$username','$sifre','$mail','$cinsiyet','$dogum','$Seci
         }
     }
     if($Secim==3 && $ekle){
-        $_SESSION['Uyari'] = null;
         header("Location: /index.php");
     }
     else if(!$Secim==3 && $ekle){
-        $_SESSION['Uyari'] = null;
         header("Location: /index.php");
     }
-    else
-        $_SESSION['Uyari'] = "Kayıt Başarısız";
-
-
 }
 ?>

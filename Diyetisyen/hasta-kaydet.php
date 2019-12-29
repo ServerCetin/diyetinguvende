@@ -52,7 +52,7 @@ ob_start();
 
                     include 'baglan.php';
                     if($kullanici = $db->query("SELECT * FROM kullanici where KullaniciAdi ='$username'")){
-                        $kullanici['']
+                        $kullanici['']; // düzenlenecek
                     }
                 }
 

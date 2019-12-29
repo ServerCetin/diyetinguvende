@@ -33,7 +33,7 @@ if(isset($_SESSION["kullaniciTur"]))
             <a href="sifresifirla.html" style=" margin-right:0px; font-size:13px; font-family:Tahoma, Geneva, sans-serif;">Şifremi Sıfırla!</a>
             <a href="sifremiunuttum.html" style=" margin-left:30px; font-size:13px; font-family:Tahoma, Geneva, sans-serif;">Şifremi Unuttum!</a>
         </div><br /><br />
-        Hesabınız Yok Mu ?<a href="kayitol.php" style="font-family:'Play', sans-serif;">&nbsp;Kayıt Ol</a>
+        Hesabınız Yok Mu ?<a href="kayit-ol.php" style="font-family:'Play', sans-serif;">&nbsp;Kayıt Ol</a>
 
     </form>
 </div>

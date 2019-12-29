@@ -25,7 +25,7 @@ echo '
             <li><a href="hastakaydet.php">Hasta Kaydet</a></li>
             <li><a href="diyetisyenmesajlari.php">Mesajlarim</a></li>
             <li ><a href="destek.php">Destek</a></li>
-            <li ><a href="logout.php">Çıkış Yap</a></li>
+            <li ><a href="cikis-yap.php">Çıkış Yap</a></li>
         </ul>
     </nav>
 

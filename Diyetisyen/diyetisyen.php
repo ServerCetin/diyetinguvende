@@ -36,8 +36,20 @@ $username = $_SESSION["username"];
 						<input type="text" name="username" id="username" value="" /><br /></p>
 						
 				<p>Hastanın Diyet Listesi:<br>
-				Liste 1 <input type="radio" name ="liste2" Value="Liste1">
-				Liste 2 <input type="radio" name ="liste2" Value="Liste2">
+                    <select name="diyetList">
+                    <?php
+                    include '../baglan.php';
+                    $id = $_SESSION["Id"];
+                    $listele = $db->query("SELECT * FROM diyettablosu where Di", PDO::FETCH_ASSOC);
+                    if ( $listele->rowCount() ) //rawcountu 0 değilse
+                    {
+                        foreach( $listele as $gelenveri )
+                        {
+                            echo '<option value"'.$gelenveri['Id'].'">'.$gelenveri['TabloAdi'].'</option>';
+                        }
+                    }
+                    ?>
+                    </select>
 				<br>
 			<p><a href="#" class="button buttonS" style="margin-left:80%;"name="kodgonder">Gönder</a>
 			<br><br>
@@ -46,8 +58,21 @@ $username = $_SESSION["username"];
   <tr>
     <th>Hasta Adı Soyadı</th>
 	<th style="width:200px;">Git</th>
-    
   </tr>
+             <?php
+             /*
+             include 'baglan.php';
+             $listele = $db->query("SELECT * FROM kullanici where KullaniciTurId=3", PDO::FETCH_ASSOC);
+             if ( $listele->rowCount() ) //rawcountu 0 değilse
+             {
+                 foreach( $listele as $gelenveri )
+                 {
+                     echo "Id'si: ".$gelenveri['Id']." Adı: ".$gelenveri['Ad']. "<br />";
+                 }
+             }
+*/
+             ?>
+
   <tr>
     <td>Gözde Çetinkaya</td>
     <td><a href="diyetisyenhastalari.html" class="button button-reversed">Git</a>

@@ -1,0 +1,122 @@
+/* 
+	Simple Ajax Chat : CSS
+	
+		* Complete list of available CSS hooks 
+		* Also includes an example of "minimal theme" styles
+		* Note this file is not used by anything, it is FYI only
+		* You can add custom CSS via the plugin setting, "Custom CSS styles"
+*/
+
+
+
+/* CSS skeleton */
+
+div#simple-ajax-chat {} /* contains everything */
+
+	div#sac-content { display: none; } /* empty unused div */
+
+	div#sac-output {} /* contains the chat box */
+
+		/* displays time of latest message */
+		div#sac-latest-message {}
+		div#sac-latest-message span {}
+		div#sac-latest-message em {}
+
+		/* displays list of chat messages */
+		ul#sac-messages {}
+		ul#sac-messages li {}
+		ul#sac-messages li:first-child {} /* latest chat */
+		ul#sac-messages li span {}
+		ul#sac-messages li span a {}
+		ul#sac-messages li span a.sac-chat-link {}
+		
+		/* login required */
+		div#sac-output p {}
+		div#sac-output.sac-reg-req {}
+		
+	div#sac-panel {} /* contains the chat form */
+
+		/* displays the chat form */
+		form#sac-form {}
+		form#sac-form fieldset {}
+		form#sac-form fieldset label, 
+		form#sac-form fieldset input, 
+		form#sac-form fieldset textarea {}
+
+		/* username */
+		form#sac-form fieldset#sac-user-info {}
+		form#sac-form fieldset#sac-user-info label {}
+		form#sac-form fieldset#sac-user-info input#sac_name {}
+
+		/* user url */
+		form#sac-form fieldset#sac-user-url {}
+		form#sac-form fieldset#sac-user-url label {}
+		form#sac-form fieldset#sac-user-url input#sac_url {}
+
+		/* chat message */
+		form#sac-form fieldset#sac-user-chat {}
+		form#sac-form fieldset#sac-user-chat label {}
+		form#sac-form fieldset#sac-user-chat input#sac_chat {}
+		form#sac-form fieldset#sac-user-chat textarea#sac_chat {}
+
+		/* submit button */
+		form#sac-form div#sac-user-submit {}
+		form#sac-form div#sac-user-submit input#submitchat {}
+
+
+
+/* minimal theme */
+
+div#simple-ajax-chat { width: 100%; overflow: hidden; } /* contains everything */
+
+	div#sac-content { display: none; } /* empty unused div */
+
+	div#sac-output { float: left; width: 58%; height: 250px; overflow: auto; border: 1px solid #efefef; } /* contains the chat box */
+
+		/* displays time of latest message */
+		div#sac-latest-message { padding: 5px 10px; background-color: #efefef; }
+		div#sac-latest-message span {}
+		div#sac-latest-message em {}
+
+		/* displays list of chat messages */
+		ul#sac-messages { margin: 0; padding: 0; font-size: 13px; line-height: 16px; }
+		ul#sac-messages li { margin: 0; padding: 3px 3px 3px 10px; }
+		ul#sac-messages li:first-child { background-color: #ffffcc; } /* latest chat */
+		ul#sac-messages li span { font-weight: bold; }
+		ul#sac-messages li span a {}
+		ul#sac-messages li span a.sac-chat-link {}
+
+		/* login required */
+		div#sac-output p {}
+		div#sac-output.sac-reg-req {}
+		
+	div#sac-panel { float: right; width: 40%; } /* contains the chat form */
+
+		/* displays the chat form */
+		form#sac-form {}
+		form#sac-form fieldset {}
+		form#sac-form fieldset label, 
+		form#sac-form fieldset input, 
+		form#sac-form fieldset textarea { float: left; clear: both; width: 94%; margin: 0 0 5px 2px; }
+
+		/* username */
+		form#sac-form fieldset#sac-user-info {}
+		form#sac-form fieldset#sac-user-info label { margin: 0 0 0 2px; }
+		form#sac-form fieldset#sac-user-info input#sac_name {}
+
+		/* user url */
+		form#sac-form fieldset#sac-user-url {}
+		form#sac-form fieldset#sac-user-url label { margin: 0 0 0 2px; }
+		form#sac-form fieldset#sac-user-url input#sac_url {}
+
+		/* chat message */
+		form#sac-form fieldset#sac-user-chat {}
+		form#sac-form fieldset#sac-user-chat label { margin: 0 0 0 2px; }
+		form#sac-form fieldset#sac-user-chat input#sac_chat {}
+		form#sac-form fieldset#sac-user-chat textarea#sac_chat {}
+
+		/* submit button */
+		form#sac-form div#sac-user-submit {}
+		form#sac-form div#sac-user-submit input#submitchat {}
+
+

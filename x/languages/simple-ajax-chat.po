@@ -1,0 +1,890 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-11 17:12+0700\n"
+"PO-Revision-Date: 2019-03-11 18:04+0700\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+
+#: simple-ajax-chat.php:87
+msgid "requires WordPress "
+msgstr "需要WordPress "
+
+#: simple-ajax-chat.php:88
+msgid " or higher, and has been deactivated! "
+msgstr "或者更高，并停用！"
+
+#: simple-ajax-chat.php:89
+msgid "Please return to the"
+msgstr "请回到"
+
+#: simple-ajax-chat.php:90
+msgid "WordPress Admin area"
+msgstr "WordPress管理区域"
+
+#: simple-ajax-chat.php:90
+msgid "to upgrade WordPress and try again."
+msgstr "升级WordPress并再试一次。"
+
+#: simple-ajax-chat.php:137
+msgid "The Admin"
+msgstr "管理员"
+
+#: simple-ajax-chat.php:138
+msgid "High five! You&rsquo;ve successfully installed Simple Ajax Chat."
+msgstr "您已成功安装Simple Ajax Chat。"
+
+#: simple-ajax-chat.php:180
+msgid "ago"
+msgstr "以前"
+
+#: simple-ajax-chat.php:301
+msgid "Anonymous"
+msgstr "匿名"
+
+#: simple-ajax-chat.php:450 simple-ajax-chat-admin.php:25
+msgid "Welcome to the Chat Forum"
+msgstr "欢迎来到聊天论坛"
+
+#. Name of the plugin
+#: simple-ajax-chat.php:451 simple-ajax-chat-admin.php:26 support-panel.php:5
+msgid "Simple Ajax Chat"
+msgstr "简单的Ajax聊天"
+
+#: simple-ajax-chat.php:470
+msgid "Successfully truncated SAC table."
+msgstr "成功截断SAC表。"
+
+#: simple-ajax-chat.php:471
+msgid "Unable to truncate SAC table."
+msgstr "无法截断SAC表。"
+
+#: simple-ajax-chat.php:472
+msgid "Truncate not needed, zero rows affected."
+msgstr "截断不需要，零行受影响。"
+
+#: simple-ajax-chat.php:474
+msgid "Successfully inserted default message."
+msgstr "成功插入默认消息。"
+
+#: simple-ajax-chat.php:475
+msgid "Unable to insert default message."
+msgstr "无法插入默认消息。"
+
+#: simple-ajax-chat.php:476
+msgid "Default message not inserted."
+msgstr "未插入默认消息。"
+
+#: simple-ajax-chat.php:489
+msgid "Visit SAC Settings"
+msgstr "访问SAC设置"
+
+#: simple-ajax-chat.php:489
+msgid "Settings"
+msgstr "设置"
+
+#: simple-ajax-chat.php:504
+msgid "Give us a 5-star rating at WordPress.org"
+msgstr "在WordPress.org给我们一个5星评级"
+
+#: simple-ajax-chat.php:505
+msgid "Rate this plugin"
+msgstr "评价这个插件"
+
+#: simple-ajax-chat.php:643
+msgid "year"
+msgstr "年"
+
+#: simple-ajax-chat.php:644
+msgid "month"
+msgstr "月"
+
+#: simple-ajax-chat.php:645
+msgid "week"
+msgstr "周"
+
+#: simple-ajax-chat.php:646
+msgid "day"
+msgstr "天"
+
+#: simple-ajax-chat.php:647
+msgid "hour"
+msgstr "小时"
+
+#: simple-ajax-chat.php:648
+msgid "minute"
+msgstr "分钟"
+
+#: simple-ajax-chat.php:668 simple-ajax-chat.php:677
+msgid "s"
+msgstr "秒"
+
+#: simple-ajax-chat-core.php:8 includes/sac-check-user.php:8
+msgid "Please do not load this page directly. Thanks!"
+msgstr "请不要直接加载此页面。谢谢！"
+
+#: simple-ajax-chat-core.php:67
+msgid ""
+"WP Plugin SAC: JavaScript not enabled. Please enable JavaScript and try "
+"again."
+msgstr "WP插件SAC：未启用JavaScript。 请启用JavaScript，然后重试。"
+
+#: simple-ajax-chat-core.php:77
+msgid ""
+"WP Plugin SAC: Name and comment required. Please complete all required "
+"fields and try again."
+msgstr "WP插件SAC：需要名称和注释。 请填写所有必填字段，然后重试。"
+
+#: simple-ajax-chat-admin.php:271 simple-ajax-chat-admin.php:380
+msgid "Sorry, you are not allowed to export data."
+msgstr "对不起，您不能导出数据。"
+
+# 聊日日志
+#: simple-ajax-chat-admin.php:289
+msgid "Chat Log"
+msgstr "聊日日志"
+
+#: simple-ajax-chat-admin.php:296
+msgid "User ID"
+msgstr "用户ID"
+
+#: simple-ajax-chat-admin.php:297
+msgid "User IP"
+msgstr "用户IP"
+
+#: simple-ajax-chat-admin.php:298
+msgid "User URL"
+msgstr "用户URL"
+
+#: simple-ajax-chat-admin.php:299
+msgid "Chat Date"
+msgstr "聊天日期"
+
+#: simple-ajax-chat-admin.php:300
+msgid "Chat Name"
+msgstr "聊天名称"
+
+#: simple-ajax-chat-admin.php:301
+msgid "Chat Message"
+msgstr "聊天消息"
+
+#: simple-ajax-chat-admin.php:327
+msgid ""
+"Unable to create file. Try creating the file manually and make sure it has "
+"write permissions."
+msgstr "无法创建文件。 尝试手动创建文件并确保它具有写入权限。"
+
+#: simple-ajax-chat-admin.php:353
+msgid "Export all chat data in CSV format"
+msgstr "以CSV格式导出所有聊天数据"
+
+#: simple-ajax-chat-admin.php:357
+msgid "Download CSV File"
+msgstr "捐款"
+
+#: simple-ajax-chat-admin.php:363
+msgid "Delete CSV File"
+msgstr "删除CSV文件"
+
+#: simple-ajax-chat-admin.php:402
+msgid ""
+"Warning: default message not found! Click &ldquo;Delete all chats&rdquo; to "
+"enable the chat box."
+msgstr "警告：找不到默认消息！点击“删除所有聊天记录”启用聊天框。"
+
+#: simple-ajax-chat-admin.php:409
+msgid "Currently there "
+msgstr "目前有 "
+
+#: simple-ajax-chat-admin.php:410
+#, php-format
+msgid "is %s "
+msgid_plural "are %s "
+msgstr[0] ""
+
+#: simple-ajax-chat-admin.php:411
+msgid "chat message."
+msgid_plural "chat messages."
+msgstr[0] ""
+
+#: simple-ajax-chat-admin.php:485
+msgid "Default settings restored."
+msgstr "恢复默认设置。"
+
+#: simple-ajax-chat-admin.php:486
+msgid "All chat messages deleted."
+msgstr "删除所有聊天消息。"
+
+#: simple-ajax-chat-admin.php:487
+msgid "Comment deleted successfully."
+msgstr "评论已成功删除。"
+
+#: simple-ajax-chat-admin.php:488
+msgid "Comment edited successfully."
+msgstr "评论已成功编辑。"
+
+#: simple-ajax-chat-admin.php:489
+msgid "Chats exported to CSV file."
+msgstr "聊天导出为CSV文件。"
+
+#: simple-ajax-chat-admin.php:490
+msgid "Export file deleted successfully."
+msgstr "导出文件已成功删除。"
+
+#: simple-ajax-chat-admin.php:499
+msgid "Toggle all panels"
+msgstr "切换所有面板"
+
+#: simple-ajax-chat-admin.php:509
+msgid "Simple Ajax Chat needs your support!"
+msgstr "简单的Ajax聊天!"
+
+#: simple-ajax-chat-admin.php:513
+msgid "Please"
+msgstr "请"
+
+#: simple-ajax-chat-admin.php:513
+msgid "Make a donation via PayPal!"
+msgstr "通过PayPal捐款！"
+
+#: simple-ajax-chat-admin.php:513
+msgid "make a donation"
+msgstr "捐款"
+
+#: simple-ajax-chat-admin.php:513
+msgid "and/or"
+msgstr "和/或"
+
+#: simple-ajax-chat-admin.php:514 simple-ajax-chat-admin.php:546
+msgid "Thank you for your support!"
+msgstr "谢谢你的支持！"
+
+#: simple-ajax-chat-admin.php:514 simple-ajax-chat-admin.php:546
+msgid "give it a 5-star rating"
+msgstr "给它一个5星评级"
+
+#: simple-ajax-chat-admin.php:517
+msgid ""
+"Your generous support enables continued development of this free plugin. "
+"Thank you!"
+msgstr "您的慷慨支持继续开发这个免费的插件。 谢谢！"
+
+#: simple-ajax-chat-admin.php:523
+msgid "Check this box if you have shown support"
+msgstr "如果您已显示支持，请选中此框"
+
+#: simple-ajax-chat-admin.php:531
+msgid "Overview"
+msgstr "概观"
+
+#: simple-ajax-chat-admin.php:535
+msgid "(SAC) displays an Ajax-powered chat box anywhere on your site."
+msgstr "（SAC）在您网站的任何位置显示一个基于Ajax的聊天框。"
+
+#: simple-ajax-chat-admin.php:536
+msgid ""
+"Use the shortcode to display the chat box on any post or page, or use the "
+"template tag to display anywhere in your theme."
+msgstr "使用登录的用户名作为聊天名称。"
+
+#: simple-ajax-chat-admin.php:539 simple-ajax-chat-admin.php:553
+msgid "Plugin Settings"
+msgstr "插件设置"
+
+#: simple-ajax-chat-admin.php:540 simple-ajax-chat-admin.php:940
+msgid "Shortcode &amp; Template Tag"
+msgstr "短代码＆amp; 模板日"
+
+#: simple-ajax-chat-admin.php:541 simple-ajax-chat-admin.php:853
+msgid "Manage Chat Messages"
+msgstr "管理聊天消息"
+
+#: simple-ajax-chat-admin.php:542 simple-ajax-chat-admin.php:965
+msgid "Plugin Homepage"
+msgstr "插件主页"
+
+#: simple-ajax-chat-admin.php:545
+msgid "If you like this plugin, please"
+msgstr "如果您喜欢这个插件，请"
+
+#: simple-ajax-chat-admin.php:555
+msgid ""
+"Here you may customize Simple Ajax Chat to suit your needs. Note: after "
+"updating time and color options, you may need to refresh/empty the browser "
+"cache before you see the changes take effect."
+msgstr ""
+"在这里，您可以自定义Simple Ajax Chat以满足您的需求。注意：更新时间和颜色选项"
+"后，您可能需要刷新缓存，然后才能看到更改生效。"
+
+#: simple-ajax-chat-admin.php:557
+msgid "General options"
+msgstr "一般选择"
+
+#: simple-ajax-chat-admin.php:561
+msgid "Default name"
+msgstr "默认名称"
+
+#: simple-ajax-chat-admin.php:565
+msgid ""
+"Default name for &ldquo;welcome&rdquo; message. Reset chat messages for new "
+"name to be displayed."
+msgstr "默认名称消息ldquo;welcomerdquo;。重置聊天消息以显示新名称。"
+
+#: simple-ajax-chat-admin.php:570
+msgid "Default message"
+msgstr "默认消息"
+
+#: simple-ajax-chat-admin.php:574
+msgid ""
+"Default &ldquo;welcome&rdquo; message that appears as the first chat comment."
+msgstr "默认ldquo;欢迎rdquo;显示为第一个聊天评论的消息。"
+
+#: simple-ajax-chat-admin.php:575
+msgid "Reset chat messages for new welcome message to be displayed."
+msgstr "重置聊天消息以获取新的欢迎消息。"
+
+#: simple-ajax-chat-admin.php:580
+msgid "Require log in"
+msgstr "需要登录"
+
+#: simple-ajax-chat-admin.php:584
+msgid "Require users to be logged in to view and use the chat box."
+msgstr "要求用户登录并使用聊天框。"
+
+#: simple-ajax-chat-admin.php:589
+msgid "Display Mode"
+msgstr "显示模式"
+
+#: simple-ajax-chat-admin.php:593
+msgid ""
+"Display chat messages as read-only. So visitors can view chats, but not add "
+"their own."
+msgstr ""
+"以只读方式显示聊天消息。所以访客可以查看聊天记录，但不要添加自己的聊天记录。"
+
+#: simple-ajax-chat-admin.php:598
+msgid "Logged-in username"
+msgstr "登录用户名"
+
+#: simple-ajax-chat-admin.php:602
+msgid "Use the logged-in username as the chat name."
+msgstr "使用登录的用户名作为聊天名称。"
+
+#: simple-ajax-chat-admin.php:607
+msgid "Linked username"
+msgstr "ldquo;淡出QUOT;新聊天消息的背景颜色。"
+
+#: simple-ajax-chat-admin.php:611
+msgid "Enable users to specify a URL for their chat name."
+msgstr "允许用户为其聊天名称指定URL。"
+
+#: simple-ajax-chat-admin.php:616
+msgid "Large input field"
+msgstr "大输入字段"
+
+#: simple-ajax-chat-admin.php:620
+msgid "Display a larger input field for chat messages."
+msgstr "显示聊天消息的大输入字段。"
+
+#: simple-ajax-chat-admin.php:625
+msgid "Sound alerts"
+msgstr "声音警报"
+
+#: simple-ajax-chat-admin.php:629
+msgid "Play sound alert for new chat messages."
+msgstr "播放新聊天消息的声音警报。"
+
+#: simple-ajax-chat-admin.php:630
+msgid "See the FAQs to learn how to customize the sound alert."
+msgstr "请参阅常见问题解答以了解如何自定义声音警报。"
+
+#: simple-ajax-chat-admin.php:635
+msgid "Chat order"
+msgstr "聊天顺序"
+
+#: simple-ajax-chat-admin.php:639
+msgid ""
+"Display chats in ascending order (new messages appear at the bottom of the "
+"list). Requires jQuery."
+msgstr "按升序显示聊天记录。需要jQuery。"
+
+#: simple-ajax-chat-admin.php:644
+msgid "Disable IP Collection"
+msgstr "禁用IP收集"
+
+#: simple-ajax-chat-admin.php:648
+msgid ""
+"Disable collection of IP address. No IP info will be stored in the database."
+msgstr "禁用IP地址的收集。没有IP信息想要存储在数据库中。"
+
+#: simple-ajax-chat-admin.php:653
+msgid "Max chats"
+msgstr "最大聊天数"
+
+#: simple-ajax-chat-admin.php:657
+msgid "Maximum number of chats that should be allowed in the chat box."
+msgstr "聊天框中应允许的最大聊天数."
+
+#: simple-ajax-chat-admin.php:662
+msgid "Max characters"
+msgstr "最大字符数"
+
+#: simple-ajax-chat-admin.php:666
+msgid ""
+"Maximum number of characters that should be allowed in each chat message."
+msgstr "每个聊天消息中应允许的最大字符数。"
+
+#: simple-ajax-chat-admin.php:671
+msgid "Username length"
+msgstr "用户名长度"
+
+#: simple-ajax-chat-admin.php:675
+msgid "Maximum number of characters that should be allowed in the username."
+msgstr "用户名中应允许的最大字符数。"
+
+#: simple-ajax-chat-admin.php:682
+msgid "Times and colors"
+msgstr "时代和色彩"
+
+#: simple-ajax-chat-admin.php:686
+msgid "Update interval"
+msgstr "更新间隔"
+
+#: simple-ajax-chat-admin.php:690
+msgid "Refresh frequency (in milliseconds, decimals allowed)."
+msgstr "刷新频率（以毫秒为单位，允许的小数）。"
+
+#: simple-ajax-chat-admin.php:691
+msgid ""
+"Smaller numbers make new chat messages appear faster, but also increase "
+"server load."
+msgstr "较小的数字使新的聊天消息显得更快，但因此增加了服务器负载。"
+
+#: simple-ajax-chat-admin.php:692
+msgid "The default is 3 seconds (3000 ms)."
+msgstr "默认值为3秒（3000毫秒）。"
+
+#: simple-ajax-chat-admin.php:697
+msgid "Fade duration"
+msgstr "淡出持续时间"
+
+#: simple-ajax-chat-admin.php:701
+msgid ""
+"Fade-duration of most recent chat message (in milliseconds, decimals "
+"allowed)."
+msgstr "最近聊天消息的淡入持续时间（以毫秒为单位，允许小数）。"
+
+#: simple-ajax-chat-admin.php:702
+msgid "Default is 1.5 seconds (1500 ms)."
+msgstr "默认值为1.5秒（1500毫秒）。"
+
+#: simple-ajax-chat-admin.php:707
+msgid "Highlight fade (from)"
+msgstr "突出显示淡入淡出(来自)"
+
+#: simple-ajax-chat-admin.php:711
+msgid "&ldquo;Fade-in&rdquo; background-color of new chat messages."
+msgstr "ldquo;淡入rdquo; 新聊天消息的背景颜色。"
+
+#: simple-ajax-chat-admin.php:712
+msgid "Color must be 6-digit-hex format, default color is #ffffcc."
+msgstr "颜色必须是6位十六进制格式，默认颜色为#ffffcc。"
+
+#: simple-ajax-chat-admin.php:717
+msgid "Highlight fade (to)"
+msgstr "突出淡化()"
+
+#: simple-ajax-chat-admin.php:721
+msgid "&ldquo;Fade-out&rdquo; background-color of new chat messages."
+msgstr "ldquo;淡出rdquo; 新聊天消息的背景颜色。"
+
+#: simple-ajax-chat-admin.php:722
+msgid "Color must be 6-digit-hex format, default color is #ffffff."
+msgstr "颜色必须是6位十六进制格式，默认颜色为#ffffff。"
+
+#: simple-ajax-chat-admin.php:729
+msgid "Appearance"
+msgstr "外观"
+
+#: simple-ajax-chat-admin.php:733
+msgid "Enable custom styles?"
+msgstr "启用自定义样式？"
+
+#: simple-ajax-chat-admin.php:737
+msgid "Check this box if you want to enable the Custom CSS styles."
+msgstr "如果要启用自定义CSS样式，请选中此框。"
+
+#: simple-ajax-chat-admin.php:742
+msgid "Custom CSS styles"
+msgstr "自定义CSS样式"
+
+#: simple-ajax-chat-admin.php:746
+msgid "Optional CSS to style the chat form. Do not include"
+msgstr "用于设置聊天表单样式的可选CSS。不包括"
+
+#: simple-ajax-chat-admin.php:747
+msgid "tags. Check out"
+msgstr ""
+"成功插入默认消息。\n"
+"成功截断SAC表。\n"
+"标签。退出"
+
+#: simple-ajax-chat-admin.php:748
+msgid "for a complete list of CSS selectors."
+msgstr "获取CSS选择器的完整列表。"
+
+#: simple-ajax-chat-admin.php:755
+msgid "Targeted loading"
+msgstr "有针对性的装载"
+
+#: simple-ajax-chat-admin.php:759
+msgid "Chat URL"
+msgstr "聊天网址"
+
+#: simple-ajax-chat-admin.php:763
+msgid "By default, SAC JavaScript is included on *every* page."
+msgstr "默认情况下，每个*页面都包含SA​​C JavaScript。"
+
+#: simple-ajax-chat-admin.php:764
+msgid ""
+"To prevent this, and to include the required JavaScript only on the chat "
+"page, enter its URL here."
+msgstr ""
+"为防止这种情况发生，您需要在聊天页面上启用JavaScript，并在此处输入其URL。"
+
+#: simple-ajax-chat-admin.php:765
+msgid "Separate multiple URLs with a comma. Leave blank to disable."
+msgstr "请参阅常见问题解答以了解如何自定义声音警报。"
+
+#: simple-ajax-chat-admin.php:772
+msgid "Custom content"
+msgstr "自定义内容"
+
+#: simple-ajax-chat-admin.php:776
+msgid "Before chat box"
+msgstr "在聊天框之前"
+
+#: simple-ajax-chat-admin.php:780
+msgid ""
+"Optional custom content to appear *before* the chat box. Leave blank to "
+"disable."
+msgstr "在聊天框之前显示*的可选自定义内容。留空以禁用。"
+
+#: simple-ajax-chat-admin.php:785
+msgid "After chat box"
+msgstr "聊天框后"
+
+#: simple-ajax-chat-admin.php:789
+msgid ""
+"Optional custom content to appear *after* the chat box. Leave blank to "
+"disable."
+msgstr "可选的自定义内容*在*聊天框后显示。留空以禁用。"
+
+#: simple-ajax-chat-admin.php:794
+msgid "Before chat form"
+msgstr "在聊天表格之前"
+
+#: simple-ajax-chat-admin.php:798
+msgid ""
+"Optional custom content to appear *before* the chat form. Leave blank to "
+"disable."
+msgstr "在聊天表单之前显示*的可选自定义内容。留空以禁用。"
+
+#: simple-ajax-chat-admin.php:803
+msgid "After chat form"
+msgstr "聊天表格后"
+
+#: simple-ajax-chat-admin.php:807
+msgid ""
+"Optional custom content to appear *after* the chat form. Leave blank to "
+"disable."
+msgstr "可选的自定义内容*在*聊天表单后显示。留空以禁用。"
+
+#: simple-ajax-chat-admin.php:814 simple-ajax-chat-admin.php:847
+msgid "Save Settings"
+msgstr "保存设置"
+
+#: simple-ajax-chat-admin.php:826
+msgid "Banned Phrases"
+msgstr "在聊天框之前"
+
+#: simple-ajax-chat-admin.php:829
+msgid ""
+"Comma-separated List of banned words/phrases that never will be displayed in "
+"the chat box."
+msgstr "颜色必须是6位十六进制格式，默认颜色为#ffffff。"
+
+#: simple-ajax-chat-admin.php:830
+msgid "This setting applies to usernames, URLs, and chat messages."
+msgstr "此设置适用于用户名，网址和聊天消息。"
+
+#: simple-ajax-chat-admin.php:842
+msgid "Banned phrases"
+msgstr "被禁止的短语"
+
+#: simple-ajax-chat-admin.php:856
+msgid ""
+"Here is a list of all chat messages. You can edit or delete any chat message."
+msgstr "这是所有聊天消息的列表。您可以编辑或删除任何聊天消息。"
+
+#: simple-ajax-chat-admin.php:857
+msgid "There must always be at least"
+msgstr "必须始终至少"
+
+#: simple-ajax-chat-admin.php:857
+msgid "one message"
+msgstr "一条消息"
+
+#: simple-ajax-chat-admin.php:858
+msgid ""
+"in the chat box. Click &ldquo;Delete all chats&rdquo; to clear the database "
+"and restore the default message."
+msgstr "在聊天框中。 点击“删除所有聊天记录” 清除数据库并恢复默认消息。"
+
+#: simple-ajax-chat-admin.php:859
+msgid "You can customize the default message in the plugin settings."
+msgstr "您可以在插件设置中自定义默认消息。"
+
+#: simple-ajax-chat-admin.php:874
+#, php-format
+msgid "Latest Message: %s ago"
+msgstr "最新消息：%s之前"
+
+#: simple-ajax-chat-admin.php:883
+msgid "Delete"
+msgstr "删除"
+
+#: simple-ajax-chat-admin.php:884
+msgid "Edit"
+msgstr "编辑"
+
+#: simple-ajax-chat-admin.php:900
+msgid "Delete all chats"
+msgstr "删除所有聊天"
+
+#: simple-ajax-chat-admin.php:906
+msgid "Export Chat Messages"
+msgstr "导出聊天消息"
+
+#: simple-ajax-chat-admin.php:910
+msgid ""
+"Click the \"Export\" link to create a CSV file named \"sac-export.csv\", "
+"located in the SAC plugin directory. A download link will appear after the "
+"file is created."
+msgstr ""
+"单击“导出”链接以创建位于SAC插件目录中名为“sac-export.csv”的CSV文件。创建文件"
+"后将出现下载链接。"
+
+#: simple-ajax-chat-admin.php:911
+msgid ""
+"Note that the export file will contain ALL chat data (including user IP), "
+"and should be deleted after download. You can delete the file by clicking "
+"the \"Delete CSV\" link, which will appear after the file is created."
+msgstr ""
+"请注意，导出文件将包含所有聊天数据（包括用户IP），并应​​在下载后删除。您可以通"
+"过单击“删除CSV”链接删除该文件，该链接将在创建文件后显示。"
+
+#: simple-ajax-chat-admin.php:920
+msgid "Restore Defaults"
+msgstr "恢复默认值"
+
+#: simple-ajax-chat-admin.php:923 simple-ajax-chat-admin.php:927
+msgid "Restore default settings"
+msgstr "恢复默认设置"
+
+#: simple-ajax-chat-admin.php:924
+msgid "Click the button to restore plugin options to their default setttings."
+msgstr "单击按钮可将插件选项恢复为默认设置。"
+
+#: simple-ajax-chat-admin.php:933
+msgid "Delete all plugin settings"
+msgstr "删除所有插件设置"
+
+#: simple-ajax-chat-admin.php:934
+msgid ""
+"To delete all plugin settings and chat messages from the database, simply "
+"uninstall (delete) the plugin."
+msgstr "要从数据库中删除所有插件设置和聊天消息，只需卸载（删除）插件即可。"
+
+#: simple-ajax-chat-admin.php:943
+msgid "Shortcode"
+msgstr "短代码"
+
+#: simple-ajax-chat-admin.php:944
+msgid "Use this shortcode to display the chat box on any WP Post or Page:"
+msgstr "使用此短代码在任何WP帖子或页面上显示聊天框："
+
+#: simple-ajax-chat-admin.php:947
+msgid "Template tag"
+msgstr "模板标签"
+
+#: simple-ajax-chat-admin.php:948
+msgid ""
+"Use this template tag to display the chat box anywhere in your theme "
+"template:"
+msgstr "使用此模板在主题模板中的任何位置显示聊天框："
+
+#: simple-ajax-chat-admin.php:955
+msgid "Show Support"
+msgstr "显示支持"
+
+#: simple-ajax-chat-admin.php:965
+msgid "by"
+msgstr "由"
+
+#: simple-ajax-chat-admin.php:966
+msgid "Jeff Starr on Twitter"
+msgstr "杰夫斯塔尔"
+
+#: simple-ajax-chat-admin.php:967
+msgid "Obsessive Web Design &amp; Development"
+msgstr "强迫网页设计＆amp;发展"
+
+#: simple-ajax-chat-admin.php:1001
+msgid "Hide this notice"
+msgstr "隐藏此通知"
+
+#: simple-ajax-chat-admin.php:1006
+msgid ""
+"Delete all messages and reset the chat box? (this action cannot be undone)"
+msgstr "删除所有邮件并重置聊天框？ (此操作无法撤消)"
+
+#: simple-ajax-chat-admin.php:1014
+msgid "Restore default plugin settings? (this action cannot be undone)"
+msgstr "恢复默认插件设置？ (此操作无法撤消)"
+
+#: simple-ajax-chat-admin.php:1022
+msgid ""
+"Are you sure you want to create a new file on the server? It may contain "
+"sensitive data like user IP address. You can always delete the file by "
+"clicking on the \"Delete CSV\" link, which will appear after the file is "
+"created. Click \"OK\" to continue."
+msgstr ""
+"您确定要在服务器上创建新文件吗？它可能包含敏感数据，如用户IP地址。您始终可以"
+"通过单击“删除CSV”链接删除该文件，该链接将在创建文件后显示。单击“确定”继续。"
+
+#: simple-ajax-chat-form.php:141
+msgid "Latest Message:"
+msgstr "最新消息："
+
+#: simple-ajax-chat-form.php:142
+#, php-format
+msgid "%s ago"
+msgstr "%s 之前"
+
+#: simple-ajax-chat-form.php:147
+#, php-format
+msgid "Posted %s ago"
+msgstr "发表于%s 之前"
+
+#: simple-ajax-chat-form.php:159
+msgid "You need at least one entry in the chat forum!"
+msgstr "您需要在聊天论坛中至少输入一个条目！"
+
+#: simple-ajax-chat-form.php:181 simple-ajax-chat-form.php:191
+#: simple-ajax-chat-form.php:192
+msgid "Name"
+msgstr "名"
+
+#: simple-ajax-chat-form.php:203 simple-ajax-chat-form.php:204
+msgid "URL"
+msgstr ""
+
+#: simple-ajax-chat-form.php:210 simple-ajax-chat-form.php:213
+msgid "Message"
+msgstr "聊天框中应允许的最大聊天数"
+
+#: simple-ajax-chat-form.php:222
+msgid "Human verification: leave this field empty."
+msgstr "人工验证：将此字段留空。"
+
+#: simple-ajax-chat-form.php:228
+msgid "Submit"
+msgstr "提交"
+
+#: simple-ajax-chat-form.php:263
+msgid "You must be a registered user to participate in this chat."
+msgstr "您必须是注册用户才能加入此聊天。"
+
+#: support-panel.php:52
+msgid "Perishable Press Books"
+msgstr "易腐旧书"
+
+#: support-panel.php:53
+msgid "Plugin Planet"
+msgstr "插件星球"
+
+#: support-panel.php:54
+msgid "Donate via PayPal"
+msgstr "通过PayPal捐款"
+
+#: support-panel.php:56
+msgid "books"
+msgstr "在聊天表格之前"
+
+#: support-panel.php:57
+msgid "plugins"
+msgstr "插件"
+
+#: support-panel.php:58
+msgid "donation"
+msgstr "捐款"
+
+#: support-panel.php:60
+msgid "Thank you for using"
+msgstr "谢谢你的使用"
+
+#: support-panel.php:61
+msgid "Please show support by purchasing one of my"
+msgstr "请通过购买我的一个来表示支持"
+
+#: support-panel.php:62
+msgid "or"
+msgstr "或"
+
+#: support-panel.php:62
+msgid "or by making a"
+msgstr "或通过制作"
+
+#: support-panel.php:63
+msgid "Your generous support helps to ensure future development of"
+msgstr "您的慷慨支持有助于确保未来的发展"
+
+#: support-panel.php:64
+msgid "and is greatly appreciated."
+msgstr "非常感谢。"
+
+#: support-panel.php:66
+msgid ""
+"Any size donation helps me to continue developing this free plugin and other "
+"awesome WordPress resources."
+msgstr ""
+"任何规模的捐赠都有助于我继续开发这个免费的插件和其他令人敬畏的WordPress资源。"
+
+#: resources/sac.php:431
+msgid "Posted:"
+msgstr "发布时间："
+
+#. Description of the plugin
+msgid ""
+"Displays a fully customizable Ajax-powered chat box anywhere on your site."
+msgstr "在您的站点上的任何位置显示完全可自定义的基于Ajax的聊天框。"
+
+#. URI of the plugin
+msgid "https://perishablepress.com/simple-ajax-chat/"
+msgstr ""
+
+#. Author of the plugin
+msgid "Jeff Starr"
+msgstr "杰夫斯塔尔"
+
+#. Author URI of the plugin
+msgid "https://plugin-planet.com/"
+msgstr ""

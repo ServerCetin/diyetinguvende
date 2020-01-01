@@ -147,7 +147,7 @@ echo $tabloAdi;
 echo $tabloNot;
 echo $datetimeNow;
 echo $id;
-$lastId = $db-> lastinsertid();
+/* $lastId = $db-> lastinsertid();
 
 $pzt1 = $_POST['pzt1'];
 $sali1 = $_POST['sali1'];
@@ -218,7 +218,7 @@ $db ->exec('INSERT INTO diyettablosatir (ProgramGunId,DiyetTabloId,Aciklama) VAL
 $db ->exec('INSERT INTO diyettablosatir (ProgramGunId,DiyetTabloId,Aciklama) VALUES (2,$lastId,crs4)');
 $db ->exec('INSERT INTO diyettablosatir (ProgramGunId,DiyetTabloId,Aciklama) VALUES (2,$lastId,crs5)');
 $db ->exec('INSERT INTO diyettablosatir (ProgramGunId,DiyetTabloId,Aciklama) VALUES (2,$lastId,crs6)');
-
+*/
 
 }
 

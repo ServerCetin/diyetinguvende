@@ -95,13 +95,6 @@ $username = $_SESSION["username"];
 			</form>	
 				</div>
 		</article>
-			
-		
-				
-		
-
-			
-			
 
 		</section>
 

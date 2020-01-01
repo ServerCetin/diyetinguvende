@@ -30,9 +30,9 @@ $username = $_SESSION["username"];
 			<form action="" method="POST">
 			<fieldset>
 			<legend>Diyet Listesi Ekle</legend><br><br>
-		  Hasta Seç:  <select>
-          <option>Hasta Kullanıcı Adı</option>
-                    </select> <br><br><br><br>
+          Tablo adını giriniz: <input type="text" name="tabloAdi" />
+
+                <br><br><br><br>
 			<h5>Notunuzu Giriniz</h5>
 <blockquote>
 <textarea name="diyetisyenNotu" rows="5" cols="100"></textarea>
@@ -48,16 +48,13 @@ $username = $_SESSION["username"];
 <th style="max-width:50px">Pazar</th>
    
 </tr>
-
-
-<td><input type="text" name="pzt1"style="max-width:50px"></td>
+<td><input type="text" name="pzt1" style="max-width:50px"></td>
 <td><input type="text" name="sali1" style="max-width:50px"></td>
 <td><input type="text" name="crs1" style="max-width:50px"></td>
-<td><input type="text" name="prs1"style="max-width:50px"></td>
-<td><input type="text" name="cum1"style="max-width:50px"></td>
-<td><input type="text" name="cert1"style="max-width:50px"></td>
-<td><input type="text" name="paz1"style="max-width:50px"></td>
-
+<td><input type="text" name="prs1" style="max-width:50px"></td>
+<td><input type="text" name="cum1" style="max-width:50px"></td>
+<td><input type="text" name="cert1" style="max-width:50px"></td>
+<td><input type="text" name="paz1" style="max-width:50px"></td>
 </tr>
 <tr>
 
@@ -140,3 +137,4 @@ $username = $_SESSION["username"];
 
 </body>
 </html>
+

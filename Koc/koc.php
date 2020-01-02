@@ -27,7 +27,7 @@ ob_start();
 			<div class="beyaz" style="padding-top: 50px"  >
 			<fieldset>
             <legend>Öğrenci Kaydet</legend><br>
-				<form action="#" method="get">		
+				<form action="#" method="POST">
 				
 				<p>Öğrencinin Kullanıcı Adı:
 						<input type="text" name="username" id="username" value="" /><br /></p>
@@ -46,7 +46,7 @@ ob_start();
                         }
                     }
                     ?></select>
-			<p><a href="#" class="button buttonS" style="margin-left:28%;"name="kullaniciEkle">Ekle</a>
+			<p><input type="submit" class="button buttonS" style="margin-left:28%;"name="kullaniciEkle" value="Ekle"/>
 
 		
 			<h4>Öğrencilerim</h4><br>

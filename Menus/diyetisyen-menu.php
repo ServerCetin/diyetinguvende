@@ -19,7 +19,7 @@ echo '
             <li><font face="Oxygen" ><a href="../Ortak/kullanici-profili.php">'.$name.' '.$soyad.' <br>@'.$username.'</font></a></li>
             <li class="selected-item" style="background-color:forestgreen"><a href="/Diyetisyen/diyetisyen.php"> Hastalarım</a></li>
             <li><a href="/Diyetisyen/yeni-diyet-listesi.php">Diyet Listesi Ekle</a></li>
-            <li><a href="/Diyetisyen/hasta-kaydet.php">Liste Güncelle</a></li>
+            <li><a href="/Diyetisyen/diyetisyen-liste-guncelle.php">Liste Güncelle</a></li>
             <li><a href="/Diyetisyen/diyetisyen-mesajlari.php">Mesajlarim</a></li>
             <li ><a href="../Ortak/destek.php">Destek</a></li>
             <li ><a href="../cikis-yap.php">Çıkış Yap</a></li>

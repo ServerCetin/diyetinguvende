@@ -67,7 +67,7 @@ $username = $_SESSION["username"];
                  {
                      echo '<tr>
                             <td>'.$gelenveri['Ad'].' '.$gelenveri['Soyad'].'</td>
-                            <td><a href="diyetisyenhastalari.html" class="button button-reversed">Git</a>
+                            <td><a href="diyetisyenhastalari.php" class="button button-reversed">Git</a>
                                <form method="post"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
                                <input type="submit" name="kaldir" value="Kaldır"></form>
                             </td>

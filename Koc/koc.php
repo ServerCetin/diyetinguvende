@@ -32,21 +32,50 @@ ob_start();
 				<p>Öğrencinin Kullanıcı Adı:
 						<input type="text" name="username" id="username" value="" /><br /></p>
 						
-			<p>Öğrencinin Diyet Listesi:
-				<br><br>
-				Liste 1 <input type="radio" name ="liste2" Value="Liste1">
-				Liste 2 <input type="radio" name ="liste2" Value="Liste2">
-				<br><br>
-			<p><a href="#" class="button buttonS" style="margin-left:28%;"name="kodgonder">Ekle</a>
+			<p>Öğrencinin Diyet Listesi:<br>
+			<select name="sporList">
+				<?php
+                    include '../baglan.php';
+                    $id = $_SESSION["Id"];
+                    $listele = $db->query("SELECT * FROM sportablosu where KocId =$id", PDO::FETCH_ASSOC);
+                    if ( $listele->rowCount() ) //rawcountu 0 değilse
+                    {
+                        foreach( $listele as $gelenveri )
+                        {
+                            echo '<option value="'.$gelenveri['Id'].'">'.$gelenveri['TabloAdi'].'</option>';
+                        }
+                    }
+                    ?></select>
+			<p><a href="#" class="button buttonS" style="margin-left:28%;"name="kullaniciEkle">Ekle</a>
 
 		
 			<h4>Öğrencilerim</h4><br>
 				<table id="hastalistesi">
   <tr>
     <th>Öğrenci Adı Soyadı</th>
-	<th style="width:200px;">Git</th>
-    
-  </tr>
+	<th style="width:200px;">Git</th></tr>
+     <?php
+
+             include '../baglan.php';
+             $id = $_SESSION['Id'];
+             $listele = $db->query("SELECT * FROM kullanici INNER JOIN hastabilgi ON kullanici.Id=KullaniciId where KocId='$id'", PDO::FETCH_ASSOC);
+             if ($listele->rowCount()) //rawcountu 0 değilse
+             {
+                 foreach( $listele as $gelenveri )
+                 {
+                     echo '<tr>
+                            <td>'.$gelenveri['Ad'].' '.$gelenveri['Soyad'].'</td>
+                            <td><a href="diyetisyenhastalari.php" class="button button-reversed">Git</a>
+                               <form method="post"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
+                               <input type="submit" name="kaldir" value="Kaldır"></form>
+                            </td>
+                          </tr>
+                     ';
+                 }
+             }
+
+             ?>
+  
   <tr>
     <td>Gözde Çetinkaya</td>
     <td>
@@ -87,23 +116,35 @@ ob_start();
   </tr>
   
 </table>
-			</form>	
-				</div>
+</form>	
+</div>
 		</article>
-			
-		
-				
-		
-
-			
-			
-
 		</section>
-
 		<div class="clear"></div>
-
-	</section>
+	    </section>
 	
 
 </body>
 </html>
+<?php
+if(isset($_POST['kullaniciEkle'])){
+
+    $username = $_POST['username'];
+    $id = $_SESSION['Id'];
+    $tabloId = $_POST['sporList'];
+    include ('../baglan.php');
+
+    $query = $db->query("SELECT * FROM kullanici WHERE KullaniciAdi ='{$username}'")->fetch(PDO::FETCH_ASSOC);
+    if ( $query ){
+        $kId = $query['Id'];
+        $insert = $db -> exec("UPDATE hastabilgi SET KocId='$id',SporTabloId='$tabloId' where KullaniciId='$kId'");
+    }
+}
+    if(isset($_POST['kaldir'])){
+    $uId = $_POST['kullaniciIds'];
+    $query = $db->query("SELECT * FROM hastabilgi WHERE KullaniciId ='{$uId}'")->fetch(PDO::FETCH_ASSOC);
+    if ($query){
+        $insert = $db -> exec("UPDATE hastabilgi SET KocId=null, SporTabloId=null where KullaniciId='$uId'");
+    }
+}
+?>

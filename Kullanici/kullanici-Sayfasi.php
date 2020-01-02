@@ -37,20 +37,20 @@ ob_start();
 		    <tr>
 						<th>Saat</th>
 						<th>Bugunku Listem<br><button id="button1">Yaptim</button> <button id="button2">Yapmadim</button></th>
-						<th>Yarýnki Listem</th>
+						<th>Yarï¿½nki Listem</th>
 		    </tr>
 			<script>
 
-var listeyiYaptým=document.getElementById("button1");
-	listeyiYaptým.onclick=function()
+var listeyiYaptï¿½m=document.getElementById("button1");
+	listeyiYaptï¿½m.onclick=function()
 	{
-		window.alert("Hasta bugünkü diyetini yapmýþtýr. Diyetisyenine bilgilendirme yapýlacaktýr.");
+		window.alert("Hasta bugï¿½nkï¿½ diyetini yapmï¿½ï¿½tï¿½r. Diyetisyenine bilgilendirme yapï¿½lacaktï¿½r.");
 	}
 
-	var listeyiYapmadým=document.getElementById("button2");
-	listeyiYapmadým.onclick=function()
+	var listeyiYapmadï¿½m=document.getElementById("button2");
+	listeyiYapmadï¿½m.onclick=function()
 	{
-		window.alert("Hasta bugünkü diyetini tam olarak yapmamýþtýr. Diyetisyenine bilgilendirme yapýlacaktýr.");
+		window.alert("Hasta bugï¿½nkï¿½ diyetini tam olarak yapmamï¿½ï¿½tï¿½r. Diyetisyenine bilgilendirme yapï¿½lacaktï¿½r.");
 	}
 	
             </script>
@@ -99,86 +99,41 @@ var listeyiYaptým=document.getElementById("button1");
 			<br>			<br>
 			<br>			<br>
 			<br>
-			<h4>Mevcut Haftalik Diyet Listem</h4>
-				<table>
-					<tr>
-						<th style="width:50px;">Saat</th>
-						<th style="width:50px;">Pazartesi</th>
-						<th style="width:50px;">Sali</th>
-						<th style="width:50px;">Çarsamba</th>
-						<th style="width:50px;">Persembe</th>
-						<th style="width:50px;">Cuma</th>
-						<th style="width:50px;">Cumartesi</th>
-						<th style="width:50px;">Pazar</th>
+    <?php
+    include '../baglan.php';
+    $id = $_SESSION['Id'];
 
-					</tr>
-					<tr>
-						<td>09.00</td>
-						<td>x</td>
-						<td>x</td>
-						<td>x</td>
-						<td>x</td>
-						<td>x</td>
-						<td>x</td>
-						<td>x</td>
-					</tr>
-					<tr>
-						<td>12.00</td>
-						<td>x </td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>z z</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-					</tr>
-					<tr>
-						<td>14.30</td>
-						<td> x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-					</tr>
-					<tr>
-						<td>17.00</td>
-						<td> x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-					</tr>
-					<tr>
-						<td>19.00</td>
-						<td> x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						
-					</tr>
-					<tr>
-						<td>21.00</td>
-						<td> x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
-						<td>x x</td>
+    echo '<h4>Mevcut Haftalik Diyet Listem</h4>';
 
-						
-					</tr>
+    $query = $db->query("SELECT * FROM hastabilgi WHERE KullaniciId ='{$id}'")->fetch(PDO::FETCH_ASSOC);
+    if ( $query ){
+        $diyetTabloId = $query['DiyetTabloId'];
+    }
 
-	
-				</table>
-				<b>Ekle</b>
+    $listele = $db->query("SELECT * FROM diyettablosatir where DiyetTabloId=$diyetTabloId", PDO::FETCH_ASSOC);
+    if ( $listele->rowCount() )
+    {
+        $sayac = 0;
+        echo '<table>';
+        echo '<th>Pazartesi</th>';
+        echo '<th>SalÄ±</th>';
+        echo '<th>Ã‡arÅŸamba</th>';
+        echo '<th>PerÅŸembe</th>';
+        echo '<th>Cuma</th>';
+        echo '<th>Cumartesi</th>';
+        echo '<th>Pazar</th>';
+        foreach( $listele as $gelenveri )
+        {
+            if($sayac==0){echo '<tr>';}
+            echo "<td style=\"width:50px;\">".$gelenveri['Aciklama']."</td>";
+            $sayac++;
+            if($sayac==7){echo '</tr>';$sayac=0;}
+        }
+        echo '</table>';
+    }
+
+    ?>
+
 				<p>&nbsp;</p>
 				
 					
@@ -187,7 +142,7 @@ var listeyiYaptým=document.getElementById("button1");
 
 			
 			<footer class="clear">
-				<p>&copy; 2019 Diyetin Güvende.</p>
+				<p>&copy; 2019 Diyetin Gï¿½vende.</p>
 			</footer>
 
 		</section>

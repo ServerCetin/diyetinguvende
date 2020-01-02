@@ -24,8 +24,8 @@ ob_start();
 	    <article>
 <div class="beyaz" >
 
-			
-			
+
+
 			
 
 			
@@ -33,6 +33,7 @@ ob_start();
 
 
     <?php
+
     include '../baglan.php';
     $id = $_SESSION['Id'];
 

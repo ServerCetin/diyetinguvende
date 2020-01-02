@@ -68,6 +68,18 @@ a.button {
     text-decoration: none;
     text-transform: uppercase;
 }
+a.submit { 
+    background-color:forestgreen;
+    border-radius: 5px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 22px;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
 a.button-reversed { 
     background-color: #333;

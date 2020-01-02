@@ -48,7 +48,7 @@ $username = $_SESSION["username"];
                     ?>
                     </select>
 				<br>
-			<p><input type="submit" style="margin-left:80%;"name="kullaniciEkle" value="Ekle">
+			<p><input type="submit" style="margin-left:80%;" name="kullaniciEkle" value="Ekle" >
 			<br><br>
 			<h4>Hastalarım</h4><br>
 				<table id="hastalistesi">
@@ -69,7 +69,8 @@ $username = $_SESSION["username"];
                             <td>'.$gelenveri['Ad'].' '.$gelenveri['Soyad'].'</td>
                             <td><a href="diyetisyenhastalari.php" class="button button-reversed">Git</a>
                                <form method="post"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
-                               <input type="submit" name="kaldir" value="Kaldır"></form>
+                               <input type="submit" name="kaldir" class="button button-reversed" value="Kaldır" />
+</form>
                             </td>
                           </tr>
                      ';

@@ -23,92 +23,179 @@ ob_start();
                 		
 	    <article>
 <div class="beyaz" >
-<h4>Diyetisyeninizin Notu:</h4>
-			<blockquote>
-						<p>
-						Programina uymaya dikkat et, sana ozel ayarlandigindan aksatmamaya calis!
-						</p>
-			</blockquote>
-			
-			
-			
-			<table>
-			
-		    <tr>
-						<th>Saat</th>
-						<th>Bugunku Listem<br><button id="button1">Yaptim</button> <button id="button2">Yapmadim</button></th>
-						<th>Yar�nki Listem</th>
-		    </tr>
-			<script>
 
-var listeyiYapt�m=document.getElementById("button1");
-	listeyiYapt�m.onclick=function()
-	{
-		window.alert("Hasta bug�nk� diyetini yapm��t�r. Diyetisyenine bilgilendirme yap�lacakt�r.");
-	}
+			
+			
+			
 
-	var listeyiYapmad�m=document.getElementById("button2");
-	listeyiYapmad�m.onclick=function()
-	{
-		window.alert("Hasta bug�nk� diyetini tam olarak yapmam��t�r. Diyetisyenine bilgilendirme yap�lacakt�r.");
-	}
-	
-            </script>
+			
 
 
-			<tr>
-			            <td>09.00</td>
-						<td>Kahvalti</td>
-						<td>Kahvalti</td>  
-			</tr>
-			
-			<tr>
-			            <td>12.00</td>
-						<td>Ara Ogun</td>
-						<td>Ara Ogun</td>  
-			</tr>
-			
-			<tr>
-			            <td>14.30</td>
-						<td>Ogle Yemegi</td>
-						<td>Ogle Yemegi</td>  
-			</tr>
-			
-			<tr>
-			            <td>17.00</td>
-						<td>Ara Ogun</td>
-						<td>Ara Ogun</td>  
-			</tr>
-			
-			<tr>
-			            <td>19.00</td>
-						<td>Aksam Yemegi</td>
-						<td>Aksam Yemegi</td>  
-			</tr>
-			
-			<tr>
-			            <td>21.00</td>
-						<td>Meyve,Kuruyemis</td>
-						<td>Meyve,Kuruyemis</td>  
-			</tr>
-			</table>
-			
-			<br>
-			<br>
-						<br>
-			<br>			<br>
-			<br>			<br>
-			<br>
+
     <?php
     include '../baglan.php';
     $id = $_SESSION['Id'];
-
-    echo '<h4>Mevcut Haftalik Diyet Listem</h4>';
 
     $query = $db->query("SELECT * FROM hastabilgi WHERE KullaniciId ='{$id}'")->fetch(PDO::FETCH_ASSOC);
     if ( $query ){
         $diyetTabloId = $query['DiyetTabloId'];
     }
+    $query = $db->query("SELECT * FROM diyettablosu WHERE Id ='{$diyetTabloId}'")->fetch(PDO::FETCH_ASSOC);
+    if ( $query ){
+        $tabloAciklamasi = $query['TabloAciklamasi'];
+    }
+    echo '<table>
+                <tr>
+                    <th>Bugunkü Listem<br></th>
+                    <th>Yarınki Listem</th>
+                </tr>';
+    if(date('l')=="Monday"){
+        $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 1 OR ProgramGunId =2 ", PDO::FETCH_ASSOC);
+        if ( $listele->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+    if(date('l')=="Tuesday"){
+        $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 2 OR ProgramGunId =3 ", PDO::FETCH_ASSOC);
+        if ( $listele->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+    if(date('l')=="Wednesday"){
+        $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 3 OR ProgramGunId =4 ", PDO::FETCH_ASSOC);
+        if ( $listele->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+    if(date('l')=="Thursday"){
+        $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 4 OR ProgramGunId =5 ", PDO::FETCH_ASSOC);
+        if ( $listele->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+    if(date('l')=="Friday"){
+        $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 5 OR ProgramGunId =6 ", PDO::FETCH_ASSOC);
+        if ( $listele->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+    if(date('l')=="Saturday"){
+        $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 6 OR ProgramGunId =7 ", PDO::FETCH_ASSOC);
+        if ( $listele->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+    if(date('l')=="Sunday"){
+        $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 7 OR ProgramGunId =1 ", PDO::FETCH_ASSOC);
+        if ( $listele->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+
+
+			echo '</table>
+				<br>
+			<br>
+			<br>			<br>
+			<br>
+
+			
+			';
+
+
+
+    echo '<h4>Mevcut Haftalik Diyet Listem</h4>';
+
+
+    echo '<h5>Diyetisyeninizin Notu:</h5>'.' <blockquote>
+        <p>
+            '.$tabloAciklamasi.'
+        </p>
+    </blockquote>';
 
     $listele = $db->query("SELECT * FROM diyettablosatir where DiyetTabloId=$diyetTabloId", PDO::FETCH_ASSOC);
     if ( $listele->rowCount() )

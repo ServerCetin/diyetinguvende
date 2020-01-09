@@ -9,7 +9,8 @@ if(isset($_SESSION["kullaniciTur"])) {
     else if ($_SESSION["kullaniciTur"] == "Diyetisyen")
         header("Location: ../diyetisyen/diyetisyen.php");
     else if ($_SESSION["kullaniciTur"] == "Yönetici")
-        header("Location: ../yonetici/panel.php");
-    else header("Location: /giris-yap.php");
+        header("Location: ../Yonetici/destek-istekleri.php");
+    else
+        header("Location: /giris-yap.php");
 }
 ?>

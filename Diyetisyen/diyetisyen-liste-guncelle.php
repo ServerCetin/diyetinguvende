@@ -56,9 +56,9 @@ $username = $_SESSION["username"];
                             $query = $db->query("SELECT * FROM diyettablosu WHERE Id=$diyetTabloId", PDO::FETCH_ASSOC);
                             if ( $query->rowCount() ){
                                 foreach( $query as $row ){
-                                   $aciklama = $row['TabloAciklamasi'];
-                                   $tabloAdi = $row['TabloAdi'];
-                                   $diyetTabloId = $row['Id'];
+                                    $aciklama = $row['TabloAciklamasi'];
+                                    $tabloAdi = $row['TabloAdi'];
+                                    $diyetTabloId = $row['Id'];
                                 }
                             }
                             echo '<input type="hidden" name="tabloAdi" value="'.$tabloAdi.'">';
@@ -114,9 +114,9 @@ $username = $_SESSION["username"];
                             <td><input type="text" name="sali1" style="max-width:50px"></td>
                             <td><input type="text" name="crs1" style="max-width:50px"></td>
                             <td><input type="text" name="prs1" style="max-width:50px"></td>
-                            <td><input type="text" name="cum1" style="max-width:50px"></td>
-                            <td><input type="text" name="cert1" style="max-width:50px"></td>
-                            <td><input type="text" name="paz1" style="max-width:50px"></td>
+                            <td><input type="text" name="cuma1" style="max-width:50px"></td>
+                            <td><input type="text" name="cmt1" style="max-width:50px"></td>
+                            <td><input type="text" name="pzr1" style="max-width:50px"></td>
                             </tr>
 
                             <tr>
@@ -124,9 +124,9 @@ $username = $_SESSION["username"];
                                 <td><input type="text" name="sali2"style="max-width:50px"></td>
                                 <td><input type="text" name="crs2"style="max-width:50px"></td>
                                 <td><input type="text" name="prs2"style="max-width:50px"></td>
-                                <td><input type="text" name="cum2"style="max-width:50px"></td>
-                                <td><input type="text" name="cert2"style="max-width:50px"></td>
-                                <td><input type="text" name="paz2"style="max-width:50px"></td>
+                                <td><input type="text" name="cuma2"style="max-width:50px"></td>
+                                <td><input type="text" name="cmt2"style="max-width:50px"></td>
+                                <td><input type="text" name="pzr2"style="max-width:50px"></td>
                             </tr>
 
                             <tr>
@@ -134,9 +134,9 @@ $username = $_SESSION["username"];
                                 <td><input type="text" name="sali3" style="max-width:50px"></td>
                                 <td><input type="text" name="crs3" style="max-width:50px"></td>
                                 <td><input type="text" name="prs3" style="max-width:50px"></td>
-                                <td><input type="text" name="cum3" style="max-width:50px"></td>
-                                <td><input type="text" name="cert3" style="max-width:50px"></td>
-                                <td><input type="text" name="paz3" style="max-width:50px"></td>
+                                <td><input type="text" name="cuma3" style="max-width:50px"></td>
+                                <td><input type="text" name="cmt3" style="max-width:50px"></td>
+                                <td><input type="text" name="pzr3" style="max-width:50px"></td>
                             </tr>
 
                             <tr>
@@ -144,9 +144,9 @@ $username = $_SESSION["username"];
                                 <td><input type="text" name="sali4" style="max-width:50px"></td>
                                 <td><input type="text" name="crs4" style="max-width:50px"></td>
                                 <td><input type="text" name="prs4" style="max-width:50px"></td>
-                                <td><input type="text" name="cum4" style="max-width:50px"></td>
-                                <td><input type="text" name="cert4" style="max-width:50px"></td>
-                                <td><input type="text" name="paz4" style="max-width:50px"></td>
+                                <td><input type="text" name="cuma4" style="max-width:50px"></td>
+                                <td><input type="text" name="cmt4" style="max-width:50px"></td>
+                                <td><input type="text" name="pzr4" style="max-width:50px"></td>
                             </tr>
 
                             <tr>
@@ -154,9 +154,9 @@ $username = $_SESSION["username"];
                                 <td><input type="text" name="sali5" style="max-width:50px"></td>
                                 <td><input type="text" name="crs5" style="max-width:50px"></td>
                                 <td><input type="text" name="prs5" style="max-width:50px"></td>
-                                <td><input type="text" name="cum5" style="max-width:50px"></td>
-                                <td><input type="text" name="cert5" style="max-width:50px"></td>
-                                <td><input type="text" name="paz5" style="max-width:50px"></td>
+                                <td><input type="text" name="cuma5" style="max-width:50px"></td>
+                                <td><input type="text" name="cmt5" style="max-width:50px"></td>
+                                <td><input type="text" name="pzr5" style="max-width:50px"></td>
                             </tr>
 
                             <tr>
@@ -164,9 +164,9 @@ $username = $_SESSION["username"];
                                 <td><input type="text" name="sali6" style="max-width:50px"></td>
                                 <td><input type="text" name="crs6" style="max-width:50px"></td>
                                 <td><input type="text" name="prs6" style="max-width:50px"></td>
-                                <td><input type="text" name="cum6" style="max-width:50px"></td>
-                                <td><input type="text" name="cert6" style="max-width:50px"></td>
-                                <td><input type="text" name="paz6" style="max-width:50px"></td>
+                                <td><input type="text" name="cuma6" style="max-width:50px"></td>
+                                <td><input type="text" name="cmt6" style="max-width:50px"></td>
+                                <td><input type="text" name="pzr6" style="max-width:50px"></td>
                             </tr>
 
 
@@ -178,8 +178,8 @@ $username = $_SESSION["username"];
 
 
 
-                    <br><br>
-                    <br><input type="submit" class="button buttonS" value="Güncelle" name="guncelle" style="margin-left:80%;">
+                        <br><br>
+                        <br><input type="submit" class="button buttonS" value="Güncelle" name="guncelle" style="margin-left:80%;">
 
                 </form>
             </div>
@@ -209,150 +209,144 @@ if(isset($_POST['guncelle'])){
     $id = $_SESSION['Id'];
     $insert = $db -> exec("UPDATE diyettablosu SET TabloAciklamasi='$tabloNot',TabloTarih='$datetimeNow' where Id='$diyetTabloId'");
 
-    /*
     $pzt1 = $_POST['pzt1'];
     $sali1 = $_POST['sali1'];
     $crs1 = $_POST['crs1'];
     $prs1 = $_POST['prs1'];
-    $cuma1 = $_POST['cum1'];
-    $cmt1 = $_POST['cert1'];
-    $pzr1 = $_POST['paz1'];
+    $cuma1 = $_POST['cuma1'];
+    $cmt1 = $_POST['cmt1'];
+    $pzr1 = $_POST['pzr1'];
 
     $pzt2 = $_POST['pzt2'];
     $sali2 = $_POST['sali2'];
     $crs2 = $_POST['crs2'];
     $prs2 = $_POST['prs2'];
-    $cuma2 = $_POST['cum2'];
-    $cmt2 = $_POST['cert2'];
-    $pzr2 = $_POST['paz2'];
+    $cuma2 = $_POST['cuma2'];
+    $cmt2 = $_POST['cmt2'];
+    $pzr2 = $_POST['pzr2'];
 
     $pzt3 = $_POST['pzt3'];
     $sali3 = $_POST['sali3'];
     $crs3 = $_POST['crs3'];
     $prs3 = $_POST['prs3'];
-    $cuma3 = $_POST['cum3'];
-    $cmt3 = $_POST['cert3'];
-    $pzr3 = $_POST['paz3'];
+    $cuma3 = $_POST['cuma3'];
+    $cmt3 = $_POST['cmt3'];
+    $pzr3 = $_POST['pzr3'];
 
     $pzt4 = $_POST['pzt4'];
     $sali4 = $_POST['sali4'];
     $crs4 = $_POST['crs4'];
     $prs4 = $_POST['prs4'];
-    $cuma4 = $_POST['cum4'];
-    $cmt4 = $_POST['cert4'];
-    $pzr4 = $_POST['paz4'];
+    $cuma4 = $_POST['cuma4'];
+    $cmt4 = $_POST['cmt4'];
+    $pzr4 = $_POST['pzr4'];
 
     $pzt5 = $_POST['pzt5'];
     $sali5 = $_POST['sali5'];
     $crs5 = $_POST['crs5'];
     $prs5 = $_POST['prs5'];
-    $cuma5 = $_POST['cum5'];
-    $cmt5 = $_POST['cert5'];
-    $pzr5 = $_POST['paz5'];
+    $cuma5 = $_POST['cuma5'];
+    $cmt5 = $_POST['cmt5'];
+    $pzr5 = $_POST['pzr5'];
 
     $pzt6 = $_POST['pzt6'];
     $sali6 = $_POST['sali6'];
     $crs6 = $_POST['crs6'];
     $prs6 = $_POST['prs6'];
-    $cuma6 = $_POST['cum6'];
-    $cmt6 = $_POST['cert6'];
-    $pzr6 = $_POST['paz6'];
+    $cuma6 = $_POST['cuma6'];
+    $cmt6 = $_POST['cmt6'];
+    $pzr6 = $_POST['pzr6'];
 
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(1, $lastId, $pzt1));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(2, $lastId, $sali1));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(3, $lastId, $crs1));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(4, $lastId, $prs1));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(5, $lastId, $cuma1));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(6, $lastId, $cmt1));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(7, $lastId, $pzr1));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzt1", "tabloId" => $diyetTabloId, "gunno" => "1", "gunsira" => "1"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzt2", "tabloId" => $diyetTabloId, "gunno" => "1", "gunsira" => "2"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzt3", "tabloId" => $diyetTabloId, "gunno" => "1", "gunsira" => "3"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzt4", "tabloId" => $diyetTabloId, "gunno" => "1", "gunsira" => "4"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzt5", "tabloId" => $diyetTabloId, "gunno" => "1", "gunsira" => "5"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzt6", "tabloId" => $diyetTabloId, "gunno" => "1", "gunsira" => "6"));
 
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$sali1", "tabloId" => $diyetTabloId, "gunno" => "2", "gunsira" => "1"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$sali2", "tabloId" => $diyetTabloId, "gunno" => "2", "gunsira" => "2"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$sali3", "tabloId" => $diyetTabloId, "gunno" => "2", "gunsira" => "3"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$sali4", "tabloId" => $diyetTabloId, "gunno" => "2", "gunsira" => "4"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$sali5", "tabloId" => $diyetTabloId, "gunno" => "2", "gunsira" => "5"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$sali6", "tabloId" => $diyetTabloId, "gunno" => "2", "gunsira" => "6"));
 
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(1, $lastId, $pzt2));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(2, $lastId, $sali2));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(3, $lastId, $crs2));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(4, $lastId, $prs2));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(5, $lastId, $cuma2));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(6, $lastId, $cmt2));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(7, $lastId, $pzr2));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$crs1", "tabloId" => $diyetTabloId, "gunno" => "3", "gunsira" => "1"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$crs2", "tabloId" => $diyetTabloId, "gunno" => "3", "gunsira" => "2"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$crs3", "tabloId" => $diyetTabloId, "gunno" => "3", "gunsira" => "3"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$crs4", "tabloId" => $diyetTabloId, "gunno" => "3", "gunsira" => "4"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$crs5", "tabloId" => $diyetTabloId, "gunno" => "3", "gunsira" => "5"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$crs6", "tabloId" => $diyetTabloId, "gunno" => "3", "gunsira" => "6"));
 
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$prs1", "tabloId" => $diyetTabloId, "gunno" => "4", "gunsira" => "1"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$prs2", "tabloId" => $diyetTabloId, "gunno" => "4", "gunsira" => "2"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$prs3", "tabloId" => $diyetTabloId, "gunno" => "4", "gunsira" => "3"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$prs4", "tabloId" => $diyetTabloId, "gunno" => "4", "gunsira" => "4"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$prs5", "tabloId" => $diyetTabloId, "gunno" => "4", "gunsira" => "5"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$prs6", "tabloId" => $diyetTabloId, "gunno" => "4", "gunsira" => "6"));
 
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(1, $lastId, $pzt3));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(2, $lastId, $sali3));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(3, $lastId, $crs3));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(4, $lastId, $prs3));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(5, $lastId, $cuma3));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(6, $lastId, $cmt3));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(7, $lastId, $pzr3));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => $cuma1, "tabloId" => $diyetTabloId, "gunno" => 5, "gunsira" => "1"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$cuma2", "tabloId" => $diyetTabloId, "gunno" => "5", "gunsira" => "2"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$cuma3", "tabloId" => $diyetTabloId, "gunno" => "5", "gunsira" => "3"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$cuma4", "tabloId" => $diyetTabloId, "gunno" => "5", "gunsira" => "4"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$cuma5", "tabloId" => $diyetTabloId, "gunno" => "5", "gunsira" => "5"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$cuma6", "tabloId" => $diyetTabloId, "gunno" => "5", "gunsira" => "6"));
 
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(1, $lastId, $pzt4));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(2, $lastId, $sali4));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(3, $lastId, $crs4));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(4, $lastId, $prs4));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(5, $lastId, $cuma4));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(6, $lastId, $cmt4));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(7, $lastId, $pzr4));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$cmt1", "tabloId" => $diyetTabloId, "gunno" => "6", "gunsira" => "1"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$cmt2", "tabloId" => $diyetTabloId, "gunno" => "6", "gunsira" => "2"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$cmt3", "tabloId" => $diyetTabloId, "gunno" => "6", "gunsira" => "3"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$cmt4", "tabloId" => $diyetTabloId, "gunno" => "6", "gunsira" => "4"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$cmt5", "tabloId" => $diyetTabloId, "gunno" => "6", "gunsira" => "5"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$cmt6", "tabloId" => $diyetTabloId, "gunno" => "6", "gunsira" => "6"));
 
-
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(1, $lastId, $pzt5));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(2, $lastId, $sali5));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(3, $lastId, $crs5));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(4, $lastId, $prs5));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(5, $lastId, $cuma5));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(6, $lastId, $cmt5));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(7, $lastId, $pzr5));
-
-
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(1, $lastId, $pzt6));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(2, $lastId, $sali6));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(3, $lastId, $crs6));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(4, $lastId, $prs6));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(5, $lastId, $cuma6));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(6, $lastId, $cmt6));
-    $query = $db->prepare("INSERT INTO diyettablosatir SET ProgramGunId = ?, DiyetTabloId = ?, Aciklama = ?");
-    $insert = $query->execute(array(7, $lastId, $pzr6));
-    */
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzr1", "tabloId" => $diyetTabloId, "gunno" => "7", "gunsira" => "1"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzr2", "tabloId" => $diyetTabloId, "gunno" => "7", "gunsira" => "2"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzr3", "tabloId" => $diyetTabloId, "gunno" => "7", "gunsira" => "3"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzr4", "tabloId" => $diyetTabloId, "gunno" => "7", "gunsira" => "4"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzr5", "tabloId" => $diyetTabloId, "gunno" => "7", "gunsira" => "5"));
+    $query = $db->prepare("UPDATE diyettablosatir SET Aciklama = :aciklama WHERE DiyetTabloId = :tabloId AND ProgramGunId= :gunno AND GunSira= :gunsira");
+    $update = $query->execute(array("aciklama" => "$pzr6", "tabloId" => $diyetTabloId, "gunno" => "7", "gunsira" => "6"));
 }
-
 
 ?>

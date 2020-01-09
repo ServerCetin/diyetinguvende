@@ -49,6 +49,8 @@
       <workItem from="1577532156596" duration="14196000" />
       <workItem from="1577570366537" duration="16434000" />
       <workItem from="1577914168778" duration="20129000" />
+      <workItem from="1577979861040" duration="357000" />
+      <workItem from="1578581913712" duration="16707000" />
     </task>
     <servers />
   </component>
@@ -67,5 +69,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Kullanici/kullanici-Sayfasi.php</url>
+          <line>108</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Kullanici/kullanici-Sayfasi.php</url>
+          <line>126</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

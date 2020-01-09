@@ -26,73 +26,89 @@ $username = $_SESSION["username"];
 	    <article>
 			
 			<div class="beyaz" style="padding-top: 50px"  >
-			<form>	
+
 				<h3>Form</h3>
 				<fieldset>
+                    <legend>Mesaj Gönder</legend>
+                    <table>
+                        <th>
+                            <th>Hastaya Mesaj</th>
+                            <th>Koçuna Mesaj</th>
+                        </th>
+                        <?php
+                        include "../baglan.php";
+                        $id = $_SESSION['Id'];
 
-					<legend>Mesajlarım</legend>
-					<br>
-					<form>	
-				
-			
-			
-				<table >
+                        $query = $db->query("SELECT * FROM hastabilgi where DiyetisyenId= $id", PDO::FETCH_ASSOC);
+                        if ( $query->rowCount() ){
+                            foreach( $query as $hastaBilgi ){
+                                $kId = $hastaBilgi['KullaniciId'];
+                                $kocId = $hastaBilgi['KocId'];
+
+                                $hastakullanici = $db->query("SELECT * FROM kullanici WHERE Id = $kId")->fetch(PDO::FETCH_ASSOC);
+                                $kAdi = $hastakullanici['KullaniciAdi'];
+                                $kocVarMi = false;
+                                if(isset($kocId)){
+                                    $hastaKoc = $db->query("SELECT * FROM kullanici WHERE Id = $kocId")->fetch(PDO::FETCH_ASSOC);
+                                    $kocVarMi = true;
+                                }
+
+                                print'
+                                
+                                    <tr>
+                                        <td>'.$kAdi.'</td>
+                                        <td>
+                                             <form method="GET" action="mesajlar.php">
+                                                <input type="hidden" value="'.$kId.'" name="kullaniciId">
+                                                <input type="submit"  value="Kullanıcıya Mesaj"> 
+                                             </form>
+                                        </td>';
+                                       if($kocVarMi) {
+                                           print '
+                                        <td>
+                                            <form method="GET" action="mesajlar.php">
+                                                <input type="hidden" value="'.$kocId.'" name="kullaniciId">
+                                                <input type="submit" value="Koça Mesaj"> 
+                                            </form>
+                                                
+                                        </td>';
+                                       }
+                                   print '
+                                    </tr>
+                                </form>';
+                            }
+                        }
+                        ?>
+                    </table>
+
+                    <table style="margin-top: 40px;">
 					<tr>
 						<th>Gelen Mesajlar</th>
 						<th>Kimden</th>
-					    <th>Saat</th>
+					    <th>Gönderilme Tarihi</th>
 					</tr>
-					<tr>
-						<td>Örnek Gelen Mesaj 1</td>
-						<td>Spor Koçu</td>
-						<td>1 saat önce</td>
-					</tr>
-					<tr>
-						<td>Örnek Gelen Mesaj 2 </td>
-						<td>Hastalarım</td>
-						<td>1 gün önce</td>
-						<td></td>
-						</tr>
-					</table><br><br>
-						<table >
-					<tr>
-						<th>Hastalarım</th>
-						<th>Diyetisyeni</th>
-						<th>Mesaj</th>
-						
-					
-						
-					</tr>
-					<tr>
-						<td>Server
-						</td>
-						<td>Çetin</td>
-						<td><a href="#" class="button button-reversed">Hastaya Mesaj</a>
-						<a href="#" class="button button-reversed" style="margin-left:10px;">Spor Koçuna Mesaj</a>
-						</td>
-					</tr>
-					<tr>
-						<td>Server
-						</td>
-						<td>Çetin</td>
-						<td><a href="#" class="button button-reversed">Hastaya Mesaj</a>
-						<a href="#" class="button button-reversed" style="margin-left:10px;">Diyetisyene Mesaj</a>
-						</td>
-					</tr>
-					
-					</table><br><br>
-						
-					
-				</form>	
-					<form action="#" method="get">
-						
-					<p><textarea  cols="60" rows="11" name="message" id="message" placeholder="Mesaj Yaz..." ></textarea>
-						<input type="submit" name="send" class="formbutton" value="Gönder" />
-					</form>
-			
-			
-				
-			</form>	
+                <?php
+
+                    $query = $db->query("SELECT * FROM kullanicimesaj where AlanId = $id", PDO::FETCH_ASSOC);
+                    if ( $query->rowCount() ){
+                        foreach( $query as $mesaj ){
+                            $kkId= $mesaj['GonderenId'];
+                            $karsiKullanici = $db->query("SELECT * FROM kullanici WHERE Id = $kkId")->fetch(PDO::FETCH_ASSOC);
+                            print '
+                                <tr>
+                                    <td>'.$mesaj['Mesaj'].'</td>
+                                    <td>'.$karsiKullanici['KullaniciAdi'].'</td>
+                                    <td>'.$mesaj['GonderilmeTarihi'].'</td>
+                                </tr>
+                            ';
+                        }
+                    }
+
+
+                ?>
+
+                    </table><br><br>
+
 				</div>
 		</article>
 

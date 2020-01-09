@@ -92,11 +92,11 @@ if(isset($_POST['sorun'],$_POST['message'])){
 	Sorun = ?,
 	SorunKategoriId = ?");
 	$insert = $query->execute(array(
-		 $gonderenId, $message, $gonderenId
+		 $gonderenId, $message, $sorunId
 	));
-	if ( $insert ){
+    $last_id = $db->lastInsertId();
+    if ( $insert ){
 		$last_id = $db->lastInsertId();
-		print "insert işlemi başarılı!";
 }
 }
 

@@ -56,7 +56,8 @@ $username = $_SESSION["username"];
     <th>Hasta Adı Soyadı</th>
 	<th style="width:200px;">Git</th>
   </tr>
-             <?php
+            </form>
+                <?php
 
              include '../baglan.php';
              $id = $_SESSION['Id'];
@@ -67,10 +68,13 @@ $username = $_SESSION["username"];
                  {
                      echo '<tr>
                             <td>'.$gelenveri['Ad'].' '.$gelenveri['Soyad'].'</td>
-                            <td><a href="diyetisyenhastalari.php" class="button button-reversed">Git</a>
-                               <form method="post"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
+                            <td>
+                               <form method="post" action="hasta-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
+                               <input type="submit" name="git" class="button button-reversed" value="Git" />
+                               </form>
+                                <form method="post"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
                                <input type="submit" name="kaldir" class="button button-reversed" value="Kaldır" />
-</form>
+                               </form>
                             </td>
                           </tr>
                      ';
@@ -80,7 +84,7 @@ $username = $_SESSION["username"];
              ?>
 
 </table>
-			</form>	
+
 				</div>
 		</article>
 
@@ -115,6 +119,5 @@ if(isset($_POST['kaldir'])){
         $insert = $db -> exec("UPDATE hastabilgi SET DiyetisyenId=null, DiyetTabloId=null where KullaniciId='$uId'");
     }
 }
-
 
 ?>

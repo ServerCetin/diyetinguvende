@@ -125,11 +125,8 @@ VALUES ('$ad', '$soyad','$username','$sifre','$mail','$cinsiyet','$dogum','$Seci
             $ekle = $db ->exec("INSERT INTO hastabilgi (KullaniciId,Boy,Kilo,YagOrani) VALUES ('$kisiId','$deger','$deger','$deger')");
         }
     }
-    if($Secim==3 && $ekle){
-        header("Location: /index.php");
-    }
-    else if(!$Secim==3 && $ekle){
-        header("Location: /index.php");
+    if($Secim==3 && $ekle || !$Secim==3 && $ekle){
+        header("Location: /giris-yap.php");
     }
 }
 ?>

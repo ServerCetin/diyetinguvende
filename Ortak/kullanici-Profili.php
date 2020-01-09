@@ -21,6 +21,7 @@ ob_start();
 		<section id="body" class="width">
 		 <?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "../Menus/kullanici-menu.php";}
 		else if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "../Menus/diyetisyen-menu.php";}
+		else if ($_SESSION["kullaniciTur"] == "Yönetici"){include "../Menus/yonetici-menu.php";}
 		else {include "../Menus/koc-menu.php";}	?>
 
 			

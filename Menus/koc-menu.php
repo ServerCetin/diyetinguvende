@@ -20,7 +20,7 @@ echo '
 			<li><a href="/Koc/ogrenci-kaydet.php">Liste Güncelle</a></li>	
             <li><a href="/Koc/koc-mesajlari.php">Mesajlarim</a></li>
             <li ><a href="../Ortak/destek.php">Destek</a></li>
-			<li ><a href="../logout.php">Çıkış Yap</a></li>
+			<li ><a href="../cikis-yap.php">Çıkış Yap</a></li>
         </ul>
 	</nav>
 

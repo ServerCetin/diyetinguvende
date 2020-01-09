@@ -21,7 +21,7 @@ echo '
 			<li><a href="/Kullanici/eski-diyet.php">Diyetlerim</a></li>
 			<li><a href="/Kullanici/kul-mesajlari.php">Mesajlarim</a></li>
 			<li><a href="../Ortak/destek.php">Destek</a></li>
-			<li ><a href="../logout.php">Çıkış Yap</a></li>
+			<li ><a href="../cikis-yap.php">Çıkış Yap</a></li>
         </ul>
     </nav>
 

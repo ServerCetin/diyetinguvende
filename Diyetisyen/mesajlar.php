@@ -31,7 +31,7 @@ $username = $_SESSION["username"];
                     $karsi = $db->query("SELECT * FROM kullanici WHERE Id = $gonderilenId")->fetch(PDO::FETCH_ASSOC);
                     ?>
                     <legend><?php echo $karsi['KullaniciAdi']; ?> ile olan mesajlaşma</legend><br>
-                    <div class="mesajAlani" id="mesajAlani" style="background-color: #6e707d;width: 100%;height: 400px;overflow: scroll;">
+                    <div class="mesajAlani" id="mesajAlani" style="background-color: #ffffff;width: 100%;height: 500px;overflow: scroll;">
 
                         <?php
                         $query = $db->query("SELECT * FROM kullanicimesaj WHERE GonderenId= $gonderilenId OR AlanId= $gonderilenId", PDO::FETCH_ASSOC);
@@ -39,15 +39,15 @@ $username = $_SESSION["username"];
                             foreach( $query as $mesaj ){
                                 if($mesaj['AlanId']!=$id){
                                     print '
-                                        <div class="alanMesaj" style="background-color: #00b8d4;font-size: 24px;font-weight: bold;margin: 10px 15px">
-                                            <p style="padding: 5px 5px 5px 5px">Ben:'.$mesaj['Mesaj'].'</p>
+                                        <div align="right" class="speech-bubble" class="alanMesaj">
+                                            <p>Sen :'.$mesaj['Mesaj'].'</p>
                                         </div>
                                         ';
                                 }
                                 else{
                                     print '
-                                        <div class="karsiMesaj" style="background-color: #2b669a;font-size: 24px;font-weight: bold;margin: 10px 15px">
-                                            <p style="padding: 5px 5px 5px 5px">O:'.$mesaj['Mesaj'].'</p>
+                                        <div align="left"  class="speech-bubblee" class="karsiMesaj">
+                                            <p>O:'.$mesaj['Mesaj'].'</p>
                                         </div>
                                     ';
                                 }
@@ -62,7 +62,7 @@ $username = $_SESSION["username"];
                     <form method="get">
                         <input type="text" style="width: 70%" id="msg" name="msg"/>
                         <input type="hidden" value="<?php echo $karsi['Id'] ?>" name="kullaniciId">
-                        <input type="submit" onclick="mesajGonderildi()" value="Gönder">
+                        <input class="brk-btn" type="submit" onclick="mesajGonderildi()" value="Gönder">
                     </form>
                 </div>
 		</section>
@@ -79,7 +79,7 @@ $username = $_SESSION["username"];
        var alan = document.getElementById('mesajAlani');
        var mesaj = document.getElementById('msg');
        alan.innerHTML +=
-           "<div class=\"alanMesaj\" style=\"background-color: #00b8d4;font-size: 24px;font-weight: bold;margin: 10px 15px\">\n" +
+           "<div  class=\"alanMesaj\" style=\"background-color: #00b8d4;font-size: 24px;font-weight: bold;margin: 10px 15px\">\n" +
            "                                            <p style=\"padding: 5px 5px 5px 5px\">Ben: +mesaj+</p>\n" +
            "                                        </div>";
     }

@@ -48,7 +48,7 @@ $username = $_SESSION["username"];
                     ?>
                     </select>
 				<br>
-			<p><input type="submit" style="margin-left:80%;" name="kullaniciEkle" value="Ekle" >
+			<p><input class="brk-btn" type="submit" style="margin-left:80%;" name="kullaniciEkle" value="Ekle" >
 			<br><br>
 			<h4>Hastalarım</h4><br>
 				<table id="hastalistesi">

@@ -459,3 +459,104 @@ background-color:red
 
 
 }
+.underlined-a {
+  text-decoration: none;
+  color: forestgreen;
+  padding-bottom: 0.15em;
+  box-sizing: border-box;
+  box-shadow: inset 0 -0.2em 0 forestgreen;
+  transition: 0.2s;
+  &:hover {
+    color: #222;
+    box-shadow: inset 0 -2em 0 forestgreen;
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+}
+
+.brk-btn {
+  position: relative;
+  background: none;
+  color: forestgreen;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid forestgreen;
+  padding: 0.5em 1em;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
+}
+.speech-bubble {
+	position: relative;
+	background: #00aabb;
+	border-radius: .4em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 50;
+	height: 50;
+	border: 31px solid transparent;
+	border-left-color: #00aabb;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -15.5px;
+	margin-right: -31px;
+}
+.speech-bubblee {
+	position: relative;
+	background: #80ff80;
+	border-radius: .4em;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+.speech-bubblee :after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 50;
+	height: 50;
+	border: 31px solid transparent;
+	border-left-color: #80ff80;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -15.5px;
+	margin-right: -31px;
+}

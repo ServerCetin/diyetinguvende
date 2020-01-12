@@ -179,7 +179,7 @@ $username = $_SESSION["username"];
 
 
                         <br><br>
-                        <br><input type="submit" class="button buttonS" value="Güncelle" name="guncelle" style="margin-left:80%;">
+                        <br><input type="submit" class="brk-btn" value="Güncelle" name="guncelle" style="margin-left:80%;">
 
                 </form>
             </div>

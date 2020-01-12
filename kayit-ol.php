@@ -87,7 +87,7 @@ ob_start();
         <input type="submit" value="Kayıt Ol"  name="kayitol"><br><br>
 
 
-        <a href="giris.php" style="text-decoration: none; font-family: 'Play', sans-serif; color: yellow;">&nbsp;Giriş Yap</a>
+        <a href="giris-yap.php" style="text-decoration: none; font-family: 'Play', sans-serif; color: yellow;">&nbsp;Giriş Yap</a>
     </form>
 
 </div>

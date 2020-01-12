@@ -114,7 +114,7 @@ $username = $_SESSION["username"];
 
 
 <br><br>
-<br><input type="submit" class="button buttonS" value="Kaydet" style="margin-left:80%;">
+<br><input type="submit" class="brk-btn" value="Kaydet" style="margin-left:80%;">
 
 </form>
 	</div>

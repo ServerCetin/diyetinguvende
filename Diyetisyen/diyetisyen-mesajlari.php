@@ -26,10 +26,8 @@ $username = $_SESSION["username"];
 	    <article>
 			
 			<div class="beyaz" style="padding-top: 50px"  >
-
-				<h3>Form</h3>
 				<fieldset>
-                    <legend>Mesaj Gönder</legend>
+                    <legend>Mesaj Gönder</legend><br><br>
                     <table>
                         <th>
                             <th>Hastaya Mesaj</th>

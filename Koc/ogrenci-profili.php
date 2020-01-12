@@ -9,7 +9,7 @@ $username = $_SESSION["username"];
 <head>
 <meta charset="UTF-8">
 
-<title>Hasta Profili-Diyetin Güvende!</title>
+<title>Öğrenci Profili-Diyetin Güvende!</title>
 <link rel="stylesheet" href="../css/styles.css" type="text/css" />
 
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
@@ -18,7 +18,7 @@ $username = $_SESSION["username"];
 <body>
 
 		<section id="body" class="width">
-		<?php if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "../Menus/diyetisyen-menu.php";}?>
+		<?php if($_SESSION["kullaniciTur"] == "Spor Hocası"){include "../Menus/koc-menu.php";}?>
 
 
 			<section id="content" class="column-right">
@@ -43,18 +43,18 @@ $username = $_SESSION["username"];
                 <b>Kilosu:</b>'.$hasta['Kilo'].'<br>
                 <b>Yağ oranı:</b>'.$hasta['YagOrani'].'<br><br><br>
 
-                <a href="yeni-diyet-listesi.php"><b>Yeni Liste ekle</b></a><br>
+                <a href="yeni-spor-plani.php"><b>Yeni Liste ekle</b></a><br>
                 <b>Listesini değiştir</b>
                 <form method="post">
                     <select name="tabloId">
                     ';
-                    $diyetisyenId = $_SESSION['Id'];
-                    $listele = $db->query("SELECT * FROM diyettablosu where DiyetisyenId =$diyetisyenId", PDO::FETCH_ASSOC);
+                    $kocId = $_SESSION['Id'];
+                    $listele = $db->query("SELECT * FROM sportablosu where KocId =$kocId", PDO::FETCH_ASSOC);
                         if ( $listele->rowCount() ) //rawcountu 0 değilse
                         {
                             foreach( $listele as $gelenveri )
                             {
-                                if($gelenveri['Id'] ==$hasta['DiyetTabloId'])
+                                if($gelenveri['Id'] ==$hasta['SporTabloId'])
                                     echo '<option selected="selected" value="'.$gelenveri['Id'].'">'.$gelenveri['TabloAdi'].'</option>';
                                 else
                                     echo '<option value="'.$gelenveri['Id'].'">'.$gelenveri['TabloAdi'].'</option>';
@@ -69,7 +69,7 @@ $username = $_SESSION["username"];
 			</div>
 	</article>
 
-			<table></table>
+			
 		</section>
 		<div class="clear"></div>
 
@@ -82,7 +82,7 @@ $username = $_SESSION["username"];
 if(isset($_POST['tabloId'])){
     $tabloId = $_POST['tabloId'];
     $kId = $_POST['kullaniciIds'];
-    $insert = $db -> exec("UPDATE hastabilgi SET DiyetTabloId='$tabloId' where KullaniciId='$kId'");
+    $insert = $db -> exec("UPDATE hastabilgi SET SporTabloId='$tabloId' where KullaniciId='$kId'");
 }
 
 ?>

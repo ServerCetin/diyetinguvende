@@ -10,7 +10,7 @@ $username = $_SESSION["username"];
     <meta charset="UTF-8">
 
     <title>Diyet Listesi Oluştur-Diyetin Güvende!</title>
-    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
 
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 </head>

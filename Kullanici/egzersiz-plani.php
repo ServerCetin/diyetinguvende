@@ -26,84 +26,204 @@ $username = $_SESSION["username"];
                 		
 	    <article>
 <div class="beyaz" >
+			<fieldset><br>
+					<legend>Egzersiz Planım</legend><br><br>
+<?php
+
+    include '../baglan.php';
+    $id = $_SESSION['Id'];
+
+    $query = $db->query("SELECT * FROM hastabilgi WHERE KullaniciId ='{$id}'")->fetch(PDO::FETCH_ASSOC);
+    if ( $query ){
+        $sporTabloId = $query['SporTabloId'];
+    }
+    $query = $db->query("SELECT * FROM sportablosu WHERE Id ='{$sporTabloId}'")->fetch(PDO::FETCH_ASSOC);
+    if ( $query ){
+        $tabloAciklamasi = $query['TabloAciklamasi'];
+    }
+	if(isset($tabloAciklamasi)){
+    echo '<table>
+                <tr>
+                    <th>Bugunkü Listem<br></th>
+                    <th>Yarınki Listem</th>
+                </tr>';
+    if(date('l')=="Monday"){
+        $listele = $db->query("SELECT * FROM sportablosatir WHERE SporTabloId=$sporTabloId AND ProgramGunId = 1 OR ProgramGunId =2 ", PDO::FETCH_ASSOC);
+        if ( $listele->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+	if(date('l')=="Tuesday"){
+        $listele = $db->query("SELECT * FROM sportablosatir WHERE SporTabloId=$sporTabloId AND ProgramGunId = 2 OR ProgramGunId =3 ", PDO::FETCH_ASSOC);
+        if ( $listele->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+	if(date('l')=="Wednesday"){
+        $listele2 = $db->query("SELECT * FROM sportablosatir WHERE SporTabloId=$sporTabloId AND ProgramGunId = 3 OR ProgramGunId =4 ", PDO::FETCH_ASSOC);
+        if ( $listele2->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele2 as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+	if(date('l')=="Thursday"){
+        $listele3 = $db->query("SELECT * FROM sportablosatir WHERE SporTabloId=$sporTabloId AND ProgramGunId = 4 OR ProgramGunId =5 ", PDO::FETCH_ASSOC);
+        if ( $listele3->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele3 as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+    if(date('l')=="Friday"){
+        $listele4 = $db->query("SELECT * FROM sportablosatir WHERE SporTabloId=$sporTabloId AND ProgramGunId = 5 OR ProgramGunId =6 ", PDO::FETCH_ASSOC);
+        if ( $listele4->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele4 as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+    if(date('l')=="Saturday"){
+        $listele5 = $db->query("SELECT * FROM sportablosatir WHERE SporTabloId=$sporTabloId AND ProgramGunId = 6 OR ProgramGunId =7 ", PDO::FETCH_ASSOC);
+        if ( $listele5->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele5 as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+    if(date('l')=="Sunday"){
+        $listele6 = $db->query("SELECT * FROM sportablosatir WHERE SporTabloId=$sporTabloId AND ProgramGunId = 7 OR ProgramGunId =1 ", PDO::FETCH_ASSOC);
+        if ( $listele6->rowCount() )
+        {
+            $sayac = 0;
+            foreach( $listele6 as $gelenveri )
+            {
+                $sayac++;
+                if($sayac==1)
+                    echo "<tr>";
+                echo "<td>".$gelenveri['Aciklama']."</td>";
+                if($sayac==2){
+                    echo "</tr>";
+                    $sayac=0;
+                }
+            }
+        }
+    }
+	}
+	echo '</table>
+				<br>
+			<br>
+			<br>			<br>
+			<br>
+
 			
-		<h2>Spor Koçunuzun Notu:</h2>
-			<blockquote>
-						<p>
-						Barfixleri 5'er 5'er 5 dklik arayla, mekikleri de 50'ser 50'ser 5 dk arayla yapmalisin.
-						</p>
-			</blockquote>
-				<br>
-				<table>
-				
-				<tr>
-						<th>Hareketler</th>
-						<th>Bugünkü Sayı</th>
-						<th>Yarınki Sayı</th>
-		        </tr>
-				
-				
-				
-				<tr>
-			            <td>Barfix</td>
-						<td>20</td>
-						<td>17</td>  
-			    </tr>
-				<tr>
-			            <td>Mekik</td>
-						<td>200</td>
-						<td>120</td>  
-			    </tr>
-				</table>
-				<br>
-				<br>
-				
-			<h2>Mevcut Haftalık Spor Takip Listem</h2>
-				<table>
-					<tr>
-						<th>Hareketler</th>
-						<th>Pazartesi</th>
-						<th>Salı</th>
-						<th>Çarşamba</th>
-						<th>Perşembe</th>
-						<th>Cuma</th>
-						<th>Cumartesi</th>
-						<th>Pazar</th>
+			';
+			
+	if(isset($tabloAciklamasi)){
+    echo '<h4>Mevcut Haftalik Spor Listem</h4>';
 
-					</tr>
-					<tr>
-						<td>Barfix</td>
-						<td>20</td>
-						<td>17</td>
-						<td>15</td>
-						<td>30</td>
-						<td>5</td>
-						<td>-</td>
-						<td>12</td>
-					</tr>
-					<tr>
-						<td>Mekik</td>
-						<td>200</td>
-						<td>120</td>
-						<td>42</td>
-						<td>44</td>
-						<td>400</td>
-						<td>-</td>
-						<td>-</td>
-					</tr>
 
-	
-				</table>
-				<b>Ekle</b>
+    echo '<h5>Spor Koçunuzun Notu:</h5>'.' <blockquote>
+        <p>
+            '.$tabloAciklamasi.'
+        </p>
+    </blockquote>';
+
+    $listele = $db->query("SELECT * FROM sportablosatir WHERE SporTabloId=$sporTabloId", PDO::FETCH_ASSOC);
+    if ( $listele->rowCount() )
+    {
+        $sayac = 0;
+        echo '<table>';
+        echo '<th>Pazartesi</th>';
+        echo '<th>Salı</th>';
+        echo '<th>Çarşamba</th>';
+        echo '<th>Perşembe</th>';
+        echo '<th>Cuma</th>';
+        echo '<th>Cumartesi</th>';
+        echo '<th>Pazar</th>';
+        foreach( $listele as $gelenveri )
+        {
+            if($sayac==0){echo '<tr>';}
+            echo "<td style=\"width:50px;\">".$gelenveri['Aciklama']."</td>";
+            $sayac++;
+            if($sayac==7){echo '</tr>';$sayac=0;}
+        }
+        echo '</table>';
+    }
+    }
+	?>	
+			
+		
 				<p>&nbsp;</p>
-
-				</div>
-		</article>
-
-			
+        </fieldset>
+	    </div>
+	</article>
 			<footer class="clear">
-								<p>&copy; 2019 Diyetin Güvende.</p>
-
+				<p>&copy; 2019 Diyetin Güvende.</p>
 			</footer>
 
 		</section>

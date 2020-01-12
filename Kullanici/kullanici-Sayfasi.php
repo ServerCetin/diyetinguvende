@@ -24,13 +24,9 @@ ob_start();
 	    <article>
 <div class="beyaz" >
 
-
-
-			
-
-			
-
-
+<fieldset>
+<br>
+					<legend>Diyet Listem</legend><br><br>
 
     <?php
 
@@ -224,18 +220,17 @@ ob_start();
     }
     ?>
 
-				<p>&nbsp;</p>
-				
+			    <p>&nbsp;</p>
+			</fieldset>
 					
-			</div>
-		</article>
-
-			
+		</div>
+	</article>
+	
 			<footer class="clear">
 				<p>&copy; 2019 Diyetin G�vende.</p>
 			</footer>
 
-		</section>
+	</section>
 
 		<div class="clear"></div>
 

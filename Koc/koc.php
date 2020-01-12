@@ -65,9 +65,13 @@ ob_start();
                  {
                      echo '<tr>
                             <td>'.$gelenveri['Ad'].' '.$gelenveri['Soyad'].'</td>
-                            <td><a href="diyetisyenhastalari.php" class="button button-reversed">Git</a>
-                               <form method="post"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
-                               <input type="submit" name="kaldir" value="Kaldır"></form>
+                             <td>
+                               <form method="post" action="ogrenci-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
+                               <input type="submit" name="kaldir" class="button button-reversed" value="Kaldır" />
+                               </form>
+                                <form method="post" action="ogrenci-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
+                               <input type="submit" name="git" class="button button-reversed" value="Git" />
+                               </form>
                             </td>
                           </tr>
                      ';

@@ -23,8 +23,7 @@ $username = $_SESSION["username"];
 			<section id="content" class="column-right">
                 		
 	    <article>
-<div class="beyaz" >
-				
+<div class="beyaz" >		
 		
 			<h3>Form</h3>
 				<fieldset>
@@ -41,47 +40,35 @@ $username = $_SESSION["username"];
                         <input type="submit" name="diyetisyenSend" class="formbutton" value="Diyetisyene Mesaj" />
                     </form>
 
-                    <?php
+                      <?php
                     $id = $_SESSION["Id"];
                     $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
                     $listele = $db->query("SELECT * FROM kullanicimesaj where AlanId='{$id}'", PDO::FETCH_ASSOC);
                     if ( $listele->rowCount() )
                     {
+						echo '<table>
+                    <th>Mesaj<br></th>
+                    <th>Gönderen Kişi</th>';
                         foreach( $listele as $gelenveri )
                         {
-                            echo "Mesajı:".$gelenveri['Mesaj']." Atan:". $gelenveri['GonderenId']."<br />";
+							echo " <tr>";	
+                            echo "<td>Mesajı:".$gelenveri['Mesaj']."</td>"."<td>"." Atan:". $gelenveri['GonderenId']."</td>"."<br />";
+						    echo " </tr>";
                         }
+						echo '</table>';
                     }
                     ?>
-                    <table>
-                        <tr>
-                            <th>Gelen Mesajlar</th>
-                            <th>Kimden</th>
-
-                        </tr>
-                        <tr>
-                            <td>Örnek Gelen Mesaj 1</td>
-                            <td>Spor Koçu</td>
-
-                        </tr>
-                        <tr>
-                            <td>Örnek Gelen Mesaj 2 </td>
-                            <td>Diyetisyen</td>
-                            <td></td>
-                        </tr>
+                    <table>  
                     </table>
 
-                </fieldset></div>
-			</article>
-				<footer class="clear">
-								<p>&copy; 2019 Diyetin Güvende.</p>
-
+                </fieldset>
+</div>
+	    </article>
+			<footer class="clear">
+				<p>&copy; 2019 Diyetin Güvende.</p>
 			</footer>
-
 		</section>
-
 		<div class="clear"></div>
-
 	</section>
 	
 

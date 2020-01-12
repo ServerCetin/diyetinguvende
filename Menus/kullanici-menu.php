@@ -18,7 +18,6 @@ echo '
 			<li><font face="Oxygen" ><a href="../Ortak/kullanici-profili.php">'.$name.' '.$soyad.' <br>@'.$username.'</font></a></li>
 			<li class="selected-item" style="background-color:forestgreen"><a href="/Kullanici/kullanici-Sayfasi.php">Güncel Diyet Listem</a></li>
 			<li><a href="/Kullanici/egzersiz-plani.php">Egzersiz Planim</a></li>
-			<li><a href="/Kullanici/eski-diyet.php">Diyetlerim</a></li>
 			<li><a href="/Kullanici/kul-mesajlari.php">Mesajlarim</a></li>
 			<li><a href="../Ortak/destek.php">Destek</a></li>
 			<li ><a href="../cikis-yap.php">Çıkış Yap</a></li>

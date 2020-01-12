@@ -179,10 +179,9 @@ ob_start();
 			echo '</table>
 				<br>
 			<br>
-			<br>			<br>
+			<br><br>
 			<br>
 
-			
 			';
 
 
@@ -219,7 +218,6 @@ ob_start();
     }
     }
     ?>
-
 			    <p>&nbsp;</p>
 			</fieldset>
 					
@@ -227,7 +225,7 @@ ob_start();
 	</article>
 	
 			<footer class="clear">
-				<p>&copy; 2019 Diyetin G�vende.</p>
+				<p>&copy; 2019 Diyetin Guvende.</p>
 			</footer>
 
 	</section>

@@ -18,12 +18,12 @@ $username = $_SESSION["username"];
 <body>
 
 		<section id="body" class="width">
-		<?php if($_SESSION["kullaniciTur"] == "Spor Hocası"){include "../Menus/koc-menu.php";}?>
+		<?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "../Menus/kullanici-menu.php";}?>
 
 			
         <section id="content" class="column-right">
                 <div class="beyaz" style="padding-top: 50px"  >
-				<fieldset>
+				 <fieldset>
                     <legend>Mesajlar</legend><br><br>
                     <?php
                     include "../baglan.php";
@@ -32,8 +32,8 @@ $username = $_SESSION["username"];
                     $gonderilenId =  $_GET['kullaniciId'];
                     $karsi = $db->query("SELECT * FROM kullanici WHERE Id = $gonderilenId")->fetch(PDO::FETCH_ASSOC);
                     ?>
-                    <legend><?php echo $karsi['KullaniciAdi']; ?> ile olan mesajlaşma</legend><br>
-                    <div class="mesajAlani" id="mesajAlani" style="background-color: #fffff;width: 100%;height: 400px;overflow: scroll;">
+                    <h2><?php echo $karsi['KullaniciAdi']; ?> ile olan mesajlaşma</h2>
+                    <div class="mesajAlani" id="mesajAlani" style="background-color: #6e707d;width: 100%;height: 400px;overflow: scroll;">
 
                         <?php
                         $query = $db->query("SELECT * FROM kullanicimesaj WHERE GonderenId= $gonderilenId OR AlanId= $gonderilenId", PDO::FETCH_ASSOC);
@@ -41,15 +41,15 @@ $username = $_SESSION["username"];
                             foreach( $query as $mesaj ){
                                 if($mesaj['AlanId']!=$id){
                                     print '
-                                        <div align="right" class="speech-bubble" class="alanMesaj">
-                                            <p>Sen :'.$mesaj['Mesaj'].'</p>
+                                        <div class="alanMesaj" style="background-color: #00b8d4;font-size: 24px;font-weight: bold;margin: 10px 15px">
+                                            <p style="padding: 5px 5px 5px 5px">Ben:'.$mesaj['Mesaj'].'</p>
                                         </div>
                                         ';
                                 }
                                 else{
                                     print '
-                                        <div align="left"  class="speech-bubblee" class="karsiMesaj">
-                                            <p>O:'.$mesaj['Mesaj'].'</p>
+                                        <div class="karsiMesaj" style="background-color: #2b669a;font-size: 24px;font-weight: bold;margin: 10px 15px">
+                                            <p style="padding: 5px 5px 5px 5px">O:'.$mesaj['Mesaj'].'</p>
                                         </div>
                                     ';
                                 }
@@ -66,13 +66,11 @@ $username = $_SESSION["username"];
                         <input type="hidden" value="<?php echo $karsi['Id'] ?>" name="kullaniciId">
                         <input type="submit" onclick="mesajGonderildi()" value="Gönder">
                     </form>
-            </fieldset>  
-			</div>
+                </div>
 		</section>
 
 		<div class="clear"></div>
 
-                  
 	</section>
 	
 

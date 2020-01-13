@@ -47,7 +47,7 @@ else {include "../Menus/koc-menu.php";}	?>
                                 }
                             }
                             ?>
-                        </select>
+                        </select><br><br>
 						<p><label for="message">Mesajınız:</label>
 						<textarea cols="60" rows="11" name="message" id="message"></textarea><br /></p>
 						<p><input type="submit" name="send" class="formbutton" value="Gönder" /></p>

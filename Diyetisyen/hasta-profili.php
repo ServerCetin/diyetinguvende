@@ -36,15 +36,15 @@ $username = $_SESSION["username"];
                 $cinsiyet = $kullanici['CinsiyetId'] == 1 ? "Kadın" : "Erkek";
                 echo '
                 <h2>Hastanın bilgileri</h2><br><br><br>
-                <b>Adı ve Soyadı:</b>'.$kullanici['Ad'].' '.$kullanici['Soyad'].'<br>
-                <b>Kullanıcı Adı:</b>'.$kullanici['KullaniciAdi'].'<br>
-                <b>Cinsiyeti:</b>'.$cinsiyet.'<br><br><br>
-                <b>Boyu:</b>'.$hasta['Boy'].'<br>
-                <b>Kilosu:</b>'.$hasta['Kilo'].'<br>
-                <b>Yağ oranı:</b>'.$hasta['YagOrani'].'<br><br><br>
+                <b >Adı ve Soyadı:   </b>'.$kullanici['Ad'].' '.$kullanici['Soyad'].'<br>
+                <b>Kullanıcı Adı:   </b>'.$kullanici['KullaniciAdi'].'<br>
+                <b>Cinsiyeti:   </b>'.$cinsiyet.'<br><br>
+                <b>Boyu:   </b>'.$hasta['Boy'].'<br>
+                <b>Kilosu:   </b>'.$hasta['Kilo'].'<br>
+                <b>Yağ oranı:   </b>'.$hasta['YagOrani'].'<br><br><br>
 
-                <a href="yeni-diyet-listesi.php"><b>Yeni Liste ekle</b></a><br>
-                <b>Listesini değiştir</b>
+                <a href="yeni-diyet-listesi.php" class="button ButtonS"><b>Yeni Liste Oluştur</b></a><br><br><br>
+                <h4>Listesini değiştir</h4>
                 <form method="post">
                     <select name="tabloId">
                     ';

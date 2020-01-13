@@ -45,7 +45,7 @@ $username = $_SESSION["username"];
                             }
                             ?>
                         </select>
-                        <input  type="submit" value="Getir" name="getir">
+                        <input type="submit" value="Getir" name="getir">
                         <br><br><br><br>
                         <h5>Notunuzu Giriniz</h5>
 

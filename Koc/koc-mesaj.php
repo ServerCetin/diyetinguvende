@@ -23,8 +23,6 @@ $username = $_SESSION["username"];
 			
         <section id="content" class="column-right">
                 <div class="beyaz" style="padding-top: 50px"  >
-				<fieldset>
-                    <legend>Mesajlar</legend><br><br>
                     <?php
                     include "../baglan.php";
 
@@ -64,15 +62,13 @@ $username = $_SESSION["username"];
                     <form method="get">
                         <input type="text" style="width: 70%" id="msg" name="msg"/>
                         <input type="hidden" value="<?php echo $karsi['Id'] ?>" name="kullaniciId">
-                        <input class="brk-btn" type="submit" onclick="mesajGonderildi()" value="Gönder">
+                        <input type="submit" onclick="mesajGonderildi()" value="Gönder">
                     </form>
-            </fieldset>  
-			</div>
+                </div>
 		</section>
 
 		<div class="clear"></div>
 
-                  
 	</section>
 	
 

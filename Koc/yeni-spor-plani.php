@@ -26,9 +26,8 @@ $username = $_SESSION["username"];
 			
 			<div class="beyaz" style="padding-top: 50px"  >
 			<form action ="#" method="POST">	
-			 <fieldset>
-                    <legend>Yeni Spor Planı Oluştur</legend><br><br>
-				
+			
+			<h4>Yeni Spor Planı Oluştur</h4><br><br>		
 			Tablo adını giriniz: <input type="text" name="tabloAdi" /><br><br>
 			<h5>Notunuzu Giriniz</h5>
 			<blockquote>
@@ -112,7 +111,6 @@ $username = $_SESSION["username"];
 
 			</form>	
 				</div>
-				</fieldset>
 		</article>
 			
 

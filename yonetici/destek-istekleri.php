@@ -28,10 +28,10 @@ $username = $_SESSION["username"];
                 <h2>Destek talepleri</h2>
                 <table>
                     <tr>
-                        <td><b>Gönderen</b></td>
-                        <td><b>Sorun</b></td>
-                        <td><b>Sorun Kategorisi</b></td>
-                        <td><b>İşlem</b></td>
+                        <td>Gönderen</td>
+                        <td>Sorun</td>
+                        <td>Sorun Kategorisi</td>
+                        <td>Sil</td>
                     </tr>
                     <?php
                      include "../baglan.php";

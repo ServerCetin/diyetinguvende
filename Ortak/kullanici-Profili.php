@@ -26,9 +26,7 @@ ob_start();
 
 			
 			<section id="content" class="column-right">
-               
-				<fieldset>
-                    <legend>Bilgilerimi Güncelle</legend><br><br>
+                <fieldset>
                     <form action="#" method="POST">
                 <?php
                 if($_SESSION['kullaniciTur']=="Kullanici"){
@@ -77,7 +75,7 @@ ob_start();
 
 			
 			<footer class="clear">
-				<p>&copy; 2019 Diyetin Güvende.</p>
+				<p>&copy; 2019 Diyetin G�vende.</p>
 			</footer>
 
 		</section>

@@ -41,15 +41,15 @@ $username = $_SESSION["username"];
                             foreach( $query as $mesaj ){
                                 if($mesaj['AlanId']!=$id){
                                     print '
-                                        <div align="right" class="speech-bubble" class="alanMesaj">
-                                            <p>Sen :'.$mesaj['Mesaj'].'</p>
+                                        <div style="align-content:right;min-width:100px;width:30%;height:80px;" align="center" class="speech-bubble" class="alanMesaj" >
+                                            <br><p>Sen :'.$mesaj['Mesaj'].'</p>
                                         </div>
                                         ';
                                 }
                                 else{
                                     print '
-                                        <div align="left"  class="speech-bubblee" class="karsiMesaj">
-                                            <p>O:'.$mesaj['Mesaj'].'</p>
+                                        <div style="align-content:right;min-width:100px;width:30%;height:80px;" align="center" class="speech-bubble" class="alanMesaj" >
+                                            <br><p>Sen :'.$mesaj['Mesaj'].'</p>
                                         </div>
                                     ';
                                 }
@@ -64,7 +64,7 @@ $username = $_SESSION["username"];
                     <form method="get">
                         <input type="text" style="width: 70%" id="msg" name="msg"/>
                         <input type="hidden" value="<?php echo $karsi['Id'] ?>" name="kullaniciId">
-                        <input type="submit" onclick="mesajGonderildi()" value="Gönder">
+                        <input class="brk-btn" type="submit" onclick="mesajGonderildi()" value="Gönder">
                     </form>
             </fieldset>  
 			</div>

@@ -127,6 +127,19 @@ border:none;
     text-decoration: none;
     text-transform: uppercase;
 }
+fieldset form input.formbuttonn {
+border:none;
+    background-color: # 808080;
+    border-radius: 5px;
+    color: #black;
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 22px;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 h1 {
 	font-size:2.4em;
 }

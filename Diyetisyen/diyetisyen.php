@@ -8,7 +8,7 @@ $username = $_SESSION["username"];
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/css/styles.css" type="text/css" />
+<link rel="stylesheet" href="../css/styles.css" type="text/css" />
 <title>Hastalarım-Diyetin Güvende!</title>
 
 
@@ -54,7 +54,7 @@ $username = $_SESSION["username"];
 				<table id="hastalistesi">
   <tr>
     <th>Hasta Adı Soyadı</th>
-	<th style="width:200px;">Git</th>
+	<th style="width:250px;">Git</th>
   </tr>
             </form>
                 <?php
@@ -70,10 +70,10 @@ $username = $_SESSION["username"];
                             <td>'.$gelenveri['Ad'].' '.$gelenveri['Soyad'].'</td>
                             <td>
                                <form method="post" action="hasta-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
-                               <input type="submit" name="git" class="button button-reversed" value="Git" />
+                               <input type="submit" name="git" class="formbutton"value="Git" />
                                </form>
-                                <form method="post"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
-                               <input type="submit" name="kaldir" class="button button-reversed" value="Kaldır" />
+                               <form method="post"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
+                               <input type="submit" name="kaldir" class="formbuttonn" value="Kaldır" />
                                </form>
                             </td>
                           </tr>

@@ -57,7 +57,7 @@ ob_start();
                                         <td>
                                              <form method="GET" action="koc-mesaj.php">
                                                 <input type="hidden" value="'.$kId.'" name="kullaniciId">
-                                                <input type="submit" class="yesilbuton" value="Kullanıcıya Mesaj"> 
+                                                <input type="submit" class="formbutton" value="Kullanıcıya Mesaj"> 
                                              </form>
                                         </td>';
                                        if($diyetisyenVarMi) {
@@ -65,7 +65,7 @@ ob_start();
                                         <td>
                                             <form method="GET" action="mesajlar.php">
                                                 <input type="hidden" value="'.$diyetisyenId.'" name="kullaniciId">
-                                                <input type="submit" class="yesilbuton" value="Diyetisyene Mesaj"> 
+                                                <input type="submit" class="formbutton" value="Diyetisyene Mesaj"> 
                                             </form>
                                                 
                                         </td>';

@@ -126,7 +126,7 @@ VALUES ('$ad', '$soyad','$username','$sifre','$mail','$cinsiyet','$dogum','$Seci
         }
     }
     if($Secim==3 && $ekle || !$Secim==3 && $ekle){
-        header("Location: /giris-yap.php");
+        header("Location:../giris-yap.php");
     }
 }
 ?>

@@ -58,7 +58,7 @@ $username = $_SESSION["username"];
                                         <td>
                                              <form method="GET" action="mesajlar.php">
                                                 <input type="hidden" value="'.$kId.'" name="kullaniciId">
-                                                <input type="submit"  value="Kullanıcıya Mesaj"> 
+                                                <input type="submit" class="formbutton" value="Kullanıcıya Mesaj"> 
                                              </form>
                                         </td>';
                                        if($kocVarMi) {
@@ -66,7 +66,7 @@ $username = $_SESSION["username"];
                                         <td>
                                             <form method="GET" action="mesajlar.php">
                                                 <input type="hidden" value="'.$kocId.'" name="kullaniciId">
-                                                <input type="submit" value="Koça Mesaj"> 
+                                                <input type="submit" class="formbutton" value="Koça Mesaj"> 
                                             </form>
                                                 
                                         </td>';

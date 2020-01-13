@@ -59,13 +59,14 @@ $username = $_SESSION["username"];
 
                                 print'
                                 
-                                     <tr><td></td>';
+                                     <tr> <td>Seç</td>';
                                 if($diyetisyenVarMi){
                                     echo '
-                                        <td>
+                                       
+										<td>
                                              <form method="GET" action="kul-mesajlar.php">
                                                 <input type="hidden" value="'.$diyetisyenId.'" name="kullaniciId">
-                                                <input type="submit"  value="Diyetisyene Mesaj"> 
+                                                <input type="submit" class="formbutton" value="Diyetisyene Mesaj"> 
                                              </form>
                                         </td>';
                                 }
@@ -74,7 +75,7 @@ $username = $_SESSION["username"];
                                         <td>
                                             <form method="GET" action="kul-mesajlar.php">
                                                 <input type="hidden" value="'.$kocId.'" name="kullaniciId">
-                                                <input type="submit" value="Koça Mesaj"> 
+                                                <input type="submit" class="formbutton"value="Koça Mesaj"> 
                                             </form>
                                                 
                                         </td>';

@@ -46,7 +46,7 @@ ob_start();
                         }
                     }
                     ?></select>
-			<p><input type="submit" class="button buttonS" style="margin-left:28%;"name="kullaniciEkle" value="Ekle"/>
+			<p><input type="submit" class="brk-btn" style="margin-left:28%;"name="kullaniciEkle" value="Ekle"/>
 
 		
 			<h4>Öğrencilerim</h4><br>
@@ -67,10 +67,10 @@ ob_start();
                             <td>'.$gelenveri['Ad'].' '.$gelenveri['Soyad'].'</td>
                              <td>
                                <form method="post" action="ogrenci-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
-                               <input type="submit" name="kaldir" class="button button-reversed" value="Kaldır" />
+                               <input type="submit" name="kaldir" class="formbuttonn" value="Kaldır" />
                                </form>
                                 <form method="post" action="ogrenci-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
-                               <input type="submit" name="git" class="button button-reversed" value="Git" />
+                               <input type="submit" name="git" class="formbutton" value="Git" />
                                </form>
                             </td>
                           </tr>
@@ -80,45 +80,7 @@ ob_start();
 
              ?>
   
-  <tr>
-    <td>Gözde Çetinkaya</td>
-    <td>
-		<a href="#" class="button button-reversed">Git</a>
-		<a href="#" class="button">Kaldır</a>
-	</td>
-  </tr>
-  <tr>
-    <td>Semih Hatıl</td>
-   
-    <td>
-		<a href="#" class="button button-reversed">Git</a>
-		<a href="#" class="button">Kaldır</a></td>
-	</tr>
-  <tr>
-    <td>Server Çetin</td>
-    
-    <td>
-		<a href="#" class="button button-reversed">Git</a>
-		<a href="#" class="button">Kaldır</a>
-	</td>
-  </tr>
-  <tr>
-    <td>Arda Çekem</td>
-    
-    <td>
-		<a href="#" class="button button-reversed">Git</a>
-		<a href="#" class="button">Kaldır</a>
-	</td>
-  </tr>
-  <tr>
-    <td>Tolgahan Acar</td>
-    
-    <td>
-		<a href="#" class="button button-reversed">Git</a>
-		<a href="#" class="button">Kaldır</a>
-	</td>
-  </tr>
-  
+ 
 </table>
 </form>	
 </div>

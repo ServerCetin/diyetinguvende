@@ -38,7 +38,7 @@ $username = $_SESSION["username"];
                             {
                                 foreach( $listele as $gelenveri )
                                 {
-                                    echo '<option value="'.$gelenveri['Id'].'">'.$gelenveri['TabloAdi'].'</option>';
+                                    echo '<option value="'.$gelenveri['Id'].'">'.$gelenveri['TabloAdi'].' </option>';
                                 }
                             }
                             ?>

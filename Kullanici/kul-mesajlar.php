@@ -49,7 +49,7 @@ $username = $_SESSION["username"];
                                 }
                                 else{
                                     print '
-                                        <div style="align-content:left;min-width:100px;width:30%;height:80px;"  class="karsiMesaj" align="center" class="speech-bubble" >
+                                        <div style="align-content:left;min-width:100px;width:30%;height:80px;"  class="speech-bubblee" class="karsiMesaj" align="center" >
                                             <br><p>o:'.$mesaj['Mesaj'].'</p>
                                         </div>
 										

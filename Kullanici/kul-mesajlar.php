@@ -41,15 +41,15 @@ $username = $_SESSION["username"];
                             foreach( $query as $mesaj ){
                                 if($mesaj['AlanId']!=$id){
                                     print '
-                                        <div class="alanMesaj" style="background-color: #00b8d4;font-size: 24px;font-weight: bold;margin: 10px 15px">
-                                            <p style="padding: 5px 5px 5px 5px">Ben:'.$mesaj['Mesaj'].'</p>
+                                        <div align="right" class="speech-bubble" class="alanMesaj">
+                                            <p>Sen :'.$mesaj['Mesaj'].'</p>
                                         </div>
                                         ';
                                 }
                                 else{
                                     print '
-                                        <div class="karsiMesaj" style="background-color: #2b669a;font-size: 24px;font-weight: bold;margin: 10px 15px">
-                                            <p style="padding: 5px 5px 5px 5px">O:'.$mesaj['Mesaj'].'</p>
+                                        <div align="left"  class="speech-bubblee" class="karsiMesaj">
+                                            <p>O:'.$mesaj['Mesaj'].'</p>
                                         </div>
                                     ';
                                 }

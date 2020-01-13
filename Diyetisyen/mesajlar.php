@@ -10,7 +10,7 @@ $username = $_SESSION["username"];
 <meta charset="UTF-8">
 
 <title>Mesajlar-Diyetin Güvende!</title>
-<link rel="stylesheet" href="/css/styles.css" type="text/css" />
+<link rel="stylesheet" href="../css/styles.css" type="text/css" />
 
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 </head>
@@ -46,8 +46,8 @@ $username = $_SESSION["username"];
                                 }
                                 else{
                                     print '
-                                        <div style="align-content:right;min-width:100px;width:30%;height:80px;" align="center" class="speech-bubble" class="alanMesaj" >
-                                            <br><p>Sen :'.$mesaj['Mesaj'].'</p>
+                                        <div style="align-content:left;min-width:100px;width:30%;height:80px;" class="karsiMesaj" align="center" class="speech-bubble"  >
+                                            <br><p>O :'.$mesaj['Mesaj'].'</p>
                                         </div>
                                     ';
                                 }

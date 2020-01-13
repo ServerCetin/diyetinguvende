@@ -75,7 +75,7 @@ ob_start();
 
 			
 			<footer class="clear">
-				<p>&copy; 2019 Diyetin G�vende.</p>
+				<p>&copy; 2019 Diyetin Güvende.</p>
 			</footer>
 
 		</section>

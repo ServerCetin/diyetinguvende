@@ -39,15 +39,15 @@ $username = $_SESSION["username"];
                             foreach( $query as $mesaj ){
                                 if($mesaj['AlanId']!=$id){
                                     print '
-                                        <div style="align-content:right;min-width:100px;width:30%;height:80px;" align="center" class="speech-bubble" class="alanMesaj" >
+                                        <div style="align-content:right;min-width:100px;width:30%;height:80px;" class="speech-bubble" class="alanMesaj" align="center"  >
                                             <br><p>Sen :'.$mesaj['Mesaj'].'</p>
                                         </div>
                                         ';
                                 }
                                 else{
                                     print '
-                                        <div style="align-content:right;min-width:100px;width:30%;height:80px;" align="center" class="speech-bubble" class="alanMesaj" >
-                                            <br><p>Sen :'.$mesaj['Mesaj'].'</p>
+                                        <div style="align-content:left;min-width:100px;width:30%;height:80px;" class="karsiMesaj" align="center" class="speech-bubble">
+                                            <br><p>O :'.$mesaj['Mesaj'].'</p>
                                         </div>
                                     ';
                                 }
@@ -60,9 +60,9 @@ $username = $_SESSION["username"];
 
                     </div>
                     <form method="get">
-                        <input type="text" style="width: 70%" id="msg" name="msg"/>
+                        <input type="text" style="width: 70%" id="msg" name="msg1"/>
                         <input type="hidden" value="<?php echo $karsi['Id'] ?>" name="kullaniciId">
-                        <input type="submit" onclick="mesajGonderildi()" value="Gönder">
+                        <input type="submit" class="brk-btn" onclick="mesajGonderildi()" value="Gönder">
                     </form>
                 </div>
 		</section>
@@ -77,7 +77,7 @@ $username = $_SESSION["username"];
 <script>
     function mesajGonderildi() {
        var alan = document.getElementById('mesajAlani');
-       var mesaj = document.getElementById('msg');
+       var mesaj = document.getElementById('msg1');
        alan.innerHTML +=
            "<div class=\"alanMesaj\" style=\"background-color: #00b8d4;font-size: 24px;font-weight: bold;margin: 10px 15px\">\n" +
            "                                            <p style=\"padding: 5px 5px 5px 5px\">Ben: +mesaj+</p>\n" +
@@ -86,7 +86,7 @@ $username = $_SESSION["username"];
 </script>
 </html>
 <?php
-$msg = $_GET['msg'];
+$msg1 = $_GET['msg1'];
 $query = $db->prepare("INSERT INTO kullanicimesaj SET GonderenId = ?, AlanId = ?, Mesaj = ?,GonderilmeTarihi = ?");
-$insert = $query->execute(array($id, $gonderilenId,$msg, date("Y-m-d H:i:s")));
+$insert = $query->execute(array($id, $gonderilenId,$msg1, date("Y-m-d H:i:s")));
 ?>

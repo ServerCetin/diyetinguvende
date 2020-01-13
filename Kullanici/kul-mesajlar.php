@@ -1,3 +1,4 @@
+@@ -0,0 +1,94 @@
 <?php
 session_start();
 ob_start();
@@ -33,7 +34,7 @@ $username = $_SESSION["username"];
                     $karsi = $db->query("SELECT * FROM kullanici WHERE Id = $gonderilenId")->fetch(PDO::FETCH_ASSOC);
                     ?>
                     <h2><?php echo $karsi['KullaniciAdi']; ?> ile olan mesajlaşma</h2>
-                    <div class="mesajAlani" id="mesajAlani" style="background-color: #fffff;width: 100%;height: 400px;overflow: scroll;">
+                    <div class="mesajAlani" id="mesajAlani" style="background-color: #6e707d;width: 100%;height: 400px;overflow: scroll;">
 
                         <?php
                         $query = $db->query("SELECT * FROM kullanicimesaj WHERE GonderenId= $gonderilenId OR AlanId= $gonderilenId", PDO::FETCH_ASSOC);
@@ -41,15 +42,15 @@ $username = $_SESSION["username"];
                             foreach( $query as $mesaj ){
                                 if($mesaj['AlanId']!=$id){
                                     print '
-                                        <div style="align-content:right;min-width:100px;width:30%;height:80px;" align="center" class="speech-bubble" class="alanMesaj" >
-                                            <br><p>Sen :'.$mesaj['Mesaj'].'</p>
+                                        <div class="alanMesaj" style="background-color: #00b8d4;font-size: 24px;font-weight: bold;margin: 10px 15px">
+                                            <p style="padding: 5px 5px 5px 5px">Ben:'.$mesaj['Mesaj'].'</p>
                                         </div>
                                         ';
                                 }
                                 else{
                                     print '
-                                        <div style="align-content:right;min-width:100px;width:30%;height:80px;" align="center" class="speech-bubble" class="alanMesaj" >
-                                            <br><p>Sen :'.$mesaj['Mesaj'].'</p>
+                                        <div class="karsiMesaj" style="background-color: #2b669a;font-size: 24px;font-weight: bold;margin: 10px 15px">
+                                            <p style="padding: 5px 5px 5px 5px">O:'.$mesaj['Mesaj'].'</p>
                                         </div>
                                     ';
                                 }
@@ -64,7 +65,7 @@ $username = $_SESSION["username"];
                     <form method="get">
                         <input type="text" style="width: 70%" id="msg" name="msg"/>
                         <input type="hidden" value="<?php echo $karsi['Id'] ?>" name="kullaniciId">
-                        <input class="brk-btn" type="submit" onclick="mesajGonderildi()" value="Gönder">
+                        <input type="submit" onclick="mesajGonderildi()" value="Gönder">
                     </form>
                 </div>
 		</section>

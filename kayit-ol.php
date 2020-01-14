@@ -125,7 +125,7 @@ VALUES ('$ad', '$soyad','$username','$sifre','$mail','$cinsiyet','$dogum','$Seci
             echo $kisiId." ".$deger;
             $ekle = $db ->exec("INSERT INTO hastabilgi (KullaniciId,Boy,Kilo,YagOrani) VALUES ('$kisiId','$deger','$deger','$deger')");
         }
-        header("Location:../giris-yap.php");
+        header("Location: giris-yap.php");
     }
 }
 ?>

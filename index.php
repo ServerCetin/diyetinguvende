@@ -13,6 +13,6 @@ if(isset($_SESSION["kullaniciTur"])) {
         header("Location: Yonetici/destek-istekleri.php");
 }
 else
-    header("Location: /giris-yap.php");
+    header("Location: giris-yap.php");
 
 ?>

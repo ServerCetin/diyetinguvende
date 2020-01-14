@@ -3,7 +3,7 @@ session_start();
 ob_start();
 
 if(isset($_SESSION["kullaniciTur"]))
-    header("Location: /index.php");
+    header("Location: index.php");
 ?>
 <html>
 <head>
@@ -92,7 +92,7 @@ if(isset($_POST['username'],$_POST['password'])){
     }
 
     if($islem1['KullaniciTurId']==1 || $islem1['KullaniciTurId']== 2 || $islem1['KullaniciTurId']== 3 || $islem1['KullaniciTurId']==4){
-        header("Location: /index.php");
+        header("Location: index.php");
     }
 
 }

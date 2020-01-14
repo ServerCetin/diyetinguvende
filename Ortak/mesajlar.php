@@ -77,11 +77,10 @@ $username = $_SESSION["username"];
 <script>
     function mesajGonderildi() {
        var alan = document.getElementById('mesajAlani');
-       var mesaj = document.getElementById('msg');
        alan.innerHTML +=
-           "<div  class=\"alanMesaj\" style=\"background-color: #00b8d4;font-size: 24px;font-weight: bold;margin: 10px 15px\">\n" +
-           "                                            <p style=\"padding: 5px 5px 5px 5px\">Ben: +mesaj+</p>\n" +
-           "                                        </div>";
+           '<div style="margin-left: auto;margin-top: 15px;margin-right:30px;min-width:100px;width:30%;height:80px;" align="center" class="speech-bubble" class="alanMesaj" >\n' +
+           '                                            <br><p><?php echo $_GET['msg'] ?>></p>' +
+           '                                        </div>';
     }
 </script>
 </html>

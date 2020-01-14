@@ -58,23 +58,14 @@ body {
 </style>
 <div class="forget">
 
-<form>
+<form action="sifreyi-maile-at.php" method="post">
 
 <h2 align="center" style="color:#fff;">Şifremi Unuttum!</h2>
 <h5 style="font-size:14px; color:yellow;">Hesaba bağlı olan e-posta adresini giriniz.</h5>
-<input type="text" name="username" placeholder="E-Posta Adresini Giriniz" /><br /><br />
-<input type="button" value="Gönder" onclick="myFunction()"/><br /><br />
+<input type="text" name="email" placeholder="E-Posta Adresini Giriniz" /><br /><br />
+<input type="submit" value="Gönder" onclick="myFunction()"/><br /><br />
 <a href="index.php" style="text-decoration:none;">Giriş Sayfasına Geri Dön!</a><br /><br />
 
-<div id="msg">E-Posta adresine başarı ile gönderildi.</div>
-
-<script>
-function myFunction() {
-    var x = document.getElementById("msg");
-    x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
-</script>
 </form>
 </div>
 </body>

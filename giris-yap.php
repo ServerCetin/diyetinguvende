@@ -26,8 +26,8 @@ if(isset($_SESSION["kullaniciTur"]))
         <input type="password" name="password" placeholder="Şifre" /><br /><br />
         <input type="submit" value="Giriş Yap" name="girisyap"/><br /><br />
         <div id="container">
-            <a href="sifresifirla.html" style=" margin-right:0px; font-size:13px; font-family:Tahoma, Geneva, sans-serif;">Şifremi Sıfırla!</a>
-            <a href="sifremiunuttum.html" style=" margin-left:30px; font-size:13px; font-family:Tahoma, Geneva, sans-serif;">Şifremi Unuttum!</a>
+            <!-- <a href="sifre-sifirla.php" style=" margin-right:0px; font-size:13px; font-family:Tahoma, Geneva, sans-serif;">Şifremi Sıfırla!</a> -->
+            <a href="sifremi-unuttum.php" style=" margin-left:30px; font-size:13px; font-family:Tahoma, Geneva, sans-serif;">Şifremi Unuttum!</a>
         </div><br /><br />
         Hesabınız Yok Mu ?<a href="kayit-ol.php" style="font-family:'Play', sans-serif;">&nbsp;Kayıt Ol</a>
 

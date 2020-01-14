@@ -143,7 +143,6 @@ $insert = $query->execute(array(
 
 $lastId = $db->lastInsertId();
 
-
 $pzt1 = $_POST['pzt1'];
 $sali1 = $_POST['sali1'];
 $crs1 = $_POST['crs1'];

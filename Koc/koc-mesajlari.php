@@ -55,7 +55,7 @@ ob_start();
                                     <tr>
                                         <td>'.$kAdi.'</td>
                                         <td>
-                                             <form method="GET" action="koc-mesaj.php">
+                                             <form method="GET" action="../ortak/mesajlar.php">
                                                 <input type="hidden" value="'.$kId.'" name="kullaniciId">
                                                 <input type="submit" class="formbutton" value="Kullanıcıya Mesaj"> 
                                              </form>

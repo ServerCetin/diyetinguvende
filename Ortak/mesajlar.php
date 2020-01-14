@@ -34,7 +34,7 @@ $username = $_SESSION["username"];
                     <div class="mesajAlani" id="mesajAlani" style="background-color: #ffffff;width: 100%;height: 500px;overflow: scroll;">
 
                         <?php
-                        $query = $db->query("SELECT * FROM kullanicimesaj WHERE GonderenId= $gonderilenId OR AlanId= $gonderilenId", PDO::FETCH_ASSOC);
+                        $query = $db->query("SELECT * FROM kullanicimesaj WHERE GonderenId= $gonderilenId AND AlanId= $id OR GonderenId= $id AND AlanId= $gonderilenId", PDO::FETCH_ASSOC);
                         if ( $query->rowCount() ){
                             foreach( $query as $mesaj ){
                                 if($mesaj['AlanId']!=$id){

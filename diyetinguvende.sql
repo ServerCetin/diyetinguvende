@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 14, 2020 at 03:52 AM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.1.33
+-- Anamakine: 127.0.0.1
+-- Üretim Zamanı: 14 Oca 2020, 17:45:03
+-- Sunucu sürümü: 10.4.11-MariaDB
+-- PHP Sürümü: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `diyetinguvende`
+-- Veritabanı: `diyetinguvende`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cinsiyet`
+-- Tablo için tablo yapısı `cinsiyet`
 --
 
 CREATE TABLE `cinsiyet` (
@@ -34,7 +34,7 @@ CREATE TABLE `cinsiyet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `cinsiyet`
+-- Tablo döküm verisi `cinsiyet`
 --
 
 INSERT INTO `cinsiyet` (`Id`, `CinsiyetAd`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `cinsiyet` (`Id`, `CinsiyetAd`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `destek`
+-- Tablo için tablo yapısı `destek`
 --
 
 CREATE TABLE `destek` (
@@ -55,7 +55,7 @@ CREATE TABLE `destek` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `destek`
+-- Tablo döküm verisi `destek`
 --
 
 INSERT INTO `destek` (`Id`, `GonderenId`, `Sorun`, `SorunKategoriId`) VALUES
@@ -67,7 +67,7 @@ INSERT INTO `destek` (`Id`, `GonderenId`, `Sorun`, `SorunKategoriId`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `destekkategori`
+-- Tablo için tablo yapısı `destekkategori`
 --
 
 CREATE TABLE `destekkategori` (
@@ -76,7 +76,7 @@ CREATE TABLE `destekkategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `destekkategori`
+-- Tablo döküm verisi `destekkategori`
 --
 
 INSERT INTO `destekkategori` (`Id`, `Ad`) VALUES
@@ -87,7 +87,7 @@ INSERT INTO `destekkategori` (`Id`, `Ad`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `diyettablosatir`
+-- Tablo için tablo yapısı `diyettablosatir`
 --
 
 CREATE TABLE `diyettablosatir` (
@@ -99,7 +99,7 @@ CREATE TABLE `diyettablosatir` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `diyettablosatir`
+-- Tablo döküm verisi `diyettablosatir`
 --
 
 INSERT INTO `diyettablosatir` (`Id`, `ProgramGunId`, `DiyetTabloId`, `Aciklama`, `GunSira`) VALUES
@@ -186,12 +186,54 @@ INSERT INTO `diyettablosatir` (`Id`, `ProgramGunId`, `DiyetTabloId`, `Aciklama`,
 (249, 4, 11, '', 6),
 (250, 5, 11, '', 6),
 (251, 6, 11, '', 6),
-(252, 7, 11, '', 6);
+(252, 7, 11, '', 6),
+(253, 1, 12, 'Kahvaltı', 1),
+(254, 2, 12, 'Kahvaltı', 1),
+(255, 3, 12, 'kahvaltı', 1),
+(256, 4, 12, 'kahvaltı', 1),
+(257, 5, 12, 'kahvaltı', 1),
+(258, 6, 12, 'kahvaltı', 1),
+(259, 7, 12, 'kahvaltı', 1),
+(260, 1, 12, 'ara öğün', 2),
+(261, 2, 12, 'ara öğün', 2),
+(262, 3, 12, 'ara öğün', 2),
+(263, 4, 12, 'ara öğün', 2),
+(264, 5, 12, 'ara öğün', 2),
+(265, 6, 12, 'ara öğün', 2),
+(266, 7, 12, 'ara öğün', 2),
+(267, 1, 12, 'Öğle Yemeği', 3),
+(268, 2, 12, 'Öğle Yemeği', 3),
+(269, 3, 12, 'Öğle Yemeği', 3),
+(270, 4, 12, 'Öğle Yemeği', 3),
+(271, 5, 12, 'Öğle Yemeği', 3),
+(272, 6, 12, 'Öğle Yemeği', 3),
+(273, 7, 12, 'Öğle Yemeği', 3),
+(274, 1, 12, 'ara öğün', 4),
+(275, 2, 12, 'ara öğün', 4),
+(276, 3, 12, 'ara öğün', 4),
+(277, 4, 12, 'ara öğün', 4),
+(278, 5, 12, 'ara öğün', 4),
+(279, 6, 12, 'ara öğün', 4),
+(280, 7, 12, 'ara öğün', 4),
+(281, 1, 12, 'Akşam Yemeği', 5),
+(282, 2, 12, 'Akşam Yemeği', 5),
+(283, 3, 12, 'Akşam Yemeği', 5),
+(284, 4, 12, 'Akşam Yemeği', 5),
+(285, 5, 12, 'Akşam Yemeği', 5),
+(286, 6, 12, 'Akşam Yemeği', 5),
+(287, 7, 12, 'Akşam Yemeği', 5),
+(288, 1, 12, 'ara öğün', 6),
+(289, 2, 12, 'ara öğün', 6),
+(290, 3, 12, 'ara öğün', 6),
+(291, 4, 12, 'ara öğün', 6),
+(292, 5, 12, 'ara öğün', 6),
+(293, 6, 12, 'ara öğün', 6),
+(294, 7, 12, 'ara öğün', 6);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `diyettablosu`
+-- Tablo için tablo yapısı `diyettablosu`
 --
 
 CREATE TABLE `diyettablosu` (
@@ -203,17 +245,18 @@ CREATE TABLE `diyettablosu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `diyettablosu`
+-- Tablo döküm verisi `diyettablosu`
 --
 
 INSERT INTO `diyettablosu` (`Id`, `TabloAdi`, `TabloAciklamasi`, `DiyetisyenId`, `TabloTarih`) VALUES
 (10, 'Ölüm', 'üç nokta', 3, '2020-01-09'),
-(11, 'Öldürmeyen', 'gğncellencek bir tablo örneği', 3, '2020-01-09');
+(11, 'Öldürmeyen', 'gğncellencek bir tablo örneği', 3, '2020-01-09'),
+(12, 'Diyet Tablosu 2', 'Diyetinize uyun lütfen.', 3, '2020-01-14');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hastabilgi`
+-- Tablo için tablo yapısı `hastabilgi`
 --
 
 CREATE TABLE `hastabilgi` (
@@ -229,12 +272,12 @@ CREATE TABLE `hastabilgi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `hastabilgi`
+-- Tablo döküm verisi `hastabilgi`
 --
 
 INSERT INTO `hastabilgi` (`Id`, `KullaniciId`, `Boy`, `Kilo`, `YagOrani`, `DiyetisyenId`, `DiyetTabloId`, `SporTabloId`, `KocId`) VALUES
 (7, 36, 0, 50, 0, 3, 10, 1, 5),
-(8, 37, 0, 12, 0, 3, 10, NULL, NULL),
+(8, 37, 2, 55, 17, 3, 12, 5, 5),
 (9, 38, 0, 0, 0, NULL, NULL, NULL, NULL),
 (10, 39, 0, 0, 0, NULL, NULL, NULL, NULL),
 (11, 40, 0, 0, 0, NULL, NULL, NULL, NULL);
@@ -242,7 +285,7 @@ INSERT INTO `hastabilgi` (`Id`, `KullaniciId`, `Boy`, `Kilo`, `YagOrani`, `Diyet
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kullanici`
+-- Tablo için tablo yapısı `kullanici`
 --
 
 CREATE TABLE `kullanici` (
@@ -259,7 +302,7 @@ CREATE TABLE `kullanici` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `kullanici`
+-- Tablo döküm verisi `kullanici`
 --
 
 INSERT INTO `kullanici` (`Id`, `CinsiyetId`, `Ad`, `Soyad`, `DogumTarih`, `KullaniciAdi`, `Email`, `TelefonNo`, `Sifre`, `KullaniciTurId`) VALUES
@@ -272,12 +315,13 @@ INSERT INTO `kullanici` (`Id`, `CinsiyetId`, `Ad`, `Soyad`, `DogumTarih`, `Kulla
 (40, 2, 'Server', 'Çetin', '2020-01-01', 'admin2', 'admin2@dg.com', '2222223', '1234', 3),
 (41, 1, 'Selver', 'Çetin', '2019-12-31', 'server44', 'admisn@dg.com', '1', '123', 1),
 (42, 2, '1', '2', '2020-01-01', '222server', '2@gail.com', '22222233', '2123', 2),
-(43, 2, 'Kamil', 'Çetin', '2020-01-01', 'kamil', 'kamilcetin@gmail.com', '22222232', '123', 1);
+(43, 2, 'Kamil', 'Çetin', '2020-01-01', 'kamil', 'kamilcetin@gmail.com', '22222232', '123', 1),
+(44, 1, 'aa', 'aa', '2020-01-02', 'aa', 'asa@', '435345', 'aa', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kullanicimesaj`
+-- Tablo için tablo yapısı `kullanicimesaj`
 --
 
 CREATE TABLE `kullanicimesaj` (
@@ -289,18 +333,19 @@ CREATE TABLE `kullanicimesaj` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `kullanicimesaj`
+-- Tablo döküm verisi `kullanicimesaj`
 --
 
 INSERT INTO `kullanicimesaj` (`Id`, `GonderenId`, `AlanId`, `Mesaj`, `GonderilmeTarihi`) VALUES
 (57, 36, 3, 'Merhaba Server!', '2020-01-14 01:24:56'),
 (58, 3, 36, 'Merhaba Arda!', '2020-01-14 01:25:24'),
-(59, 5, 3, 'Selam!', '2020-01-14 02:39:15');
+(59, 5, 3, 'Selam!', '2020-01-14 02:39:15'),
+(60, 5, 37, 'Merhaba Gözde', '2020-01-14 17:39:16');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kullanicitur`
+-- Tablo için tablo yapısı `kullanicitur`
 --
 
 CREATE TABLE `kullanicitur` (
@@ -309,7 +354,7 @@ CREATE TABLE `kullanicitur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `kullanicitur`
+-- Tablo döküm verisi `kullanicitur`
 --
 
 INSERT INTO `kullanicitur` (`Id`, `TurAd`) VALUES
@@ -321,7 +366,7 @@ INSERT INTO `kullanicitur` (`Id`, `TurAd`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `programgun`
+-- Tablo için tablo yapısı `programgun`
 --
 
 CREATE TABLE `programgun` (
@@ -330,7 +375,7 @@ CREATE TABLE `programgun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `programgun`
+-- Tablo döküm verisi `programgun`
 --
 
 INSERT INTO `programgun` (`Id`, `Gun`) VALUES
@@ -345,7 +390,7 @@ INSERT INTO `programgun` (`Id`, `Gun`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sportablosatir`
+-- Tablo için tablo yapısı `sportablosatir`
 --
 
 CREATE TABLE `sportablosatir` (
@@ -357,7 +402,7 @@ CREATE TABLE `sportablosatir` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `sportablosatir`
+-- Tablo döküm verisi `sportablosatir`
 --
 
 INSERT INTO `sportablosatir` (`Id`, `ProgramGunId`, `SporTabloId`, `Aciklama`, `gunsira`) VALUES
@@ -458,12 +503,54 @@ INSERT INTO `sportablosatir` (`Id`, `ProgramGunId`, `SporTabloId`, `Aciklama`, `
 (95, 4, 4, '', 6),
 (96, 5, 4, 'sc', 6),
 (97, 6, 4, 'ca', 6),
-(98, 7, 4, '', 6);
+(98, 7, 4, '', 6),
+(99, 1, 5, '50 Barfix', 1),
+(100, 2, 5, '50 Barfix', 1),
+(101, 3, 5, '20 Barfix', 1),
+(102, 4, 5, '10 Barfix', 1),
+(103, 5, 5, '50 Barfix', 1),
+(104, 6, 5, '20 Barfix', 1),
+(105, 7, 5, '40 Barfix', 1),
+(106, 1, 5, '15 Mekik', 2),
+(107, 2, 5, '15 Mekik', 2),
+(108, 3, 5, '30 Mekik', 2),
+(109, 4, 5, '55 Mekik', 2),
+(110, 5, 5, '15 Mekik', 2),
+(111, 6, 5, '25 Mekik', 2),
+(112, 7, 5, '15 Mekik', 2),
+(113, 1, 5, '', 3),
+(114, 2, 5, '', 3),
+(115, 3, 5, '', 3),
+(116, 4, 5, '', 3),
+(117, 5, 5, '', 3),
+(118, 6, 5, '', 3),
+(119, 7, 5, '', 3),
+(120, 1, 5, '', 4),
+(121, 2, 5, '', 4),
+(122, 3, 5, '', 4),
+(123, 4, 5, '', 4),
+(124, 5, 5, '', 4),
+(125, 6, 5, '', 4),
+(126, 7, 5, '', 4),
+(127, 1, 5, '', 5),
+(128, 2, 5, '', 5),
+(129, 3, 5, '', 5),
+(130, 4, 5, '', 5),
+(131, 5, 5, '', 5),
+(132, 6, 5, '', 5),
+(133, 7, 5, '', 5),
+(134, 1, 5, '', 6),
+(135, 2, 5, '', 6),
+(136, 3, 5, '', 6),
+(137, 4, 5, '', 6),
+(138, 5, 5, '', 6),
+(139, 6, 5, '', 6),
+(140, 7, 5, '', 6);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sportablosu`
+-- Tablo için tablo yapısı `sportablosu`
 --
 
 CREATE TABLE `sportablosu` (
@@ -475,27 +562,28 @@ CREATE TABLE `sportablosu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
 
 --
--- Dumping data for table `sportablosu`
+-- Tablo döküm verisi `sportablosu`
 --
 
 INSERT INTO `sportablosu` (`Id`, `TabloAdi`, `TabloAciklamasi`, `KocId`, `TabloTarih`) VALUES
 (1, 'Spor table', 'acsada', 5, '2019-12-03'),
 (2, 'Fit planım', 'mükemmel bir plan', 5, '2020-01-14'),
 (3, 'Düzgün plan', 'sdasdasdda', 5, '2020-01-14'),
-(4, 'Ölüm v2', 'php öldürür', 5, '2020-01-14');
+(4, 'Ölüm v2', 'php öldürür', 5, '2020-01-14'),
+(5, 'Egzersiz Tablosu', 'Egzersizlerinizi düzgün yapınız', 5, '2020-01-14');
 
 --
--- Indexes for dumped tables
+-- Dökümü yapılmış tablolar için indeksler
 --
 
 --
--- Indexes for table `cinsiyet`
+-- Tablo için indeksler `cinsiyet`
 --
 ALTER TABLE `cinsiyet`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `destek`
+-- Tablo için indeksler `destek`
 --
 ALTER TABLE `destek`
   ADD PRIMARY KEY (`Id`),
@@ -503,13 +591,13 @@ ALTER TABLE `destek`
   ADD KEY `FK_Destek2` (`SorunKategoriId`);
 
 --
--- Indexes for table `destekkategori`
+-- Tablo için indeksler `destekkategori`
 --
 ALTER TABLE `destekkategori`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `diyettablosatir`
+-- Tablo için indeksler `diyettablosatir`
 --
 ALTER TABLE `diyettablosatir`
   ADD PRIMARY KEY (`Id`),
@@ -517,14 +605,14 @@ ALTER TABLE `diyettablosatir`
   ADD KEY `FK_DiyetTabloSatir2` (`DiyetTabloId`);
 
 --
--- Indexes for table `diyettablosu`
+-- Tablo için indeksler `diyettablosu`
 --
 ALTER TABLE `diyettablosu`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `FK_DiyetTablosu` (`DiyetisyenId`);
 
 --
--- Indexes for table `hastabilgi`
+-- Tablo için indeksler `hastabilgi`
 --
 ALTER TABLE `hastabilgi`
   ADD PRIMARY KEY (`Id`),
@@ -535,7 +623,7 @@ ALTER TABLE `hastabilgi`
   ADD KEY `FK_HastaBilgi5` (`SporTabloId`);
 
 --
--- Indexes for table `kullanici`
+-- Tablo için indeksler `kullanici`
 --
 ALTER TABLE `kullanici`
   ADD PRIMARY KEY (`Id`),
@@ -546,7 +634,7 @@ ALTER TABLE `kullanici`
   ADD KEY `FK_Kullanici2` (`KullaniciTurId`);
 
 --
--- Indexes for table `kullanicimesaj`
+-- Tablo için indeksler `kullanicimesaj`
 --
 ALTER TABLE `kullanicimesaj`
   ADD PRIMARY KEY (`Id`),
@@ -554,19 +642,19 @@ ALTER TABLE `kullanicimesaj`
   ADD KEY `F_UserMessage2` (`AlanId`);
 
 --
--- Indexes for table `kullanicitur`
+-- Tablo için indeksler `kullanicitur`
 --
 ALTER TABLE `kullanicitur`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `programgun`
+-- Tablo için indeksler `programgun`
 --
 ALTER TABLE `programgun`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `sportablosatir`
+-- Tablo için indeksler `sportablosatir`
 --
 ALTER TABLE `sportablosatir`
   ADD PRIMARY KEY (`Id`),
@@ -574,114 +662,114 @@ ALTER TABLE `sportablosatir`
   ADD KEY `FK_SporTabloSatir2` (`SporTabloId`);
 
 --
--- Indexes for table `sportablosu`
+-- Tablo için indeksler `sportablosu`
 --
 ALTER TABLE `sportablosu`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `FK_SporTablosu` (`KocId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
 --
 
 --
--- AUTO_INCREMENT for table `cinsiyet`
+-- Tablo için AUTO_INCREMENT değeri `cinsiyet`
 --
 ALTER TABLE `cinsiyet`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `destek`
+-- Tablo için AUTO_INCREMENT değeri `destek`
 --
 ALTER TABLE `destek`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `destekkategori`
+-- Tablo için AUTO_INCREMENT değeri `destekkategori`
 --
 ALTER TABLE `destekkategori`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `diyettablosatir`
+-- Tablo için AUTO_INCREMENT değeri `diyettablosatir`
 --
 ALTER TABLE `diyettablosatir`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=295;
 
 --
--- AUTO_INCREMENT for table `diyettablosu`
+-- Tablo için AUTO_INCREMENT değeri `diyettablosu`
 --
 ALTER TABLE `diyettablosu`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `hastabilgi`
+-- Tablo için AUTO_INCREMENT değeri `hastabilgi`
 --
 ALTER TABLE `hastabilgi`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `kullanici`
+-- Tablo için AUTO_INCREMENT değeri `kullanici`
 --
 ALTER TABLE `kullanici`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT for table `kullanicimesaj`
+-- Tablo için AUTO_INCREMENT değeri `kullanicimesaj`
 --
 ALTER TABLE `kullanicimesaj`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
--- AUTO_INCREMENT for table `kullanicitur`
+-- Tablo için AUTO_INCREMENT değeri `kullanicitur`
 --
 ALTER TABLE `kullanicitur`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `programgun`
+-- Tablo için AUTO_INCREMENT değeri `programgun`
 --
 ALTER TABLE `programgun`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `sportablosatir`
+-- Tablo için AUTO_INCREMENT değeri `sportablosatir`
 --
 ALTER TABLE `sportablosatir`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
--- AUTO_INCREMENT for table `sportablosu`
+-- Tablo için AUTO_INCREMENT değeri `sportablosu`
 --
 ALTER TABLE `sportablosu`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Constraints for dumped tables
+-- Dökümü yapılmış tablolar için kısıtlamalar
 --
 
 --
--- Constraints for table `destek`
+-- Tablo kısıtlamaları `destek`
 --
 ALTER TABLE `destek`
   ADD CONSTRAINT `FK_Destek` FOREIGN KEY (`GonderenId`) REFERENCES `kullanici` (`Id`),
   ADD CONSTRAINT `FK_Destek2` FOREIGN KEY (`SorunKategoriId`) REFERENCES `destekkategori` (`Id`);
 
 --
--- Constraints for table `diyettablosatir`
+-- Tablo kısıtlamaları `diyettablosatir`
 --
 ALTER TABLE `diyettablosatir`
   ADD CONSTRAINT `FK_DiyetTabloSatir` FOREIGN KEY (`ProgramGunId`) REFERENCES `programgun` (`Id`),
   ADD CONSTRAINT `FK_DiyetTabloSatir2` FOREIGN KEY (`DiyetTabloId`) REFERENCES `diyettablosu` (`Id`);
 
 --
--- Constraints for table `diyettablosu`
+-- Tablo kısıtlamaları `diyettablosu`
 --
 ALTER TABLE `diyettablosu`
   ADD CONSTRAINT `FK_DiyetTablosu` FOREIGN KEY (`DiyetisyenId`) REFERENCES `kullanici` (`Id`);
 
 --
--- Constraints for table `hastabilgi`
+-- Tablo kısıtlamaları `hastabilgi`
 --
 ALTER TABLE `hastabilgi`
   ADD CONSTRAINT `FK_HastaBilgi` FOREIGN KEY (`KullaniciId`) REFERENCES `kullanici` (`Id`),
@@ -691,28 +779,28 @@ ALTER TABLE `hastabilgi`
   ADD CONSTRAINT `FK_HastaBilgi5` FOREIGN KEY (`SporTabloId`) REFERENCES `sportablosu` (`Id`);
 
 --
--- Constraints for table `kullanici`
+-- Tablo kısıtlamaları `kullanici`
 --
 ALTER TABLE `kullanici`
   ADD CONSTRAINT `FK_Kullanici` FOREIGN KEY (`CinsiyetId`) REFERENCES `cinsiyet` (`Id`),
   ADD CONSTRAINT `FK_Kullanici2` FOREIGN KEY (`KullaniciTurId`) REFERENCES `kullanicitur` (`Id`);
 
 --
--- Constraints for table `kullanicimesaj`
+-- Tablo kısıtlamaları `kullanicimesaj`
 --
 ALTER TABLE `kullanicimesaj`
   ADD CONSTRAINT `F_UserMessage` FOREIGN KEY (`GonderenId`) REFERENCES `kullanici` (`Id`),
   ADD CONSTRAINT `F_UserMessage2` FOREIGN KEY (`AlanId`) REFERENCES `kullanici` (`Id`);
 
 --
--- Constraints for table `sportablosatir`
+-- Tablo kısıtlamaları `sportablosatir`
 --
 ALTER TABLE `sportablosatir`
   ADD CONSTRAINT `FK_SporTabloSatir` FOREIGN KEY (`ProgramGunId`) REFERENCES `programgun` (`Id`),
   ADD CONSTRAINT `FK_SporTabloSatir2` FOREIGN KEY (`SporTabloId`) REFERENCES `sportablosu` (`Id`);
 
 --
--- Constraints for table `sportablosu`
+-- Tablo kısıtlamaları `sportablosu`
 --
 ALTER TABLE `sportablosu`
   ADD CONSTRAINT `FK_SporTablosu` FOREIGN KEY (`KocId`) REFERENCES `kullanici` (`Id`);

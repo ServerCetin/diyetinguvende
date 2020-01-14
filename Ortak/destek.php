@@ -11,7 +11,7 @@ $username = $_SESSION["username"];
 <html>
 <head>
 <meta charset="UTF-8">
-
+<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
 <title>Diyetin Güvende!</title>
 <link rel="stylesheet" href="/css/styles.css" type="text/css" />
 
@@ -21,9 +21,7 @@ $username = $_SESSION["username"];
 <body>
 
 		<section id="body" class="width">
-            <?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "../Menus/kullanici-menu.php";}
-		else if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "../Menus/diyetisyen-menu.php";}
-else {include "../Menus/koc-menu.php";}	?>
+            <?php include "../Ortak/get-menu.php"?>
 			<section id="content" class="column-right">
                 		
 	    <article>
@@ -37,7 +35,7 @@ else {include "../Menus/koc-menu.php";}	?>
                         Sorunun Kategorisi:
                         <select name="sorun">
                             <?php
-                            $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+                            include "../baglan.php";
                             $listele = $db->query("SELECT * FROM destekkategori", PDO::FETCH_ASSOC);
                             if ( $listele->rowCount() )
                             {

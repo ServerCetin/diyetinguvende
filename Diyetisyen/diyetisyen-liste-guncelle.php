@@ -8,7 +8,7 @@ $username = $_SESSION["username"];
 <html>
 <head>
     <meta charset="UTF-8">
-
+    <link rel="shortcut icon" type="image/png" href="../favicon.png"/>
     <title>Diyet Listesi Oluştur-Diyetin Güvende!</title>
     <link rel="stylesheet" href="../css/styles.css" type="text/css" />
 
@@ -18,7 +18,7 @@ $username = $_SESSION["username"];
 <body>
 
 <section id="body" class="width">
-    <?php if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "../Menus/diyetisyen-menu.php";}?>
+    <?php include "../Ortak/get-menu.php"?>
 
 
     <section id="content" class="column-right">

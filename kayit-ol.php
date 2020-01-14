@@ -7,6 +7,7 @@ ob_start();
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Kayit ol</title>
     <link rel="stylesheet" href="./logincss/kayit-ol.css"  type="text/css" />
+	<link rel="shortcut icon" type="image/png" href="favicon.png"/>
     <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
     <style>
         #msg {

@@ -8,7 +8,7 @@ $username = $_SESSION["username"];
 <html>
 <head>
     <meta charset="UTF-8">
-
+    <link rel="shortcut icon" type="image/png" href="../favicon.png"/>
     <title>Mesajlar-Diyetin Güvende!</title>
     <link rel="stylesheet" href="/css/styles.css" type="text/css" />
 
@@ -18,7 +18,7 @@ $username = $_SESSION["username"];
 <body>
 
 <section id="body" class="width">
-    <?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "../Menus/kullanici-menu.php";}?>
+    <?php include "../Ortak/get-menu.php"?>
 
 
     <section id="content" class="column-right">
@@ -64,7 +64,7 @@ $username = $_SESSION["username"];
                                     echo '
                                        
 										<td>
-                                             <form method="GET" action="../ortak/mesajlar.php">
+                                             <form method="GET" action="../Ortak/mesajlar.php">
                                                 <input type="hidden" value="'.$diyetisyenId.'" name="kullaniciId">
                                                 <input type="submit" class="formbutton" value="Diyetisyene Mesaj"> 
                                              </form>
@@ -73,7 +73,7 @@ $username = $_SESSION["username"];
                                 if($kocVarMi) {
                                     print '
                                         <td>
-                                            <form method="GET" action="../ortak/mesajlar.php">
+                                            <form method="GET" action="../Ortak/mesajlar.php">
                                                 <input type="hidden" value="'.$kocId.'" name="kullaniciId">
                                                 <input type="submit" class="formbutton"value="Koça Mesaj"> 
                                             </form>

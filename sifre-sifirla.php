@@ -2,6 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Şifremi Sıfırla</title>
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
 <link rel="stylesheet"  href="css/sifre-sifirla.css" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
     <style>

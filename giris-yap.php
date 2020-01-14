@@ -9,6 +9,7 @@ if(isset($_SESSION["kullaniciTur"]))
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Giriş Yap</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
     <link href="./logincss/giris.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 </head>

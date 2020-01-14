@@ -10,7 +10,7 @@ $username = $_SESSION["username"];
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/css/styles.css" type="text/css" />
 <title>Hastalarım-Diyetin Güvende!</title>
-
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 </head>

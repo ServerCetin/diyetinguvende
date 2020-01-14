@@ -8,7 +8,7 @@ ob_start();
 <html>
 
 <head>
-
+<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
 <meta charset="UTF-8">
 <title>Diyetin Güvende!</title>
 <link rel="stylesheet" href="/css/styles.css" type="text/css" />
@@ -19,10 +19,7 @@ ob_start();
 <body>
 
 		<section id="body" class="width">
-		 <?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "../Menus/kullanici-menu.php";}
-		else if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "../Menus/diyetisyen-menu.php";}
-		else if ($_SESSION["kullaniciTur"] == "Yönetici"){include "../Menus/yonetici-menu.php";}
-		else {include "../Menus/koc-menu.php";}	?>
+            <?php include "../Ortak/get-menu.php"?>
 
 			
 			<section id="content" class="column-right">

@@ -8,7 +8,7 @@ $username = $_SESSION["username"];
 <html>
 <head>
 <meta charset="UTF-8">
-
+<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
 <title>Mesajlar-Diyetin Güvende!</title>
 <link rel="stylesheet" href="../css/styles.css" type="text/css" />
 

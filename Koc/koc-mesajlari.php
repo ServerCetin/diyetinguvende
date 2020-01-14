@@ -7,7 +7,7 @@ ob_start();
 <html>
 <head>
 <meta charset="UTF-8">
-
+<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
 <title>Diyetin Güvende!</title>
 <link rel="stylesheet" href="/css/styles.css" type="text/css" />
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
@@ -16,7 +16,7 @@ ob_start();
 <body>
 
 		<section id="body" class="width">
-					<?php if($_SESSION["kullaniciTur"] == "Spor Hocası"){include "../Menus/koc-menu.php";}?>
+            <?php include "../Ortak/get-menu.php"?>
 
 			<section id="content" class="column-right">
                 		
@@ -55,7 +55,7 @@ ob_start();
                                     <tr>
                                         <td>'.$kAdi.'</td>
                                         <td>
-                                             <form method="GET" action="../ortak/mesajlar.php">
+                                             <form method="GET" action="../Ortak/mesajlar.php">
                                                 <input type="hidden" value="'.$kId.'" name="kullaniciId">
                                                 <input type="submit" class="formbutton" value="Kullanıcıya Mesaj"> 
                                              </form>
@@ -63,7 +63,7 @@ ob_start();
                                        if($diyetisyenVarMi) {
                                            print '
                                         <td>
-                                            <form method="GET" action="../ortak/mesajlar.php">
+                                            <form method="GET" action="../Ortak/mesajlar.php">
                                                 <input type="hidden" value="'.$diyetisyenId.'" name="kullaniciId">
                                                 <input type="submit" class="formbutton" value="Diyetisyene Mesaj"> 
                                             </form>

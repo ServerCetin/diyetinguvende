@@ -9,7 +9,7 @@ $username = $_SESSION["username"];
 
 <head>
 
-
+<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
 <title>Diyetin Güvende!</title>
 <link rel="stylesheet" href="/css/styles.css" type="text/css" />
 
@@ -19,7 +19,7 @@ $username = $_SESSION["username"];
 <body>
 
 		<section id="body" class="width">
-		<?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "../Menus/kullanici-menu.php";}?>
+            <?php include "../Ortak/get-menu.php"?>
 
 			
 			<section id="content" class="column-right">

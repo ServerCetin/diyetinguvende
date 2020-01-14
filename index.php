@@ -4,11 +4,11 @@ ob_start();
 
 if(isset($_SESSION["kullaniciTur"])) {
     if ($_SESSION["kullaniciTur"] == "Kullanici")
-        header("Location: ../kullanici/kullanici-Sayfasi.php");
+        header("Location: ../Kullanici/kullanici-sayfasi.php");
     else if ($_SESSION["kullaniciTur"] == "Spor Hocası")
-        header("Location: ../koc/koc.php");
+        header("Location: ../Koc/koc.php");
     else if ($_SESSION["kullaniciTur"] == "Diyetisyen")
-        header("Location: ../diyetisyen/diyetisyen.php");
+        header("Location: ../Diyetisyen/diyetisyen.php");
     else if ($_SESSION["kullaniciTur"] == "Yönetici")
         header("Location: ../Yonetici/destek-istekleri.php");
 }

@@ -54,18 +54,18 @@ $username = $_SESSION["username"];
                                 print'
                                 
                                     <tr>
-                                        <td>'.$kAdi.'</td>
+                                        <td>'.$kAdi. '</td>
                                         <td>
-                                             <form method="GET" action="mesajlar.php">
-                                                <input type="hidden" value="'.$kId.'" name="kullaniciId">
+                                             <form method="GET" action="../Ortak/mesajlar.php">
+                                                <input type="hidden" value="' .$kId.'" name="kullaniciId">
                                                 <input type="submit" class="formbutton" value="Kullanıcıya Mesaj"> 
                                              </form>
                                         </td>';
                                        if($kocVarMi) {
                                            print '
                                         <td>
-                                            <form method="GET" action="mesajlar.php">
-                                                <input type="hidden" value="'.$kocId.'" name="kullaniciId">
+                                            <form method="GET" action="../Ortak/mesajlar.php">
+                                                <input type="hidden" value="' .$kocId.'" name="kullaniciId">
                                                 <input type="submit" class="formbutton" value="Koça Mesaj"> 
                                             </form>
                                                 

@@ -23,6 +23,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Ortak" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -51,6 +56,7 @@
       <workItem from="1577914168778" duration="20129000" />
       <workItem from="1577979861040" duration="357000" />
       <workItem from="1578581913712" duration="16707000" />
+      <workItem from="1578958078610" duration="2754000" />
     </task>
     <servers />
   </component>
@@ -69,21 +75,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Kullanici/kullanici-Sayfasi.php</url>
-          <line>108</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Kullanici/kullanici-Sayfasi.php</url>
-          <line>126</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

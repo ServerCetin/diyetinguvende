@@ -18,7 +18,7 @@ $username = $_SESSION["username"];
 <body>
 
 		<section id="body" class="width">
-		<?php if($_SESSION["kullaniciTur"] == "Diyetisyen"){include "../Menus/diyetisyen-menu.php";}?>
+		<?php include "get-menu.php"?>
 
 			
         <section id="content" class="column-right">
@@ -39,15 +39,15 @@ $username = $_SESSION["username"];
                             foreach( $query as $mesaj ){
                                 if($mesaj['AlanId']!=$id){
                                     print '
-                                        <div style="align-content:right;min-width:100px;width:30%;height:80px;" align="center" class="speech-bubble" class="alanMesaj" >
-                                            <br><p>Sen :'.$mesaj['Mesaj'].'</p>
+                                        <div style="margin-left: auto;margin-top: 15px;margin-right:30px;min-width:100px;width:30%;height:80px;" align="center" class="speech-bubble" class="alanMesaj" >
+                                            <br><p>'.$mesaj['Mesaj'].'</p>
                                         </div>
                                         ';
                                 }
                                 else{
                                     print '
-                                        <div style="align-content:left;min-width:100px;width:30%;height:80px;" class="speech-bubblee" class="karsiMesaj" align="center"   >
-                                            <br><p>O :'.$mesaj['Mesaj'].'</p>
+                                        <div style="margin-top: 15px;min-width:100px;width:30%;height:80px;" class="speech-bubblee" class="karsiMesaj" align="center"   >
+                                            <br><p>'.$mesaj['Mesaj'].'</p>
                                         </div>
                                     ';
                                 }
@@ -86,7 +86,9 @@ $username = $_SESSION["username"];
 </script>
 </html>
 <?php
-$msg = $_GET['msg'];
-$query = $db->prepare("INSERT INTO kullanicimesaj SET GonderenId = ?, AlanId = ?, Mesaj = ?,GonderilmeTarihi = ?");
-$insert = $query->execute(array($id, $gonderilenId,$msg, date("Y-m-d H:i:s")));
+if(isset($_GET['msg'])){
+    $msg = $_GET['msg'];
+    $query = $db->prepare("INSERT INTO kullanicimesaj SET GonderenId = ?, AlanId = ?, Mesaj = ?,GonderilmeTarihi = ?");
+    $insert = $query->execute(array($id, $gonderilenId,$msg, date("Y-m-d H:i:s")));
+}
 ?>

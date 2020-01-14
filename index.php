@@ -1,6 +1,7 @@
 <?php
 session_start();
 ob_start();
+
 if(isset($_SESSION["kullaniciTur"])) {
     if ($_SESSION["kullaniciTur"] == "Kullanici")
         header("Location: ../kullanici/kullanici-Sayfasi.php");
@@ -10,7 +11,8 @@ if(isset($_SESSION["kullaniciTur"])) {
         header("Location: ../diyetisyen/diyetisyen.php");
     else if ($_SESSION["kullaniciTur"] == "Yönetici")
         header("Location: ../Yonetici/destek-istekleri.php");
-    else
-        header("Location: /giris-yap.php");
 }
+else
+    header("Location: /giris-yap.php");
+
 ?>

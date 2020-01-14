@@ -16,7 +16,7 @@ ob_start();
 <body>
 
 		<section id="body" class="width">
-		<?php if($_SESSION["kullaniciTur"] == "Kullanici"){include "../Menus/kullanici-menu.php";}?>
+		<?php include "../ortak/get-menu.php"?>
 
 
 		<section id="content" class="column-right">
@@ -48,11 +48,13 @@ ob_start();
                     <th>Yarınki Listem</th>
                 </tr>';
 
+    date_default_timezone_set('Europe/Istanbul');
     if(date('l')=="Monday"){
-        $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 1 OR ProgramGunId =2 ", PDO::FETCH_ASSOC);
+        $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 1 OR ProgramGunId =2", PDO::FETCH_ASSOC);
         if ( $listele->rowCount() )
         {
             $sayac = 0;
+            $gün = 1;
             foreach( $listele as $gelenveri )
             {
                 $sayac++;
@@ -63,14 +65,18 @@ ob_start();
                     echo "</tr>";
                     $sayac=0;
                 }
+                $gün++;
+                if($gün==$listele->rowCount()/2+3)
+                    break;
             }
         }
     }
-    if(date('l')=="Tuesday"){
+    else if(date('l')=="Tuesday"){
         $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 2 OR ProgramGunId =3 ", PDO::FETCH_ASSOC);
         if ( $listele->rowCount() )
         {
             $sayac = 0;
+            $gün = 0;
             foreach( $listele as $gelenveri )
             {
                 $sayac++;
@@ -81,14 +87,18 @@ ob_start();
                     echo "</tr>";
                     $sayac=0;
                 }
+                $gün++;
+                if($gün==$listele->rowCount()/2+3)
+                    break;
             }
         }
     }
-    if(date('l')=="Wednesday"){
+    else if(date('l')=="Wednesday"){
         $listele2 = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 3 OR ProgramGunId =4 ", PDO::FETCH_ASSOC);
         if ( $listele2->rowCount() )
         {
             $sayac = 0;
+            $gün = 0;
             foreach( $listele2 as $gelenveri )
             {
                 $sayac++;
@@ -99,14 +109,18 @@ ob_start();
                     echo "</tr>";
                     $sayac=0;
                 }
+                $gün++;
+                if($gün==$listele->rowCount()/2+3)
+                    break;
             }
         }
     }
-    if(date('l')=="Thursday"){
+    else if(date('l')=="Thursday"){
         $listele3 = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 4 OR ProgramGunId =5 ", PDO::FETCH_ASSOC);
         if ( $listele3->rowCount() )
         {
             $sayac = 0;
+            $gün = 0;
             foreach( $listele3 as $gelenveri )
             {
                 $sayac++;
@@ -117,14 +131,18 @@ ob_start();
                     echo "</tr>";
                     $sayac=0;
                 }
+                $gün++;
+                if($gün==$listele->rowCount()/2+3)
+                    break;
             }
         }
     }
-    if(date('l')=="Friday"){
+    else if(date('l')=="Friday"){
         $listele4 = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 5 OR ProgramGunId =6 ", PDO::FETCH_ASSOC);
         if ( $listele4->rowCount() )
         {
             $sayac = 0;
+            $gün = 0;
             foreach( $listele4 as $gelenveri )
             {
                 $sayac++;
@@ -135,14 +153,18 @@ ob_start();
                     echo "</tr>";
                     $sayac=0;
                 }
+                $gün++;
+                if($gün==$listele->rowCount()/2+3)
+                    break;
             }
         }
     }
-    if(date('l')=="Saturday"){
+    else if(date('l')=="Saturday"){
         $listele5 = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 6 OR ProgramGunId =7 ", PDO::FETCH_ASSOC);
         if ( $listele5->rowCount() )
         {
             $sayac = 0;
+            $gün = 0;
             foreach( $listele5 as $gelenveri )
             {
                 $sayac++;
@@ -153,14 +175,18 @@ ob_start();
                     echo "</tr>";
                     $sayac=0;
                 }
+                $gün++;
+                if($gün==$listele->rowCount()/2+3)
+                    break;
             }
         }
     }
-    if(date('l')=="Sunday"){
+    else if(date('l')=="Sunday"){
         $listele6 = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND ProgramGunId = 7 OR ProgramGunId =1 ", PDO::FETCH_ASSOC);
         if ( $listele6->rowCount() )
         {
             $sayac = 0;
+            $gün = 0;
             foreach( $listele6 as $gelenveri )
             {
                 $sayac++;
@@ -171,6 +197,9 @@ ob_start();
                     echo "</tr>";
                     $sayac=0;
                 }
+                $gün++;
+                if($gün==$listele->rowCount()/2+3)
+                    break;
             }
         }
     }

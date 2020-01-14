@@ -39,7 +39,7 @@ $username = $_SESSION["username"];
 	<tr>
 			<br><br><br>
 			
-				<table id="hastalistesi">
+				<table class="sporlistesiolustur" width="5px" height="5px">
   <tr>
     
 	<th>Pzt</th>
@@ -71,47 +71,47 @@ $username = $_SESSION["username"];
   </tr>
   <tr>
     <td ><input type="text" name="Pzt3" style="max-width:100px"></td>
-    <td ><input type="text" name="Sali" style="max-width:100px"></td>
+    <td ><input type="text" name="Sali3" style="max-width:100px"></td>
     <td ><input type="text" name="Crs3" style="max-width:100px"></td>
     <td ><input type="text" name="Prs3" style="max-width:100px"></td>
     <td ><input type="text" name="Cuma3" style="max-width:100px"></td>
     <td ><input type="text" name="Cmt3" style="max-width:100px"></td>
     <td ><input type="text" name="Pzr3" style="max-width:100px"></td>
   </tr>
-  <tr> 
-	<td><input type="text" name="pzt5" style="max-width:100px"></td>
-	<td><input type="text" name="sali5" style="max-width:100px"></td>
-	<td><input type="text" name="crs5" style="max-width:100px"></td>
-	<td><input type="text" name="prs5" style="max-width:100px"></td>
-	<td><input type="text" name="cum5" style="max-width:100px"></td>
-	<td><input type="text" name="cert5" style="max-width:100px"></td>
-	<td><input type="text" name="paz5" style="max-width:100px"></td>
-	</tr>
-	<tr>
-	<td><input type="text" name="pzt6" style="max-width:100px"></td>
-	<td><input type="text" name="sali6" style="max-width:100px"></td>
-	<td><input type="text" name="crs6" style="max-width:100px"></td>
-	<td><input type="text" name="prs6" style="max-width:100px"></td>
-	<td><input type="text" name="cum6" style="max-width:100px"></td>
-	<td><input type="text" name="cert6" style="max-width:100px"></td>
-	<td><input type="text" name="paz6" style="max-width:100px"></td>
-	</tr>
-	<tr>	 
-	<td><input type="text" name="pzt7" style="max-width:100px"></td>
-	<td><input type="text" name="sali7" style="max-width:100px"></td>
-	<td><input type="text" name="crs7" style="max-width:100px"></td>
-	<td><input type="text" name="prs7" style="max-width:100px"></td>
-	<td><input type="text" name="cum7" style="max-width:100px"></td>
-	<td><input type="text" name="cert7" style="max-width:100px"></td>
-	<td><input type="text" name="paz7" style="max-width:100px"></td>					
-	</tr> 
-
+    <tr>
+    <td ><input type="text" name="Pzt4" style="max-width:100px"></td>
+    <td ><input type="text" name="Sali4" style="max-width:100px"></td>
+    <td ><input type="text" name="Crs4" style="max-width:100px"></td>
+    <td ><input type="text" name="Prs4" style="max-width:100px"></td>
+    <td ><input type="text" name="Cuma4" style="max-width:100px"></td>
+    <td ><input type="text" name="Cmt4" style="max-width:100px"></td>
+    <td ><input type="text" name="Pzr4" style="max-width:100px"></td>
+  </tr>
+  <tr>
+    <td ><input type="text" name="Pzt5" style="max-width:100px"></td>
+    <td ><input type="text" name="Sali5" style="max-width:100px"></td>
+    <td ><input type="text" name="Crs5" style="max-width:100px"></td>
+    <td ><input type="text" name="Prs5" style="max-width:100px"></td>
+    <td ><input type="text" name="Cuma5" style="max-width:100px"></td>
+    <td ><input type="text" name="Cmt5" style="max-width:100px"></td>
+    <td ><input type="text" name="Pzr5" style="max-width:100px"></td>
+  </tr>
+  <tr>
+    <td ><input type="text" name="Pzt6" style="max-width:100px"></td>
+    <td ><input type="text" name="Sali6" style="max-width:100px"></td>
+    <td ><input type="text" name="Crs6" style="max-width:100px"></td>
+    <td ><input type="text" name="Prs6" style="max-width:100px"></td>
+    <td ><input type="text" name="Cuma6" style="max-width:100px"></td>
+    <td ><input type="text" name="Cmt6" style="max-width:100px"></td>
+    <td ><input type="text" name="Pzr6" style="max-width:100px"></td>
+  </tr>
+ </fieldset>
 </table><br><br>
   <br><input type="submit" class="brk-btn" value="Kaydet" style="margin-left:80%;">
  <br><br><br>
 
 			</form>	
-				 </fieldset></div>
+				</div>
 		</article>
 			
 
@@ -143,148 +143,149 @@ $insert = $query->execute(array(
 
 $lastId = $db->lastInsertId();
 
-$pzt1 = $_POST['pzt1'];
-$sali1 = $_POST['sali1'];
-$crs1 = $_POST['crs1'];
-$prs1 = $_POST['prs1'];
-$cuma1 = $_POST['cum1'];
-$cmt1 = $_POST['cert1'];
-$pzr1 = $_POST['paz1'];
 
-$pzt2 = $_POST['pzt2'];
-$sali2 = $_POST['sali2'];
-$crs2 = $_POST['crs2'];
-$prs2 = $_POST['prs2'];
-$cuma2 = $_POST['cum2'];
-$cmt2 = $_POST['cert2'];
-$pzr2 = $_POST['paz2'];
+$pzt1 = $_POST['Pzt1'];
+$sali1 = $_POST['Sali1'];
+$crs1 = $_POST['Crs1'];
+$prs1 = $_POST['Prs1'];
+$cuma1 = $_POST['Cuma1'];
+$cmt1 = $_POST['Cmt1'];
+$pzr1 = $_POST['Pzr1'];
 
-$pzt3 = $_POST['pzt3'];
-$sali3 = $_POST['sali3'];
-$crs3 = $_POST['crs3'];
-$prs3 = $_POST['prs3'];
-$cuma3 = $_POST['cum3'];
-$cmt3 = $_POST['cert3'];
-$pzr3 = $_POST['paz3'];
+$pzt2 = $_POST['Pzt2'];
+$sali2 = $_POST['Sali2'];
+$crs2 = $_POST['Crs2'];
+$prs2 = $_POST['Prs2'];
+$cuma2 = $_POST['Cuma2'];
+$cmt2 = $_POST['Cmt2'];
+$pzr2 = $_POST['Pzr2'];
 
-$pzt4 = $_POST['pzt4'];
-$sali4 = $_POST['sali4'];
-$crs4 = $_POST['crs4'];
-$prs4 = $_POST['prs4'];
-$cuma4 = $_POST['cum4'];
-$cmt4 = $_POST['cert4'];
-$pzr4 = $_POST['paz4'];
+$pzt3 = $_POST['Pzt3'];
+$sali3 = $_POST['Sali3'];
+$crs3 = $_POST['Crs3'];
+$prs3 = $_POST['Prs3'];
+$cuma3 = $_POST['Cuma3'];
+$cmt3 = $_POST['Cmt3'];
+$pzr3 = $_POST['Pzr3'];
 
-$pzt5 = $_POST['pzt5'];
-$sali5 = $_POST['sali5'];
-$crs5 = $_POST['crs5'];
-$prs5 = $_POST['prs5'];
-$cuma5 = $_POST['cum5'];
-$cmt5 = $_POST['cert5'];
-$pzr5 = $_POST['paz5'];
+$pzt4 = $_POST['Pzt4'];
+$sali4 = $_POST['Sali4'];
+$crs4 = $_POST['Crs4'];
+$prs4 = $_POST['Prs4'];
+$cuma4 = $_POST['Cuma4'];
+$cmt4 = $_POST['Cmt4'];
+$pzr4 = $_POST['Pzr4'];
 
-$pzt6 = $_POST['pzt6'];
-$sali6 = $_POST['sali6'];
-$crs6 = $_POST['crs6'];
-$prs6 = $_POST['prs6'];
-$cuma6 = $_POST['cum6'];
-$cmt6 = $_POST['cert6'];
-$pzr6 = $_POST['paz6'];
+$pzt5 = $_POST['Pzt5'];
+$sali5 = $_POST['Sali5'];
+$crs5 = $_POST['Crs5'];
+$prs5 = $_POST['Prs5'];
+$cuma5 = $_POST['Cuma5'];
+$cmt5 = $_POST['Cmt5'];
+$pzr5 = $_POST['Pzr5'];
 
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(1, $lastId, $pzt1));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(2, $lastId, $sali1));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(3, $lastId, $crs1));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(4, $lastId, $prs1));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(5, $lastId, $cuma1));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(6, $lastId, $cmt1));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(7, $lastId, $pzr1));
+$pzt6 = $_POST['Pzt6'];
+$sali6 = $_POST['Sali6'];
+$crs6 = $_POST['Crs6'];
+$prs6 = $_POST['Prs6'];
+$cuma6 = $_POST['Cuma6'];
+$cmt6 = $_POST['Cmt6'];
+$pzr6 = $_POST['Pzr6'];
 
-
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(1, $lastId, $pzt2));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(2, $lastId, $sali2));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(3, $lastId, $crs2));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(4, $lastId, $prs2));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(5, $lastId, $cuma2));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(6, $lastId, $cmt2));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(7, $lastId, $pzr2));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(1, $lastId, $pzt1,1));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(2, $lastId, $sali1,1));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(3, $lastId, $crs1,1));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(4, $lastId, $prs1,1));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(5, $lastId, $cuma1,1));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(6, $lastId, $cmt1,1));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(7, $lastId, $pzr1,1));
 
 
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(1, $lastId, $pzt3));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(2, $lastId, $sali3));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(3, $lastId, $crs3));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(4, $lastId, $prs3));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(5, $lastId, $cuma3));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(6, $lastId, $cmt3));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(7, $lastId, $pzr3));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(1, $lastId, $pzt2,2));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(2, $lastId, $sali2,2));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(3, $lastId, $crs2,2));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(4, $lastId, $prs2,2));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(5, $lastId, $cuma2,2));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(6, $lastId, $cmt2,2));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(7, $lastId, $pzr2,2));
 
 
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(1, $lastId, $pzt4));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(2, $lastId, $sali4));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(3, $lastId, $crs4));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(4, $lastId, $prs4));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(5, $lastId, $cuma4));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(6, $lastId, $cmt4));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(7, $lastId, $pzr4));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(1, $lastId, $pzt3,3));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(2, $lastId, $sali3,3));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(3, $lastId, $crs3,3));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(4, $lastId, $prs3,3));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(5, $lastId, $cuma3,3));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(6, $lastId, $cmt3,3));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(7, $lastId, $pzr3,3));
 
 
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(1, $lastId, $pzt5));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(2, $lastId, $sali5));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(3, $lastId, $crs5));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(4, $lastId, $prs5));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(5, $lastId, $cuma5));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(6, $lastId, $cmt5));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(7, $lastId, $pzr5));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(1, $lastId, $pzt4,4));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(2, $lastId, $sali4,4));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(3, $lastId, $crs4,4));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(4, $lastId, $prs4,4));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(5, $lastId, $cuma4,4));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(6, $lastId, $cmt4,4));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(7, $lastId, $pzr4,4));
 
 
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(1, $lastId, $pzt6));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(2, $lastId, $sali6));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(3, $lastId, $crs6));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(4, $lastId, $prs6));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(5, $lastId, $cuma6));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(6, $lastId, $cmt6));
-$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?");
-$insert = $query->execute(array(7, $lastId, $pzr6));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(1, $lastId, $pzt5,5));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(2, $lastId, $sali5,5));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(3, $lastId, $crs5,5));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(4, $lastId, $prs5,5));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(5, $lastId, $cuma5,5));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(6, $lastId, $cmt5,5));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(7, $lastId, $pzr5,5));
+
+
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(1, $lastId, $pzt6,6));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(2, $lastId, $sali6,6));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(3, $lastId, $crs6,6));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(4, $lastId, $prs6,6));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(5, $lastId, $cuma6,6));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(6, $lastId, $cmt6,6));
+$query = $db->prepare("INSERT INTO sportablosatir SET ProgramGunId = ?, SporTabloId = ?, Aciklama = ?, GunSira = ?");
+$insert = $query->execute(array(7, $lastId, $pzr6,6));
 
 }
 

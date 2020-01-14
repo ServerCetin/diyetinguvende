@@ -45,7 +45,7 @@ ob_start();
                                 $hastakullanici = $db->query("SELECT * FROM kullanici WHERE Id = $kId")->fetch(PDO::FETCH_ASSOC);
                                 $kAdi = $hastakullanici['KullaniciAdi'];
                                 $diyetisyenVarMi = false;
-                                if(isset($kocId)){
+                                if(isset($diyetisyenId)){
                                     $hastaDiyetisyen = $db->query("SELECT * FROM kullanici WHERE Id = $diyetisyenId")->fetch(PDO::FETCH_ASSOC);
                                     $diyetisyenVarMi = true;
                                 }
@@ -63,7 +63,7 @@ ob_start();
                                        if($diyetisyenVarMi) {
                                            print '
                                         <td>
-                                            <form method="GET" action="mesajlar.php">
+                                            <form method="GET" action="../ortak/mesajlar.php">
                                                 <input type="hidden" value="'.$diyetisyenId.'" name="kullaniciId">
                                                 <input type="submit" class="formbutton" value="Diyetisyene Mesaj"> 
                                             </form>

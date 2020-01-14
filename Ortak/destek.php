@@ -80,7 +80,7 @@ else {include "../Menus/koc-menu.php";}	?>
 
 <?php
 if(isset($_POST['sorun'],$_POST['message'])){
-    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+    include "../baglan.php";
     $sorunId = $_POST['sorun'];
     $message = $_POST['message'];
     $gonderenId = $_SESSION['Id'];

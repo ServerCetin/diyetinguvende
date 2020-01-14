@@ -99,7 +99,7 @@ if(isset($_SESSION['Id'],$_POST['ad'],$_POST['soyad'],$_POST['email'],$_POST['te
     $kilo = $_POST['kilo'];
     $yagOrani = $_POST['fat'];
 
-    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+    include "../baglan.php";
     $guncelle = $db->exec("UPDATE  kullanici SET Ad='$ad',Soyad='$soyad',Email='$email',TelefonNo='$tel' WHERE Id='$id'");
     if($guncelle) {
         $_SESSION["ad"] = $ad;

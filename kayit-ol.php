@@ -108,7 +108,7 @@ if(isset($_POST['ad'],$_POST['soyad'],$_POST['kullanici_adi'],$_POST['pass'],$_P
     $dogum= $_POST['dogum'];
     $Secim= $_POST['slct'];
 
-    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+    include "baglan.php";
 
     $ekle = $db->exec("INSERT INTO kullanici 
 (Ad,Soyad,KullaniciAdi,Sifre,Email,CinsiyetId,DogumTarih,KullaniciTurId,TelefonNo) 

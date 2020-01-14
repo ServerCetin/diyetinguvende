@@ -41,7 +41,7 @@ if(isset($_SESSION["kullaniciTur"]))
 if(isset($_POST['username'],$_POST['password'])){
     $username = $_POST['username'];
     $sifre = $_POST['password'];
-    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+    include "baglan.php";
     $islem1=null;
     if (!$username|| !$sifre) {
         die("Boş alan bırakmayınız!");

@@ -98,4 +98,16 @@ if(isset($_POST['username'],$_POST['password'])){
 }
 
 ?>
+<?php
+
+ date_default_timezone_set('Europe/Istanbul');
+$ipAdresi = $_SERVER["REMOTE_ADDR"] . PHP_EOL;
+$useragent = $_SERVER['HTTP_USER_AGENT'];
+$datetime= date('d.m.Y H:i:s');
+ 
+ file_put_contents("log.txt", $ipAdresi, FILE_APPEND);
+ file_put_contents("log.txt", $useragent, FILE_APPEND);
+ file_put_contents("log.txt", $useragent, FILE_APPEND);
+ file_put_contents("log.txt", $datetime, FILE_APPEND);
+?>
 

@@ -17,13 +17,13 @@ echo '
         <ul>
         ';
 
-    if($path == "/Ortak/kullanici-profili.php")
-        echo "<li class=\"selected-item\"><a href=\"../Ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
-			<li><a href=\"../Yonetici/destek-istekleri.php\">Destek İstekleri</a></li>
+    if($path == "/ortak/kullanici-profili.php")
+        echo "<li class=\"selected-item\"><a href=\"../ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
+			<li><a href=\"../yonetici/destek-istekleri.php\">Destek İstekleri</a></li>
 			<li ><a href=\"../cikis-yap.php\">Çıkış Yap</a></li>";
     else
-        echo "<li><a href=\"../Ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
-			<li class=\"selected-item\"><a href=\"../Yonetici/destek-istekleri.php\">Destek İstekleri</a></li>
+        echo "<li><a href=\"../ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
+			<li class=\"selected-item\"><a href=\"../yonetici/destek-istekleri.php\">Destek İstekleri</a></li>
 			<li ><a href=\"../cikis-yap.php\">Çıkış Yap</a></li>";
     echo'
         </ul>

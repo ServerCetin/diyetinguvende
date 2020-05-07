@@ -17,7 +17,7 @@ ob_start();
     
         <section id="body" class="width">
 
-            <?php include "../Ortak/get-menu.php"?>
+            <?php include "../ortak/get-menu.php"?>
 
             <section id="content" class="column-right">
                     <fieldset>
@@ -25,7 +25,7 @@ ob_start();
                         <br>
                         <?php
                      $id = $_SESSION['Id'];
-                     $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+                     include "../baglan.php";
                      $listele=$db-> query(" SELECT * FROM kullanici where Id=$id", PDO::FETCH_ASSOC);
                      if($listele->rowCount())
                      {
@@ -127,10 +127,8 @@ if(isset($_SESSION['Id'],$_POST['ad'],$_POST['soyad'],$_POST['email'],$_POST['te
         $_SESSION["soyad"] = $soyad;
         $_SESSION["email"] = $email;
         $_SESSION["telefon"] = $tel;
-        
-        
     }
-    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+    include "../baglan.php";
     $guncelle = $db->exec("UPDATE  hastabilgi SET Boy='$boy',Kilo='$kilo',YagOrani='$yagOrani'WHERE KullaniciId='$id'");
     if($guncelle){
         $_SESSION["kilo"] = $kilo;
@@ -138,7 +136,7 @@ if(isset($_SESSION['Id'],$_POST['ad'],$_POST['soyad'],$_POST['email'],$_POST['te
         $_SESSION["yagOrani"] = $yagOrani;
         echo "başarılı";
     }
-    echo '<meta http-equiv="refresh" content="0;URL=kullanici-Profili.php">';
+    echo '<meta http-equiv="refresh" content="0;URL=kullanici-profili.php">';
 
 }
 
@@ -169,13 +167,11 @@ if(isset($_SESSION['Id'],$_POST['ad'],$_POST['soyad'],$_POST['email'],$_POST['te
    $_SESSION["pfoto"]=$resimad;
    }
 }
-   
-
-echo '<meta http-equiv="refresh" content="0;URL=kullanici-Profili.php">';
+echo '<meta http-equiv="refresh" content="0;URL=kullanici-profili.php">';
 } 
    else {
      echo "<script type='text/javascript'>
-      alert('Lütfen geçerli bir dosya seçin.');
+      alert('Lütfen dosyanızı resim formatı türünde yükleyiniz. (Örneğin: .png, .jpg)');
    </script>"
 ;
    }

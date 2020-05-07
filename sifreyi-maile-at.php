@@ -16,6 +16,7 @@ if (filter_var($_REQUEST['email'], FILTER_VALIDATE_EMAIL)){
 
     $query = $db->query("SELECT * FROM kullanici where Email= '{$email}'")->fetch(PDO::FETCH_ASSOC);
     if ( $query ){
+		
        $sifre= $query['Sifre'];
        $isim = $query['Ad'] .' '. $query['Soyad'];
 
@@ -24,6 +25,7 @@ if (filter_var($_REQUEST['email'], FILTER_VALIDATE_EMAIL)){
         $mail = new PHPMailer(true);
 
         if($mail) {
+			echo "no";
             //Server settings
             $mail->isSMTP();
             $mail->CharSet = 'UTF-8';
@@ -31,7 +33,7 @@ if (filter_var($_REQUEST['email'], FILTER_VALIDATE_EMAIL)){
             $mail->Mailer = "smtp";
             $mail->SMTPAuth = true;
             $mail->Username = 'servercetin0@gmail.com';
-            $mail->Password = '';
+            $mail->Password = ']Z]#,-6A\Vsc^_64';
             $mail->SMTPSecure = 'tsl';
             $mail->Port = 587;
 

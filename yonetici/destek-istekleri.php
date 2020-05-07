@@ -18,7 +18,7 @@ $username = $_SESSION["username"];
 <body>
 
 		<section id="body" class="width">
-		<?php if($_SESSION["kullaniciTur"] == "Yönetici"){require "../menus/yonetici-menu.php";}?>
+		<?php if($_SESSION["kullaniciTur"] == "Yönetici"){include "../menus/yonetici-menu.php";} ?>
 			
 			<section id="content" class="column-right">
                 		
@@ -87,6 +87,7 @@ if(isset($_POST['destekSil'])){
     $delete = $query->execute(array(
         'id' => $id
     ));
+	echo '<meta http-equiv="refresh" content="0;URL=destek-istekleri.php">';
 }
 
 

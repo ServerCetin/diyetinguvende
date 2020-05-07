@@ -19,7 +19,7 @@ $username = $_SESSION["username"];
 <body>
 
 		<section id="body" class="width">
-            <?php include "../Ortak/get-menu.php"?>
+            <?php include "../ortak/get-menu.php"?>
 			
 			<section id="content" class="column-right">
                 		
@@ -70,7 +70,7 @@ $username = $_SESSION["username"];
                      echo '<tr>
                             <td>'.$gelenveri['Ad'].' '.$gelenveri['Soyad'].'</td>
                             <td>
-                               <form method="post" action="hasta-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
+                               <form method="get" action="hasta-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
                                
 
                             

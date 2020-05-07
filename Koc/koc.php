@@ -17,7 +17,7 @@ ob_start();
 <body>
 
 		<section id="body" class="width">
-            <?php include "../Ortak/get-menu.php"?>
+            <?php include "../ortak/get-menu.php"?>
 
 
 			<section id="content" class="column-right">
@@ -66,7 +66,7 @@ ob_start();
                      echo '<tr>
                             <td>'.$gelenveri['Ad'].' '.$gelenveri['Soyad'].'</td>
                              <td>
-                               <form method="post" action="ogrenci-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
+                               <form method="post"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
                                <input type="submit" name="kaldir" class="formbuttonn" value="Kaldır" />
                                </form>
                                 <form method="post" action="ogrenci-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">

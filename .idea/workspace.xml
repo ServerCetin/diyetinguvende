@@ -40,7 +40,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588817502686</updated>
       <workItem from="1588817503900" duration="16085000" />
-      <workItem from="1588870619521" duration="243000" />
+      <workItem from="1588870619521" duration="4591000" />
     </task>
     <servers />
   </component>
@@ -61,17 +61,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Ortak/mesajlar.php</url>
+          <url>file://$PROJECT_DIR$/ortak/mesajlar.php</url>
           <line>207</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/kullanici/kullanici-Sayfasi.php</url>
+          <url>file://$PROJECT_DIR$/kullanici/kullanici-sayfasi.php</url>
           <line>89</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/kullanici/kullanici-Sayfasi.php</url>
+          <url>file://$PROJECT_DIR$/kullanici/kullanici-sayfasi.php</url>
           <line>132</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>

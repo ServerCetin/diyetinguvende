@@ -17,7 +17,7 @@ $username = $_SESSION["username"];
 <body>
 
 <section id="body" class="width">
-    <?php include "../Ortak/get-menu.php"?>
+    <?php include "../ortak/get-menu.php"?>
 
 
     <section id="content" class="column-right">

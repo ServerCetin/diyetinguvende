@@ -18,7 +18,7 @@ echo '
         <ul>
       
            ';
-            $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+                    include "../baglan.php";
                      $listele=$db-> query(" SELECT * FROM kullanici where Id=$id", PDO::FETCH_ASSOC);
                       if($listele->rowCount())
                      {
@@ -26,79 +26,79 @@ echo '
                         {
                             if(!empty($gelenveri['pfoto'])){
                             
-                            $dosyayolu="../Ortak/resimler/".$gelenveri['pfoto'];  
-                             echo "<center> <a href='../Ortak/kullanici-profili.php'><img src='$dosyayolu' width='80' height='80'  style='border-width:2px; border-radius:50px; border-style:solid; border-color:white;' ></center>";     
+                            $dosyayolu="../ortak/resimler/".$gelenveri['pfoto'];  
+                             echo "<center> <a href='../ortak/kullanici-profili.php'><img src='$dosyayolu' width='80' height='80'  style='border-width:2px; border-radius:50px; border-style:solid; border-color:white;' ></center>";     
                             }
                             else{
-                            $dosyayolu="../Ortak/resimler/profil.png";  
-                            echo " <center> <a href='../Ortak/kullanici-profili.php'><img src='$dosyayolu' width='90' height='90' style='border-width:3px; border-radius:50px; border-style:solid; border-color:white;'></center>"; 
+                            $dosyayolu="../ortak/resimler/profil.png";  
+                            echo " <center> <a href='../ortak/kullanici-profili.php'><img src='$dosyayolu' width='90' height='90' style='border-width:3px; border-radius:50px; border-style:solid; border-color:white;'></center>"; 
                             }             
                         }
                     }
 
-            if($path== "/Ortak/kullanici-profili.php")
-                echo "<li class=\"selected-item\" style=\"background-color:forestgreen\"><a href=\"../Ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
-            <li><a href=\"/Diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
-            <li ><a href=\"../Ortak/destek.php\">Destek</a></li>
+            if($path== "/ortak/kullanici-profili.php")
+                echo "<li class=\"selected-item\" style=\"background-color:forestgreen\"><a href=\"../ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
+            <li><a href=\"/diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
+            <li ><a href=\"../ortak/destek.php\">Destek</a></li>
             <li ><a href=\"../cikis-yap.php\">Çıkış Yap</a></li>";
-            else if($path== "/Diyetisyen/diyetisyen.php")
-                echo "<li><a href=\"../Ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
-            <li class=\"selected-item\" style=\"background-color:forestgreen\"><a href=\"/Diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
-            <li><a href=\"/Diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
-            <li ><a href=\"../Ortak/destek.php\">Destek</a></li>
+            else if($path== "/diyetisyen/diyetisyen.php")
+                echo "<li><a href=\"../ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
+            <li class=\"selected-item\" style=\"background-color:forestgreen\"><a href=\"/diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
+            <li><a href=\"/diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
+            <li ><a href=\"../ortak/destek.php\">Destek</a></li>
             <li ><a href=\"../cikis-yap.php\">Çıkış Yap</a></li>";
-            else if($path== "/Diyetisyen/yeni-diyet-listesi.php")
-                echo "<li><a href=\"../Ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
-            <li class=\"selected-item\" style=\"background-color:forestgreen\"><a href=\"/Diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
-            <li ><a href=\"../Ortak/destek.php\">Destek</a></li>
+            else if($path== "/diyetisyen/yeni-diyet-listesi.php")
+                echo "<li><a href=\"../ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
+            <li class=\"selected-item\" style=\"background-color:forestgreen\"><a href=\"/diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
+            <li ><a href=\"../ortak/destek.php\">Destek</a></li>
             <li ><a href=\"../cikis-yap.php\">Çıkış Yap</a></li>";
-            else if($path== "/Diyetisyen/diyetisyen-liste-guncelle.php")
-                echo "<li><a href=\"../Ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
-            <li><a href=\"/Diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
-            <li  class=\"selected-item\" style=\"background-color:forestgreen\"><a href=\"/Diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
-            <li ><a href=\"../Ortak/destek.php\">Destek</a></li>
+            else if($path== "/diyetisyen/diyetisyen-liste-guncelle.php")
+                echo "<li><a href=\"../ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
+            <li><a href=\"/diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
+            <li  class=\"selected-item\" style=\"background-color:forestgreen\"><a href=\"/diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
+            <li ><a href=\"../ortak/destek.php\">Destek</a></li>
             <li ><a href=\"../cikis-yap.php\">Çıkış Yap</a></li>";
-            else if($path== "/Ortak/destek.php")
-                echo "<li><a href=\"../Ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
-            <li><a href=\"/Diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
-            <li class=\"selected-item\" style=\"background-color:forestgreen\"><a href=\"../Ortak/destek.php\">Destek</a></li>
+            else if($path== "/ortak/destek.php")
+                echo "<li><a href=\"../ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
+            <li><a href=\"/diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
+            <li class=\"selected-item\" style=\"background-color:forestgreen\"><a href=\"../ortak/destek.php\">Destek</a></li>
             <li ><a href=\"../cikis-yap.php\">Çıkış Yap</a></li>";
-            else if(($path== "/Diyetisyen/hasta-profili.php"))
-                echo "<li><a href=\"../Ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen.php\"style=\"background-color:forestgreen\"> Hastalarım</a></li>
-            <li><a href=\"/Diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
-            <li  ><a href=\"/Diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
-            <li ><a href=\"../Ortak/destek.php\">Destek</a></li>
+            else if(($path== "/diyetisyen/hasta-profili.php"))
+                echo "<li><a href=\"../ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen.php\"style=\"background-color:forestgreen\"> Hastalarım</a></li>
+            <li><a href=\"/diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
+            <li  ><a href=\"/diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
+            <li ><a href=\"../ortak/destek.php\">Destek</a></li>
             <li ><a href=\"../cikis-yap.php\">Çıkış Yap</a></li>";
-             else if(($path== "/Diyetisyen/diyetisyen-mesajlari.php"))
-                echo "<li><a href=\"../Ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
-            <li><a href=\"/Diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
-            <li  ><a href=\"/Diyetisyen/diyetisyen-mesajlari.php\"style=\"background-color:forestgreen\">Mesajlarim</a></li>
-            <li ><a href=\"../Ortak/destek.php\">Destek</a></li>
+             else if(($path== "/diyetisyen/diyetisyen-mesajlari.php"))
+                echo "<li><a href=\"../ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
+            <li><a href=\"/diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
+            <li  ><a href=\"/diyetisyen/diyetisyen-mesajlari.php\"style=\"background-color:forestgreen\">Mesajlarim</a></li>
+            <li ><a href=\"../ortak/destek.php\">Destek</a></li>
             <li ><a href=\"../cikis-yap.php\">Çıkış Yap</a></li>";
              else {
-                echo "<li><a href=\"../Ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
-            <li><a href=\"/Diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
-            <li><a href=\"/Diyetisyen/diyetisyen-mesajlari.php\" style=\"background-color:forestgreen\">Mesajlarim</a></li>
-            <li ><a href=\"../Ortak/destek.php\">Destek</a></li>
+                echo "<li><a href=\"../ortak/kullanici-profili.php\">$name $soyad <br>@$username</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
+            <li><a href=\"/diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
+            <li><a href=\"/diyetisyen/diyetisyen-mesajlari.php\" >Mesajlarim</a></li>
+            <li ><a href=\"../ortak/destek.php\">Destek</a></li>
             <li ><a href=\"../cikis-yap.php\">Çıkış Yap</a></li>";
         }
 echo '

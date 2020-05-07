@@ -18,7 +18,7 @@ $username = $_SESSION["username"];
 <body>
 
 		<section id="body" class="width">
-            <?php include "../Ortak/get-menu.php"?>
+            <?php include "../ortak/get-menu.php"?>
 
 
 			<section id="content" class="column-right">
@@ -37,7 +37,6 @@ $username = $_SESSION["username"];
                 echo '
                 <h2>Öğrenci bilgileri</h2><br><br><br>';    
                     $id = $_POST['kullaniciIds'];
-                    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
                     $listele=$db-> query(" SELECT * FROM kullanici where Id=$id", PDO::FETCH_ASSOC);
                     if($listele->rowCount())
                     {
@@ -140,13 +139,7 @@ $username = $_SESSION["username"];
                      
                
                 }
-            if(isset($_POST['tabloId'])){
-            $tabloId = $_POST['tabloId'];
-            $kId = $_POST['kullaniciIds'];
-            $insert = $db -> exec("UPDATE hastabilgi SET SporTabloId='$tabloId' where KullaniciId='$kId'");
-            echo '<meta http-equiv="refresh" content="0;URL=ogrenci-profili.php:'.$kullanici['Id'].'">';
-            }
-                
+                echo '<meta http-equiv="refresh" content="0;URL=ogrenci-profili.php:'.$kullanici['Id'].'">';
                 ?>
                 </table>
                 <br><br><p >Tamamlanmayanlar '✖️' ile gösterilmektedir!</p>
@@ -165,6 +158,11 @@ $username = $_SESSION["username"];
 </body>
 </html>
 <?php
-
+if(isset($_POST['tabloId'])){
+    $tabloId = $_POST['tabloId'];
+    $kId = $_POST['kullaniciIds'];
+    $insert = $db -> exec("UPDATE hastabilgi SET SporTabloId='$tabloId' where KullaniciId='$kId'");
+    echo '<meta http-equiv="refresh" content="0;URL=ogrenci-profili.php:'.$kullanici['Id'].'">';
+}
 
 ?>

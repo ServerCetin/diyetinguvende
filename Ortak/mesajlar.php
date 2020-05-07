@@ -184,7 +184,7 @@ $username = $_SESSION["username"];
 
             $id = $_SESSION['Id'];
             $gonderilenId =  $_GET['kullaniciId'];
-            $karsi = $db->query("SELECT * FROM kullanici inner join KullaniciTur on kullanici.KullaniciTurId=kullanicitur.Id  WHERE kullanici.Id = $gonderilenId")->fetch(PDO::FETCH_ASSOC);
+            $karsi = $db->query("SELECT `kullanici`.*, `kullanicitur`.* FROM `kullanici` INNER JOIN `kullanicitur` ON `kullanici`.`KullaniciTurId` = `kullanicitur`.`Id` where `kullanici`.`Id`= $gonderilenId;")->fetch(PDO::FETCH_ASSOC);
             ?>
 			
         <section id="content" class="column-right">
@@ -196,7 +196,7 @@ $username = $_SESSION["username"];
                                     <div class="card-header msg_head">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="/ortak/Resimler/<?php echo $karsi['pfoto']; ?>" class="rounded-circle user_img">
+                                                <img src="../ortak/resimler/<?php echo $karsi['pfoto']; ?>" class="rounded-circle user_img">
                                             </div>
                                             <div class="user_info">
                                                 <span><?php echo $karsi['KullaniciAdi']; ?> ile olan mesajlaşma</span>
@@ -217,7 +217,7 @@ $username = $_SESSION["username"];
                                                  <!-- <span class="msg_time_send">8:55 AM, Today</span> -->
                                             </div>
                                             <div class="img_cont_msg">
-                                                <img src="/ortak/Resimler/'.$_SESSION['photo'].'" class="rounded-circle user_img_msg">
+                                                <img src="/ortak/resimler/'.$_SESSION['photo'].'" class="rounded-circle user_img_msg">
                                             </div>
                                         </div>
                                         ';
@@ -226,7 +226,7 @@ $username = $_SESSION["username"];
                                                     print '
                                        <div class="d-flex justify-content-start mb-4">
                                             <div class="img_cont_msg">
-                                                <img src="/ortak/Resimler/'.$karsi["pfoto"].'" class="rounded-circle user_img_msg">
+                                                <img src="/ortak/resimler/'.$karsi["pfoto"].'" class="rounded-circle user_img_msg">
                                             </div>
                                             <div class="msg_cotainer">
                                                 '.$mesaj['Mesaj'].'
@@ -243,14 +243,12 @@ $username = $_SESSION["username"];
                                         ?>
                                     </div>
                                     <div class="card-footer">
-                                        <form method="get" onclick="refresh()">
+                                        <form method="get">
                                             <div class="input-group">
                                             <input type="hidden" value="<?php echo $gonderilenId ?>" name="kullaniciId">
                                             <textarea name="msg" class="form-control type_msg" placeholder="Mesajınızı yazınız..."></textarea>
                                             <div class="input-group-append">
-                                                <span onclick="refresh()" class="input-group-text send_btn">
                                                 <input class="brk-btn" type="submit" onclick="refresh()" value="Gönder">
-                                                </span>
                                             </div>
 
                                             <!--<div class="input-group-append">
@@ -279,14 +277,6 @@ $username = $_SESSION["username"];
 	 {
 	  location.reload();
 	 }
-    function mesajGonderildi() {
-       var alan = document.getElementById('mesajAlani');
-       alan.innerHTML +=
-           '<div style="margin-left: auto;margin-top: 15px;margin-right:30px;min-width:100px;width:30%;height:80px;" align="center" class="speech-bubble" class="alanMesaj" >\n' +
-           '                                            <br><p><?php echo $_GET['msg'] ?>></p>' +
-           '                                        </div>';
-	   location.reload();
-    }
 </script>
 </html>
 <?php

@@ -16,7 +16,7 @@ ob_start();
     <body>
     <section id="body" class="width">
 
-        <?php include "../Ortak/get-menu.php"?>
+        <?php include "../ortak/get-menu.php"?>
 
         <section id="content" class="column-right">
 
@@ -49,8 +49,9 @@ ob_start();
                         date_default_timezone_set('Europe/Istanbul');
 
                         $today = date('N');
-                        $tomorrow = date('N')+1;
-
+						if($today == 7) $tomorrow =1;
+						else $tomorrow = date('N')+1;
+                        
                         $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND (ProgramGunId = $today OR ProgramGunId = $tomorrow) order by GunSira ASC,ProgramGunId ASC ", PDO::FETCH_ASSOC);
 
                         if ( $listele->rowCount() )
@@ -89,11 +90,10 @@ ob_start();
 
                     echo "</table>
                     <br><br>";?>
-                    <p>Lütfen bugünkü diyetinizden gerçekleştirmiş olduğunuz verileri seçin! Veriler diyetisyeninize gönderilecek. </p>
-                    <b style="color:red"> Eğer diyetisyeniniz haftalık gidişatınızı kontrol ettiyse takibe devam edebilmek için listenizi yenileyiniz.</b><br><br>
-                    <input type="submit"  name="yaptimib" class="brk-btn" value="KAYDET">
-                    <input type="submit"  name="resetTheProgram" class="brk-btn" value="YENİLE">
-                     
+                    <p>Lütfen bugünkü diyetinizden gerçekleştirmiş olduğunuz verileri seçin! Veriler spor hocanıza gönderilecek.</p>
+					<b style="color:red"> Eğer diyetisyeniniz haftalık gidişatınızı kontrol ettiyse takibe devam edebilmek için listenizi yenileyiniz.</b><br><br>
+					<input type="submit"  name="yaptimib" class="brk-btn" value="KAYDET">
+					<input type="submit"  name="resetTheProgram" class="brk-btn" value="YENİLE" onclick="return window.confirm('Bu işlemi onaylarsanız bu haftaki eylemleriniz sıfırlanacak. Bu işlemi gerçekleştirmek istediğinize gerçekten de emin miniz?')">
                     </form>
                     <br><br>
                     <br><br>

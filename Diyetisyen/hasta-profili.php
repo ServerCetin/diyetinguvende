@@ -18,7 +18,7 @@ $username = $_SESSION["username"];
 <body>
 
         <section id="body" class="width">
-            <?php include "../Ortak/get-menu.php"?>
+            <?php include "../ortak/get-menu.php"?>
 
 
             <section id="content" class="column-right">
@@ -29,15 +29,15 @@ $username = $_SESSION["username"];
                 <?php
                 include "../baglan.php";
 
-                $id = $_POST['kullaniciIds'];
+                $id = $_GET['kullaniciIds'];
                 $hasta = $db->query("SELECT * FROM hastabilgi WHERE KullaniciId = $id")->fetch(PDO::FETCH_ASSOC);
                 $kullanici = $db->query("SELECT * FROM kullanici WHERE Id = $id")->fetch(PDO::FETCH_ASSOC);
 
                 $cinsiyet = $kullanici['CinsiyetId'] == 1 ? "Kadın" : "Erkek";
                 echo '
                 <h2>Hastanın bilgileri</h2><br><br><br>';
-                $id = $_POST['kullaniciIds'];
-                    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+                $id = $_GET['kullaniciIds'];
+                    include "../baglan.php";
                     $listele=$db-> query(" SELECT * FROM kullanici where Id=$id", PDO::FETCH_ASSOC);
                     if($listele->rowCount())
                     {
@@ -63,7 +63,7 @@ $username = $_SESSION["username"];
 
                 <a href="yeni-diyet-listesi.php" class="button ButtonS"><b>Yeni Liste Oluştur</b></a><br><br><br>
                 <h4>Listesini değiştir</h4>
-                <form method="post">
+                <form method="get">
                     <select name="tabloId">
                     ';
                     $diyetisyenId = $_SESSION['Id'];
@@ -110,10 +110,6 @@ $username = $_SESSION["username"];
                     $Tablo=$db->prepare("select * from diyetyaptimi where kullaniciId='$id' AND sira='$sira' AND gunId='$gun'");
                     $Tablo->execute(array('kullaniciId'));
                     $Tablo1=$Tablo->fetch();
-                    
-
-
-
                      if($gun==1)echo"<tr>";
 
                         if($gun==$Tablo1['gunId'] && $sira==$Tablo1['sira']){
@@ -158,9 +154,9 @@ $username = $_SESSION["username"];
 </html>
 <?php
 
-if(isset($_POST['tabloId'])){
-    $tabloId = $_POST['tabloId'];
-    $kId = $_POST['kullaniciIds'];
+if(isset($_GET['tabloId'])){
+    $tabloId = $_GET['tabloId'];
+    $kId = $_GET['kullaniciIds'];
     $insert = $db -> exec("UPDATE hastabilgi SET DiyetTabloId='$tabloId' where KullaniciId='$kId'");
     
 }

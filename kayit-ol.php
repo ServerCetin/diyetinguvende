@@ -109,12 +109,13 @@ if(isset($_POST['ad'],$_POST['soyad'],$_POST['kullanici_adi'],$_POST['pass'],$_P
     $tel= $_POST['tel'];
     $dogum= $_POST['dogum'];
     $Secim= $_POST['slct'];
+	$pfoto = 'profil.png';
 
     include "baglan.php";
 
     $ekle = $db->exec("INSERT INTO kullanici 
-(Ad,Soyad,KullaniciAdi,Sifre,Email,CinsiyetId,DogumTarih,KullaniciTurId,TelefonNo) 
-VALUES ('$ad', '$soyad','$username','$sifre','$mail','$cinsiyet','$dogum','$Secim','$tel')");
+(Ad,Soyad,KullaniciAdi,Sifre,Email,CinsiyetId,DogumTarih,KullaniciTurId,TelefonNo,pfoto) 
+VALUES ('$ad', '$soyad','$username','$sifre','$mail','$cinsiyet','$dogum','$Secim','$tel','$pfoto')");
     if($ekle){
         if($Secim==3){
             $sorgu = $db->prepare("SELECT * FROM kullanici where KullaniciAdi=?");

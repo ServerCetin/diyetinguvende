@@ -16,7 +16,7 @@ ob_start();
 <body>
 <section id="body" class="width">
 
-    <?php include "../Ortak/get-menu.php"?>
+    <?php include "../ortak/get-menu.php"?>
 
     <section id="content" class="column-right">
 
@@ -49,7 +49,8 @@ ob_start();
                     date_default_timezone_set('Europe/Istanbul');
 
                     $today = date('N');
-                    $tomorrow = date('N')+1;
+					if($today == 7) $tomorrow =1;
+					else $tomorrow = date('N')+1;
 
                     $listele = $db->query("SELECT * FROM sportablosatir WHERE SporTabloId=$SporTabloId AND (ProgramGunId = $today OR ProgramGunId =$tomorrow)", PDO::FETCH_ASSOC);
 
@@ -92,8 +93,7 @@ ob_start();
             <p>Lütfen bugünkü egzersizlerinizden gerçekleştirmiş olduğunuz verileri seçin! Veriler spor hocanıza gönderilecek.</p>
             <b style="color:red"> Eğer spor hocanız haftalık gidişatınızı kontrol ettiyse takibe devam edebilmek için listenizi yenileyiniz.</b><br><br>
             <input type="submit"  name="yaptimib" class="brk-btn" value="KAYDET">
-            <input type="submit"  name="resetTheProgram" class="brk-btn" value="YENİLE">
-           
+            <input type="submit"  name="resetTheProgram" class="brk-btn" value="YENİLE" onclick="return window.confirm('Bu işlemi onaylarsanız bu haftaki eylemleriniz sıfırlanacak. Bu işlemi gerçekleştirmek istediğinize gerçekten de emin miniz?')" >
                 </form>
 			<br><br>
 			<br><br>

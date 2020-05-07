@@ -9,27 +9,23 @@ $username = $_SESSION["username"];
 
 <!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
-<title>Diyetin Güvende!</title>
-<link rel="stylesheet" href="/css/styles.css" type="text/css" />
-
-<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" type="image/png" href="../favicon.png"/>
+        <title>Diyetin Güvende!</title>
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    </head>
 
 <body>
-
 		<section id="body" class="width">
             <?php include "../Ortak/get-menu.php"?>
-			<section id="content" class="column-right">
+        <section id="content" class="column-right">
                 		
 	    <article>
 			
-			<div class="beyaz" style="padding-top: 50px"  >
+			<div class="beyaz" style="padding-top: 50px">
 			<fieldset>
-
-
 				<legend> Destek</legend>
 					<form action="#" method="POST">
                         Sorunun Kategorisi:

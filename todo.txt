@@ -1,0 +1,16 @@
+js gün sıra ekleme
+kullanıcı profili düzenlenecek
+kullanıcı foto
+yaptı mı 
+hastanın tablo çekerken verileri gelmiyor
+mesjalarda zamana göre getirmiyor
+
+
+mesajlarda tıkladığında mesajı getirsin
+
+profil foto
+
+
+Çıkış yap gözükmüyordu paddingi düşürdüm
+mesaj gönderme alanı yenilendi
+mesajlarımda menüde oluşan sorun giderildi

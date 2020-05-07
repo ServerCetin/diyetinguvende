@@ -13,8 +13,26 @@ body {
 	margin:0;
 	padding:0;
 }
+#style {
+border-style: groove;
+border-radius: 20%;
+border-color:red;
+border-width: 2px;
+}
 
-
+#buton1{
+	border:none;
+    background-color: forestgreen;
+    border-radius: 5px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 22px;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 /** element defaults **/
 table {
 	width:95%;
@@ -207,7 +225,7 @@ div#wrapper {
 
 /** header **/
 header {
-	padding:30px 0 30px;
+	padding-top:15px;
 	margin:0 auto;
 }
 header h1 { 
@@ -234,7 +252,7 @@ header h2 {
 
 /* beyaz kısmın içi*/
 div.beyaz{
-	height:1000px;
+	min-height:625px;
 	position:relative;
 	top:15%;
 	left:0%;
@@ -572,4 +590,40 @@ background-color:red
 	border-bottom: 0;
 	margin-top: -15.5px;
 	margin-right: -31px;
+}
+.box {
+  width: 300px;
+  margin: 50px auto;
+  background: #80ff80;
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  color: #80ff80;
+  font-family: arial;
+  position:relative;
+}
+.sb1:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid #00bfb6;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #00bfb6;
+  border-bottom: 10px solid transparent;
+  right: -20px;
+  top: 6px;
+}
+
+.sb2:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #00bfb6;
+  border-top: 10px solid #00bfb6;
+  border-bottom: 10px solid transparent;
+  left: -19px;
+  top: 6px;
 }

@@ -17,15 +17,15 @@ $username = $_SESSION["username"];
 
 <body>
 
-		<section id="body" class="width">
+        <section id="body" class="width">
             <?php include "../Ortak/get-menu.php"?>
 
 
-			<section id="content" class="column-right">
-                	
-	    <article>
-		
-			<div class="beyaz">
+            <section id="content" class="column-right">
+                    
+        <article>
+        
+            <div class="beyaz">
                 <?php
                 include "../baglan.php";
 
@@ -35,7 +35,25 @@ $username = $_SESSION["username"];
 
                 $cinsiyet = $kullanici['CinsiyetId'] == 1 ? "Kadın" : "Erkek";
                 echo '
-                <h2>Hastanın bilgileri</h2><br><br><br>
+                <h2>Hastanın bilgileri</h2><br><br><br>';
+                $id = $_POST['kullaniciIds'];
+                    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
+                    $listele=$db-> query(" SELECT * FROM kullanici where Id=$id", PDO::FETCH_ASSOC);
+                    if($listele->rowCount())
+                    {
+                        foreach ($listele as $gelenveri) 
+                        {
+                         if(!empty($gelenveri['pfoto'])){
+                            $dosyayolu="../ortak/resimler/".$gelenveri['pfoto'];  
+                            echo " <img src='$dosyayolu' width='100' height='100' />";    
+                            }
+                            else{
+                            $dosyayolu="../ortak/resimler/profil.png";  
+                            echo " <img src='$dosyayolu' width='100' height='100' />"; 
+                            }             
+                        }
+                    }
+                    echo'<br>
                 <b >Adı ve Soyadı:   </b>'.$kullanici['Ad'].' '.$kullanici['Soyad'].'<br>
                 <b>Kullanıcı Adı:   </b>'.$kullanici['KullaniciAdi'].'<br>
                 <b>Cinsiyeti:   </b>'.$cinsiyet.'<br><br>
@@ -64,25 +82,87 @@ $username = $_SESSION["username"];
                     ?>
                     </select>
 
-                <input type="submit" value="Değiştir">
+                <input type="submit" value="Değiştir"><?php echo"<br><br>";?>
+                  <table>
+                <?php
+                $gunler=$db->query("select * from programgun");
+                foreach ($gunler as $key) {
+                    echo"<th>".$key['Gun']."</th>";
+                }         
+                $sayi=0;
+                $sayi2=0;
+                $Kullanıcı=$db->prepare("select * from hastabilgi where kullaniciId='$id'");
+                $Kullanıcı->execute(array($id));
+                $Kullanıcı1=$Kullanıcı->fetch();
+                $Dtablo1=$db->query("select * from diyettablosatir where DiyetTabloId='".$Kullanıcı1['DiyetTabloId']."' order by GunSira ASC,ProgramGunId ASC");
+                foreach ($Dtablo1 as $key ) {
+                    if(!empty($key['Aciklama']))
+                    $sayi++;
+                }
+                $Dtablo=$db->query("select * from diyettablosatir where DiyetTabloId='".$Kullanıcı1['DiyetTabloId']."' ");
+                foreach ($Dtablo as $key ) {
+                    
+                    $gun=$key['ProgramGunId'];
+                    $sira=$key['GunSira'];
+                    $Tablo2=$db->prepare("select * from programgun where Id='$gun'");
+                    $Tablo2->execute(array('Id'));
+                    $Tablo3=$Tablo2->fetch();
+                    $Tablo=$db->prepare("select * from diyetyaptimi where kullaniciId='$id' AND sira='$sira' AND gunId='$gun'");
+                    $Tablo->execute(array('kullaniciId'));
+                    $Tablo1=$Tablo->fetch();
+                    
+
+
+
+                     if($gun==1)echo"<tr>";
+
+                        if($gun==$Tablo1['gunId'] && $sira==$Tablo1['sira']){
+                        echo"<td>".$key['Aciklama']." &#x2714;</td>";   
+                    }
+                    else{
+                        if(!empty($key['Aciklama']))
+                        echo"<td>".$key['Aciklama']." -✖️ </td>";   
+                        else{
+                            echo"<td></td>";
+                        }              
+                    }
+                    if($gun==7)echo"</tr>";
+                    if(!empty($key['Aciklama'])){
+                        $sayi2++;
+
+                        if($sayi2==$sayi){
+                        
+                            break;
+                        }
+                    }
+                 echo '<meta http-equiv="refresh" content="0;URL=hasta-profili.php:'.$kullanici['Id'].'">';
+                }
+                
+                ?>
+     
+            </table>
+            <br><br><p >Tamamlanmayanlar '✖️' ile gösterilmektedir!</p>
                 </div>
-			</div>
-	</article>
+            </div>
 
-			<table></table>
-		</section>
-		<div class="clear"></div>
+    </article>
 
-	</section>
-	
+          
+        </section>
+        <div class="clear"></div>
+
+    </section>
+    
 
 </body>
 </html>
 <?php
+
 if(isset($_POST['tabloId'])){
     $tabloId = $_POST['tabloId'];
     $kId = $_POST['kullaniciIds'];
     $insert = $db -> exec("UPDATE hastabilgi SET DiyetTabloId='$tabloId' where KullaniciId='$kId'");
+    
 }
 
 ?>

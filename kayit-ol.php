@@ -84,6 +84,7 @@ ob_start();
         <input type="radio" align="right" name="cinsiyet" value="1"> Kadın<br>
         <input type="radio" align="left" name="cinsiyet" value="2"> Erkek<br><br>
         <input type="text" name="tel" placeholder="Telefon numaranız"><br><br>
+        Doğum Tarihi: 
         <input type="date" name="dogum" placeholder="Doğum Tarihi"><br><br>
         <input type="submit" value="Kayıt Ol"  name="kayitol"><br><br>
 

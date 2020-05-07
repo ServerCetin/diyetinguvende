@@ -61,7 +61,7 @@ $username = $_SESSION["username"];
                 <?php
 
              include '../baglan.php';
-             $id = $_SESSION['Id'];
+             
              $listele = $db->query("SELECT * FROM kullanici INNER JOIN hastabilgi ON kullanici.Id=KullaniciId where DiyetisyenId='$id'", PDO::FETCH_ASSOC);
              if ($listele->rowCount()) //rawcountu 0 değilse
              {
@@ -71,7 +71,10 @@ $username = $_SESSION["username"];
                             <td>'.$gelenveri['Ad'].' '.$gelenveri['Soyad'].'</td>
                             <td>
                                <form method="post" action="hasta-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
-                               <input type="submit" name="git" class="formbutton"value="Git" />
+                               
+
+                            
+                                     <input type="submit" name="git" class="formbutton"value="Git" />
                                </form>
                                <form method="post"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
                                <input type="submit" name="kaldir" class="formbuttonn" value="Kaldır" />
@@ -79,6 +82,7 @@ $username = $_SESSION["username"];
                             </td>
                           </tr>
                      ';
+
                  }
              }
 
@@ -112,6 +116,7 @@ if(isset($_POST['kullaniciEkle'])){
         $kId = $query['Id'];
         $insert = $db -> exec("UPDATE hastabilgi SET DiyetisyenId='$id',DiyetTabloId='$tabloId' where KullaniciId='$kId'");
     }
+    echo '<meta http-equiv="refresh" content="0;URL=diyetisyen.php">';
 }
 if(isset($_POST['kaldir'])){
     $uId = $_POST['kullaniciIds'];
@@ -119,6 +124,7 @@ if(isset($_POST['kaldir'])){
     if ($query){
         $insert = $db -> exec("UPDATE hastabilgi SET DiyetisyenId=null, DiyetTabloId=null where KullaniciId='$uId'");
     }
+    echo '<meta http-equiv="refresh" content="0;URL=diyetisyen.php">';
 }
 
 ?>

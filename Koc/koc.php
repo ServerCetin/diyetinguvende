@@ -105,6 +105,7 @@ if(isset($_POST['kullaniciEkle'])){
         $kId = $query['Id'];
         $insert = $db -> exec("UPDATE hastabilgi SET KocId='$id',SporTabloId='$tabloId' where KullaniciId='$kId'");
     }
+        echo '<meta http-equiv="refresh" content="0;URL=koc.php">';
 }
     if(isset($_POST['kaldir'])){
     $uId = $_POST['kullaniciIds'];
@@ -112,5 +113,7 @@ if(isset($_POST['kullaniciEkle'])){
     if ($query){
         $insert = $db -> exec("UPDATE hastabilgi SET KocId=null, SporTabloId=null where KullaniciId='$uId'");
     }
+         echo '<meta http-equiv="refresh" content="0;URL=koc.php">';
+
 }
 ?>

@@ -75,6 +75,7 @@ if(isset($_POST['username'],$_POST['password'])){
             $_SESSION["dogumTarih"] = $kisi [DogumTarih];
             $_SESSION["email"] = $kisi [Email];
             $_SESSION["kullaniciTurId"]=$kisi [KullaniciTurId];
+            $_SESSION["photo"]=$kisi [pfoto];
 
             if($_SESSION["kullaniciTurId"]==3){
                 $id = $kisi [Id];
@@ -96,11 +97,8 @@ if(isset($_POST['username'],$_POST['password'])){
     }
 
 }
-
-?>
-<?php
-
- date_default_timezone_set('Europe/Istanbul');
+//Kullanıcı Siteye giriş yaptığında ip bilgilerini,tarayıcı bilgilerini ve girdiği tarih ve saatini otomatik oluşturduğu log.txt sayfasına ekler.
+date_default_timezone_set('Europe/Istanbul');
 $ipAdresi = $_SERVER["REMOTE_ADDR"] . PHP_EOL;
 $useragent = $_SERVER['HTTP_USER_AGENT'];
 $datetime= date('d.m.Y H:i:s');
@@ -110,4 +108,7 @@ $datetime= date('d.m.Y H:i:s');
  file_put_contents("log.txt", $useragent, FILE_APPEND);
  file_put_contents("log.txt", $datetime, FILE_APPEND);
 ?>
+
+
+
 

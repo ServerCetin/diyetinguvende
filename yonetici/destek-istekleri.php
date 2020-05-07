@@ -18,7 +18,7 @@ $username = $_SESSION["username"];
 <body>
 
 		<section id="body" class="width">
-		<?php if($_SESSION["kullaniciTur"] == "Yönetici"){include "../Menus/yonetici-menu.php";}?>
+		<?php if($_SESSION["kullaniciTur"] == "Yönetici"){require "../menus/yonetici-menu.php";}?>
 			
 			<section id="content" class="column-right">
                 		

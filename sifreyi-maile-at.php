@@ -31,7 +31,7 @@ if (filter_var($_REQUEST['email'], FILTER_VALIDATE_EMAIL)){
             $mail->Mailer = "smtp";
             $mail->SMTPAuth = true;
             $mail->Username = 'servercetin0@gmail.com';
-            $mail->Password = '!^+AJT"V\)t5J`};';
+            $mail->Password = '';
             $mail->SMTPSecure = 'tsl';
             $mail->Port = 587;
 

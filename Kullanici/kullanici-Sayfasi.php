@@ -90,9 +90,10 @@ ob_start();
                     echo "</table>
                     <br><br>";?>
                     <p>Lütfen bugünkü diyetinizden gerçekleştirmiş olduğunuz verileri seçin! Veriler diyetisyeninize gönderilecek. </p>
-                    <div id="buton1"><input type="submit" style="color:White" name="yaptimib" class="brk-btn" value="KAYDET"></div>
-                     <div id="buton1"><input type="submit" style="color:White" name="resetTheProgram" class="brk-btn" value="YENİLE"></div>
-                     <p style="color:red"><b> Eğer diyetisyeniniz haftalık gidişatınızı kontrol ettiyse takibe devam edebilmek için listenizi yenileyiniz.</b></p>
+                    <b style="color:red"> Eğer diyetisyeniniz haftalık gidişatınızı kontrol ettiyse takibe devam edebilmek için listenizi yenileyiniz.</b><br><br>
+                    <input type="submit"  name="yaptimib" class="brk-btn" value="KAYDET">
+                    <input type="submit"  name="resetTheProgram" class="brk-btn" value="YENİLE">
+                     
                     </form>
                     <br><br>
                     <br><br>

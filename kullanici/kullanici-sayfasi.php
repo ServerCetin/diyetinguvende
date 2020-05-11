@@ -35,6 +35,11 @@ ob_start();
                     if ( $query ){
                         $diyetTabloId = $query['DiyetTabloId'];
                     }
+                    if(empty($query['DiyetisyenId'])){
+                        echo "<br><p><font style='color:green' size='6'face='Georgia, Arial'>Diyetisyeniniz bulunmadığı için herhangi bir listeniz yok!</h2></p>";
+                        echo "<br><br><center><img src='../images/logo.png' width='250'hight='250'></center>";
+                    }
+                    else{
                     $query = $db->query("SELECT * FROM diyettablosu WHERE Id ='{$diyetTabloId}'")->fetch(PDO::FETCH_ASSOC);
                     if ( $query ){
                         $tabloAciklamasi = $query['TabloAciklamasi'];
@@ -89,7 +94,9 @@ ob_start();
                     }
 
                     echo "</table>
-                    <br><br>";?>
+                    <br><br>";
+                
+                ?>
                     <p>Lütfen bugünkü diyetinizden gerçekleştirmiş olduğunuz verileri seçin! Veriler spor hocanıza gönderilecek.</p>
 					<b style="color:red"> Eğer diyetisyeniniz haftalık gidişatınızı kontrol ettiyse takibe devam edebilmek için listenizi yenileyiniz.</b><br><br>
 					<input type="submit"  name="yaptimib" class="brk-btn" value="KAYDET">
@@ -98,7 +105,7 @@ ob_start();
                     <br><br>
                     <br><br>
                     <?php
-                   
+                   }
                     if(isset($tabloAciklamasi)){
                         echo '<h4>Mevcut Haftalik Diyet Listem</h4>';
 

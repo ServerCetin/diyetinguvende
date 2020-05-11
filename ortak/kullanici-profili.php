@@ -80,7 +80,10 @@ ob_start();
                     }?>
                     <br><br>
                     <p><input type="submit" name="send" class="formbutton" value="Bilgilerimi Güncelle" /></p>
-                            
+                    
+                        <br><p><label for="eski">Mevcut Şifreniz:</label><input type="password" id="pwd" name="eskipw"></p>
+                        <p><label for="yeni">Yeni şifreniz:</label><input type="password" id="pwd" name="yenipw"></p>
+                        <p><input type="submit" name="pwdegis" class="formbutton" value="Sifremi Degistir" /></p> 
                         </form>
 
                     </fieldset>
@@ -104,6 +107,33 @@ ob_start();
 
     </body>
 </html>
+<?php if(isset($_POST['pwdegis'])){
+    include "../baglan.php";
+    $eskipw = $_POST['eskipw'];
+    $yenipw = $_POST['yenipw'];
+    
+    $listele=$db-> query(" SELECT * FROM kullanici where Id=$id", PDO::FETCH_ASSOC);
+    if($listele->rowCount())
+                    {
+                        foreach ($listele as $gelenveri) 
+                        {
+                        if($gelenveri['Sifre']==$eskipw)
+                           $guncelle = $db->exec("UPDATE  kullanici SET Sifre='$yenipw' WHERE Id='$id'");
+                           if($guncelle) {
+                           echo "<script type='text/javascript'>
+                           alert('Şireniz güncellendi!');
+
+                           </script>"; 
+                           echo '<meta http-equiv="refresh" content="0;URL=../cikis-yap.php">';   
+                       }
+                        else 
+                        echo "<script type='text/javascript'>
+                        alert('Eski şifrenizi yanlış girdiniz.Şifreniz yenilenmedi.');
+                        </script>"   ;        
+                        }
+                    }    
+}
+?>
 <?php
 if(isset($_SESSION['Id'],$_POST['ad'],$_POST['soyad'],$_POST['email'],$_POST['tel'],$_POST['send'])){
     $id = $_SESSION['Id'];
@@ -114,19 +144,16 @@ if(isset($_SESSION['Id'],$_POST['ad'],$_POST['soyad'],$_POST['email'],$_POST['te
     $boy = $_POST['boy'];
     $kilo = $_POST['kilo'];
     $yagOrani = $_POST['fat'];
-    
-    
-    
-    
-    
-    
-    
+
+      
     $guncelle = $db->exec("UPDATE  kullanici SET Ad='$ad',Soyad='$soyad',Email='$email',TelefonNo='$tel' WHERE Id='$id'");
     if($guncelle) {
         $_SESSION["ad"] = $ad;
         $_SESSION["soyad"] = $soyad;
         $_SESSION["email"] = $email;
         $_SESSION["telefon"] = $tel;
+        
+        
     }
     include "../baglan.php";
     $guncelle = $db->exec("UPDATE  hastabilgi SET Boy='$boy',Kilo='$kilo',YagOrani='$yagOrani'WHERE KullaniciId='$id'");
@@ -167,12 +194,13 @@ if(isset($_SESSION['Id'],$_POST['ad'],$_POST['soyad'],$_POST['email'],$_POST['te
    $_SESSION["pfoto"]=$resimad;
    }
 }
+   
+
 echo '<meta http-equiv="refresh" content="0;URL=kullanici-profili.php">';
 } 
    else {
      echo "<script type='text/javascript'>
-      alert('Lütfen dosyanızı resim formatı türünde yükleyiniz. (Örneğin: .png, .jpg)');
-   </script>"
+     alert('Lütfen dosyanızı resim formatı türünde yükleyiniz. (Örneğin: .png, .jpg , .jpeg)');   </script>"
 ;
    }
 

@@ -37,10 +37,21 @@ $username = $_SESSION["username"];
                         <?php
                         include "../baglan.php";
                         $id = $_SESSION['Id'];
+                        $gel = $db->query("SELECT * FROM hastabilgi WHERE KullaniciId ='{$id}'")->fetch(PDO::FETCH_ASSOC);
+                        if(empty($gel['KocId'] || $gel['DiyetisyenId']  )){
+                            echo "<br><p><font style='color:green' size='6'face='Georgia, Arial'>Koçunuz ve diyetisyeniniz bulunmadığı için herhangi bir mesajınız yok!</h2></p>";
+                            echo "<br><br><center><img src='../images/logo.png' width='250'hight='250' value='Diyetin Güvende'></center><br><br>";
+                            }
+                        else
+                        {
+                        
 
                         $query = $db->query("SELECT * FROM hastabilgi where KullaniciId= $id", PDO::FETCH_ASSOC);
+
                         if ( $query->rowCount() ){
+                        
                             foreach( $query as $hastaBilgi ){
+                            
                                 $diyetisyenId = $hastaBilgi['DiyetisyenId'];
                                 $kocId = $hastaBilgi['KocId'];
 
@@ -83,8 +94,9 @@ $username = $_SESSION["username"];
                                 print '
                                     </tr>
                                 </form>';
-                            }
-                        }
+                        }    
+                    }
+
                         ?>
                     </table>
 
@@ -110,13 +122,12 @@ $username = $_SESSION["username"];
                             ';
                             }
                         }
+                    }
+              echo "</table><br><br>
 
-
-                        ?>
-
-                    </table><br><br>
-
-            </div>
+            </div>"; 
+        
+        ?>
         </article>
 
     </section>
@@ -124,7 +135,6 @@ $username = $_SESSION["username"];
     <div class="clear"></div>
 
 </section>
-
 
 </body>
 </html>

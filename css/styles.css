@@ -1,5 +1,11 @@
 
-@font-face {
+div#kutu {
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #F00;
+    margin-bottom: 10px;
+}@font-face {
   font-family: 'Oxygen';
   font-style: normal;
   font-weight: 400;

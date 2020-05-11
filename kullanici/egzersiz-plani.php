@@ -35,6 +35,11 @@ ob_start();
                 if ( $query ){
                     $SporTabloId = $query['SporTabloId'];
                 }
+                if(empty($query['KocId'])){
+                        echo "<br><p><font style='color:green' size='6'face='Georgia, Arial'>Koçunuz bulunmadığı için herhangi bir listeniz yok!</h2></p>";
+                        echo "<br><br><center><img src='../images/logo.png' width='250'hight='250'></center>";
+                }
+                else{
                 $query = $db->query("SELECT * FROM sportablosu WHERE Id ='{$SporTabloId}'")->fetch(PDO::FETCH_ASSOC);
                 if ( $query ){
                     $tabloAciklamasi = $query['TabloAciklamasi'];
@@ -98,6 +103,7 @@ ob_start();
 			<br><br>
 			<br><br>
 			<?php
+        }
                 if(isset($tabloAciklamasi)){
                     echo '<h4>Mevcut Haftalik Diyet Listem</h4>';
 

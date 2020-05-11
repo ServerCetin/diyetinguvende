@@ -40,13 +40,13 @@ $username = $_SESSION["username"];
 			
     <table class="sporlistesiolustur" id="programlist" width="5px" height="5px">
       <tr>
-        <th>Pzt</th>
+        <th>Pazartesi</th>
         <th>Salı</th>
-        <th>Çrş</th>
-        <th>Prş</th>
+        <th>Çarşamba</th>
+        <th>Perşembe</th>
         <th>Cuma</th>
-        <th>Cmt</th>
-        <th>Pzr</th>
+        <th>Cumartesi</th>
+        <th>Pazar</th>
       </tr>
       <tr>
         <td ><input type="text" name="g1-1" style="max-width:100px"></td>
@@ -123,7 +123,7 @@ if(isset($_POST['tabloAdi'],$_POST['hocaNotu'])){
         for($j=1;$j<=7;$j++){
             $text = 'g'.(string)$j.'-'.(string)$i;
             $tableRowContent = $_POST[$text];
-            $girdi = $tablosatirinsert->execute(array($j,$lastId, $tableRowContent,$tablesize));
+            $girdi = $tablosatirinsert->execute(array($j,$lastId, $tableRowContent,$i));
         }
     }
 }

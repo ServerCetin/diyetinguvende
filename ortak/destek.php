@@ -24,9 +24,9 @@ $username = $_SESSION["username"];
                 		
 	    <article>
 			
-			<div class="beyaz" style="padding-top: 50px">
+			<div class="beyaz">
 			<fieldset>
-				<legend> Destek</legend>
+				<legend> Destek</legend><br><br>
 					<form action="#" method="POST">
                         Sorunun Kategorisi:
                         <select name="sorun">

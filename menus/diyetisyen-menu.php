@@ -89,7 +89,7 @@ echo '
             <li><a href=\"/diyetisyen/diyetisyen.php\"> Hastalarım</a></li>
             <li><a href=\"/diyetisyen/yeni-diyet-listesi.php\">Diyet Listesi Ekle</a></li>
             <li><a href=\"/diyetisyen/diyetisyen-liste-guncelle.php\">Liste Güncelle</a></li>
-            <li ><a href=\"/diyetisyen/diyetisyen-mesajlari.php\"style=\"background-color:forestgreen\">Mesajlarim</a></li>
+            <li class=\"selected-item\" style=\"background-color:forestgreen\"><a href=\"/diyetisyen/diyetisyen-mesajlari.php\">Mesajlarim</a></li>
             <li ><a href=\"../ortak/destek.php\">Destek</a></li>
             <li ><a href=\"../cikis-yap.php\">Çıkış Yap</a></li>";
              else if($path == "/diyetisyen/hasta-profili.php?kullaniciIds=".$id."&git=Git"){

@@ -136,10 +136,7 @@ $username = $_SESSION["username"];
                             break;
                         }
                     }
-                     
-               
                 }
-                echo '<meta http-equiv="refresh" content="0;URL=ogrenci-profili.php:'.$kullanici['Id'].'">';
                 ?>
                 </table>
                 <br><br><p >Tamamlanmayanlar '✖️' ile gösterilmektedir!</p>
@@ -162,7 +159,6 @@ if(isset($_POST['tabloId'])){
     $tabloId = $_POST['tabloId'];
     $kId = $_POST['kullaniciIds'];
     $insert = $db -> exec("UPDATE hastabilgi SET SporTabloId='$tabloId' where KullaniciId='$kId'");
-    echo '<meta http-equiv="refresh" content="0;URL=ogrenci-profili.php:'.$kullanici['Id'].'">';
 }
 
 ?>

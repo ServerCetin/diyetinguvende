@@ -25,10 +25,10 @@ $username = $_SESSION["username"];
 
         <article>
 
-            <div class="beyaz" style="padding-top: 50px"  >
+            <div class="beyaz" >
 
                 <fieldset>
-                    <legend>Mesaj Gönder</legend><br><br>
+                    <legend>Mesaj Gönder</legend><br>
                   
                         <?php
                         include "../baglan.php";

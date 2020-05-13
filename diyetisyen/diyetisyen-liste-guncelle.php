@@ -65,9 +65,7 @@ $username = $_SESSION["username"];
                             }
                         }
                          if($sayi==0){
-                         echo " aa <script type='text/javascript'>
-                                alert('Seçmiş olduğunuz tablo bir hastanızda kayıtlı olduğu için silemezsiniz. Lütfen önce hastanızın tablosunu güncelleyin.');
-                                </script>" ;
+                         echo " Seçmiş olduğunuz tablo bir hastanızda kayıtlı olduğu için silemezsiniz. Lütfen önce hastanızın tablosunu güncelleyin." ;
                             } 
                          else{
                           $listelesatir = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$DiyetTabloId", PDO::FETCH_ASSOC);

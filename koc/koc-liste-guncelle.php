@@ -43,8 +43,44 @@ $username = $_SESSION["username"];
                                 }
                             }
                             ?>
-                        </select>
-                        <input type="submit" value="Getir" name="getir">
+                        </select><br><br>
+                        <input type="submit" value="Getir" class="brk-btn" name="getir">
+                        <input type="submit" class="brk-btn" value="Sil" name="sil">
+                        <br><br><br><br>
+                        <?php
+                        $sayi=0;
+                        if(isset($_POST['sil'])){
+                            $SporTabloId = $_POST['sporList'];
+                            $kayitlimi=$db-> query("SELECT * FROM hastabilgi where KocId=$id" , PDO::FETCH_ASSOC);
+                            if ( $kayitlimi->rowCount() ){
+                                foreach ($kayitlimi as $kayitli) {
+                                if($SporTabloId==$kayitli['SporTabloId']){
+                                   
+                                $sayi=0;
+                                }
+                                else{
+                                    $sayi=1;
+                                }
+                            }
+                        }
+                         if($sayi==0){
+                         echo " Seçmiş olduğunuz tablo bir hastanızda kayıtlı olduğu için silemezsiniz. Lütfen önce hastanızın tablosunu güncelleyin. " ;
+                            } 
+                         else{
+                          $listelesatir = $db->query("SELECT * FROM sportablosatir WHERE SporTabloId=$SporTabloId", PDO::FETCH_ASSOC);
+                                if ( $listelesatir->rowCount() ){
+                                $sil=$db->exec("DELETE FROM sportablosatir Where SporTabloId=$SporTabloId");
+                                $listele = $db->query("SELECT * FROM sportablosu where Id=$SporTabloId", PDO::FETCH_ASSOC);
+                                if($listele->rowCount()){
+                                $sil2=$db->exec("DELETE FROM sportablosu where Id=$SporTabloId ");
+                                }
+                                if($sil)
+                                echo '<meta http-equiv="refresh" content="0;URL=koc-liste-guncelle.php">';
+                                
+                                } 
+                            }
+                        }
+                        ?>
                         <br><br><br><br>
                         <?php
                     if(isset($_POST['getir'])){
@@ -58,7 +94,8 @@ $username = $_SESSION["username"];
                                 $sporTabloId = $row['Id'];
                             }
                         }
-                        echo '<h5>Notunuzu Giriniz</h5>
+                        echo '<h5>"'.$tabloAdi.'" adlı tablonuzu güncelleyebilirsiniz.
+                        <br><br>Notunuzu Giriniz</h5>
                         <input type="hidden" name="tabloAdi" value="'.$tabloAdi.'">'.
                         '<input type="hidden" name="sporTabloId" value="'.$sporTabloId.'">'.
                         '<input type="hidden" name="tablesize" value="'.($ilgilitablo->rowCount()/7).'">'.

@@ -29,21 +29,24 @@ $username = $_SESSION["username"];
 
                 <fieldset>
                     <legend>Mesaj Gönder</legend><br><br>
-                    <table>
-                        <th>
-                        <th>Diyetisyene Mesaj</th>
-                        <th>Koçuna Mesaj</th>
-                        </th>
+                  
                         <?php
                         include "../baglan.php";
                         $id = $_SESSION['Id'];
-                        $gel = $db->query("SELECT * FROM hastabilgi WHERE KullaniciId ='{$id}'")->fetch(PDO::FETCH_ASSOC);
-                        if(empty($gel['KocId'] || $gel['DiyetisyenId']  )){
+                        $gel = $db->prepare("SELECT * FROM hastabilgi WHERE KullaniciId ='{$id}'");
+                        $gel->execute(array('KullaniciId'));
+                        $gel1=$gel->fetch();
+                        if(empty($gel1['KocId']) && empty($gel1['DiyetisyenId'])  ){
                             echo "<br><p><font style='color:green' size='6'face='Georgia, Arial'>Koçunuz ve diyetisyeniniz bulunmadığı için herhangi bir mesajınız yok!</h2></p>";
                             echo "<br><br><center><img src='../images/logo.png' width='250'hight='250' value='Diyetin Güvende'></center><br><br>";
                             }
                         else
                         {
+                            echo"  <table>
+                        <th>
+                        <th>Diyetisyene Mesaj</th>
+                        <th>Koçuna Mesaj</th>
+                        </th>";
                         
 
                         $query = $db->query("SELECT * FROM hastabilgi where KullaniciId= $id", PDO::FETCH_ASSOC);
@@ -113,6 +116,8 @@ $username = $_SESSION["username"];
                             foreach( $query as $mesaj ){
                                 $kkId= $mesaj['GonderenId'];
                                 $karsiKullanici = $db->query("SELECT * FROM kullanici WHERE Id = $kkId")->fetch(PDO::FETCH_ASSOC);
+                               
+                                    
                                 print '
                                 <tr>
                                     <td>'.$mesaj['Mesaj'].'</td>
@@ -120,13 +125,14 @@ $username = $_SESSION["username"];
                                     <td>'.$mesaj['GonderilmeTarihi'].'</td>
                                 </tr>
                             ';
+                        }
+                        
                             }
                         }
-                    }
+                    
               echo "</table><br><br>
 
-            </div>"; 
-        
+            </div>";    
         ?>
         </article>
 

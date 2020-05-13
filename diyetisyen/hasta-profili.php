@@ -87,7 +87,7 @@ $username = $_SESSION["username"];
                 <?php
                 $gunler=$db->query("select * from programgun");
                 foreach ($gunler as $key) {
-                    echo"<th>".$key['Gun']."</th>";
+                    echo"<th style='max-width:80px'>".$key['Gun']."</th>";
                 }         
                 $sayi=0;
                 $sayi2=0;
@@ -113,7 +113,7 @@ $username = $_SESSION["username"];
                      if($gun==1)echo"<tr>";
 
                         if($gun==$Tablo1['gunId'] && $sira==$Tablo1['sira']){
-                        echo"<td>".$key['Aciklama']." &#x2714;</td>";   
+                        echo"<td  >".$key['Aciklama']." &#x2714;</td>";   
                     }
                     else{
                         if(!empty($key['Aciklama']))
@@ -131,14 +131,15 @@ $username = $_SESSION["username"];
                             break;
                         }
                     }
-                 echo '<meta http-equiv="refresh" content="0;URL=hasta-profili.php:'.$kullanici['Id'].'">';
+                    
+                 
                 }
                 
                 ?>
      
             </table>
             <br><br><p >Tamamlanmayanlar '✖️' ile gösterilmektedir!</p>
-                </div>
+               
             </div>
 
     </article>
@@ -158,7 +159,8 @@ if(isset($_GET['tabloId'])){
     $tabloId = $_GET['tabloId'];
     $kId = $_GET['kullaniciIds'];
     $insert = $db -> exec("UPDATE hastabilgi SET DiyetTabloId='$tabloId' where KullaniciId='$kId'");
-    
+    if($insert)
+    echo '<meta http-equiv="refresh" content="0;URL=hasta-profili.php?tabloId='.$tabloId.'&kullaniciIds='.$kId.'">';
 }
 
 ?>

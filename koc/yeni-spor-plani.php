@@ -40,13 +40,13 @@ $username = $_SESSION["username"];
 			
     <table class="sporlistesiolustur" id="programlist" width="5px" height="5px">
       <tr>
-        <th>Pazartesi</th>
+        <th>Pzt</th>
         <th>Salı</th>
-        <th>Çarşamba</th>
-        <th>Perşembe</th>
+        <th>Çrş</th>
+        <th>Prş</th>
         <th>Cuma</th>
-        <th>Cumartesi</th>
-        <th>Pazar</th>
+        <th>Cmt</th>
+        <th>Pzr</th>
       </tr>
       <tr>
         <td ><input type="text" name="g1-1" style="max-width:100px"></td>

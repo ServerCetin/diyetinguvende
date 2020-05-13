@@ -92,13 +92,15 @@ ob_start();
                             }
                         }
                     }
+                    
 
-                    echo "</table>
-                    <br><br>";
+                    
                 
                 ?>
+            </table>
+                    <br><br>
                     <p>Lütfen bugünkü diyetinizden gerçekleştirmiş olduğunuz verileri seçin! Veriler spor hocanıza gönderilecek.</p>
-					<b style="color:red"> Eğer diyetisyeniniz haftalık gidişatınızı kontrol ettiyse takibe devam edebilmek için listenizi yenileyiniz.</b><br><br>
+					<b style="color:red">Eğer diyetisyeniniz haftalık gidişatınızı kontrol ettiyse takibe devam edebilmek için listenizi yenileyiniz.</b><br><br>
 					<input type="submit"  name="yaptimib" class="brk-btn" value="KAYDET">
 					<input type="submit"  name="resetTheProgram" class="brk-btn" value="YENİLE" onclick="return window.confirm('Bu işlemi onaylarsanız bu haftaki eylemleriniz sıfırlanacak. Bu işlemi gerçekleştirmek istediğinize gerçekten de emin miniz?')">
                     </form>

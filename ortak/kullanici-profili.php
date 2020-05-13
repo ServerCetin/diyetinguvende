@@ -81,10 +81,34 @@ ob_start();
                     <br><br>
                     <p><input type="submit" name="send" class="formbutton" value="Bilgilerimi Güncelle" /></p>
                     
-                        <br><p><label for="eski">Mevcut Şifreniz:</label><input type="password" id="pwd" name="eskipw"></p>
-                        <p><label for="yeni">Yeni şifreniz:</label><input type="password" id="pwd" name="yenipw"></p>
-                        <p><input type="submit" name="pwdegis" class="formbutton" value="Sifremi Degistir" /></p> 
                         </form>
+                        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+                        <form action=""   method="POST">
+                        
+                    <br><p><label for="eski">Mevcut Sifre:</label><input type="password" id="password" name="eskipw"><i class="icon-eye-open" onclick="togglePassword()"></i></p>
+                        <p><label for="yeni">Yeni Sifre:</label><input type="password" id="password1" name="yenipw" ><i class="icon-eye-open" onclick="togglePassword1()"></i> </p>
+                                
+                
+                <p><input type="submit" name="pwdegis" class="formbutton" value="Sifremi Degistir" /></p> 
+                
+                
+                        
+                        </form>
+                        <script>
+            function togglePassword() {
+                var element = document.getElementById('password');
+                element.type = (element.type == 'password' ? 'text' : 'password');
+                
+                
+            }
+            function togglePassword1() {
+                var element = document.getElementById('password1');
+                element.type = (element.type == 'password' ? 'text' : 'password');
+                
+                
+            }
+            
+        </script>
 
                     </fieldset>
 

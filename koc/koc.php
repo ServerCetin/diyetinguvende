@@ -24,7 +24,8 @@ ob_start();
                 		
 	    <article>
 			
-			<div class="beyaz" style="padding-top: 50px"  >
+			<div class="beyaz"  >
+                <br>
 			<fieldset>
             <legend>Öğrenci Kaydet</legend><br>
 				<form action="#" method="POST">
@@ -111,7 +112,8 @@ if(isset($_POST['kullaniciEkle'])){
     $uId = $_POST['kullaniciIds'];
     $query = $db->query("SELECT * FROM hastabilgi WHERE KullaniciId ='{$uId}'")->fetch(PDO::FETCH_ASSOC);
     if ($query){
-        $insert = $db -> exec("UPDATE hastabilgi SET KocId=null, SporTabloId=null where KullaniciId='$uId'");
+        $insert = $db -> exec("UPDATE hastabilgi SET KocId=null, SporTabloId=null where KullaniciId='$uId'"); 
+        $insert1 = $db-> exec("DELETE from kullanicimesaj where(GonderenId='$id' and AlanId='$uId') or (GonderenId='$uId' and AlanId='$id')");
     }
          echo '<meta http-equiv="refresh" content="0;URL=koc.php">';
 

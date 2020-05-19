@@ -28,15 +28,23 @@ $username = $_SESSION["username"];
 			<div class="beyaz">
                 <?php
                 include "../baglan.php";
+                if($_SESSION['Tablo']!=null){
+                    $id=$_SESSION['Tablo'];
+                }
+                else{
+                    $id = $_POST['kullaniciIds'];
+                }
 
-                $id = $_POST['kullaniciIds'];
+                
                 $hasta = $db->query("SELECT * FROM hastabilgi WHERE KullaniciId = $id")->fetch(PDO::FETCH_ASSOC);
-                $kullanici = $db->query("SELECT * FROM kullanici WHERE Id = $id")->fetch(PDO::FETCH_ASSOC);
+                $kullanici1 = $db->prepare("SELECT * FROM kullanici WHERE Id = $id");
+                $kullanici1->execute(array('Id'));
+                $kullanici=$kullanici1->fetch();
                 
                 $cinsiyet = $kullanici['CinsiyetId'] == 1 ? "Kadın" : "Erkek";
                 echo '
                 <h2>Öğrenci bilgileri</h2><br><br><br>';    
-                    $id = $_POST['kullaniciIds'];
+                    
                     $listele=$db-> query(" SELECT * FROM kullanici where Id=$id", PDO::FETCH_ASSOC);
                     if($listele->rowCount())
                     {
@@ -155,10 +163,17 @@ $username = $_SESSION["username"];
 </body>
 </html>
 <?php
+$_SESSION['Tablo']=null;
 if(isset($_POST['tabloId'])){
     $tabloId = $_POST['tabloId'];
     $kId = $_POST['kullaniciIds'];
     $insert = $db -> exec("UPDATE hastabilgi SET SporTabloId='$tabloId' where KullaniciId='$kId'");
+    if($insert){
+        $_SESSION['Tablo']=$kId;
+    
+    echo '<meta http-equiv="refresh" content="0;URL=ogrenci-profili.php">';
+}
+
 }
 
 ?>

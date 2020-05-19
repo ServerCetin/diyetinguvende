@@ -22,11 +22,12 @@ ob_start();
                 		
 	    <article>
 			
-			<div class="beyaz" style="padding-top: 50px"  >
-			
+			<div class="beyaz" >
+			<br><br>
 				
 				<fieldset>
                     <legend>Mesaj Gönder</legend><br><br>
+                    
                     <table>
                         <th>
                             <th>Hastaya Mesaj</th>

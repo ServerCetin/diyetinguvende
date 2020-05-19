@@ -70,7 +70,8 @@ $username = $_SESSION["username"];
                      echo '<tr>
                             <td>'.$gelenveri['Ad'].' '.$gelenveri['Soyad'].'</td>
                             <td>
-                               <form method="get" action="hasta-profili.php"> <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
+                               <form method="POST" action=""> 
+                               <input type="hidden" name="kullaniciIds" value="'.$gelenveri['KullaniciId'].'">
                                
 
                             
@@ -121,10 +122,18 @@ if(isset($_POST['kullaniciEkle'])){
 if(isset($_POST['kaldir'])){
     $uId = $_POST['kullaniciIds'];
     $query = $db->query("SELECT * FROM hastabilgi WHERE KullaniciId ='{$uId}'")->fetch(PDO::FETCH_ASSOC);
+	
     if ($query){
         $insert = $db -> exec("UPDATE hastabilgi SET DiyetisyenId=null, DiyetTabloId=null where KullaniciId='$uId'");
+		$insert1 = $db-> exec("DELETE from kullanicimesaj where(GonderenId='$id' and AlanId='$uId') or (GonderenId='$uId' and AlanId='$id')");
     }
     echo '<meta http-equiv="refresh" content="0;URL=diyetisyen.php">';
+}
+if(isset($_POST['git'])){
+    $id=$_POST['kullaniciIds'];
+    $_SESSION['kId']=$id;
+    echo"<meta http-equiv='refresh' content='0;URL=hasta-profili.php?kullaniciIds=".$id."&git=Git'>";
+
 }
 
 ?>

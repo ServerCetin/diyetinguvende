@@ -24,11 +24,14 @@ $username = $_SESSION["username"];
                 		
 	    <article>
 			
-			<div class="beyaz" style="padding-top: 50px"  >
+			<div class="beyaz"  >
+            <fieldset>
+            <legend>Yeni Spor Planı Oluştur</legend>
+            </fieldset>
 			<form action ="#" method="POST">	
 			
-                    <legend>Yeni Spor Planı Oluştur</legend><br><br>
-			Tablo adını giriniz: <input type="text" name="tabloAdi" /><br><br><br>
+                   <br><br>
+			Tablo adını giriniz: <input type="text" name="tabloAdi" maxlength="20" /><br><br><br>
 			<h5>Notunuzu Giriniz</h5>
 			<blockquote>
 				<textarea name="hocaNotu" rows="5" cols="100"></textarea>
@@ -49,13 +52,13 @@ $username = $_SESSION["username"];
         <th>Pzr</th>
       </tr>
       <tr>
-        <td ><input type="text" name="g1-1" style="max-width:100px"></td>
-        <td ><input type="text" name="g2-1" style="max-width:100px"></td>
-        <td ><input type="text" name="g3-1" style="max-width:100px"></td>
-        <td ><input type="text" name="g4-1" style="max-width:100px"></td>
-        <td ><input type="text" name="g5-1" style="max-width:100px"></td>
-        <td ><input type="text" name="g6-1" style="max-width:100px"></td>
-        <td ><input type="text" name="g7-1" style="max-width:100px"></td>
+        <td ><input type="text" name="g1-1" style="max-width:100px" maxlength="35"></td>
+        <td ><input type="text" name="g2-1" style="max-width:100px" maxlength="35"></td>
+        <td ><input type="text" name="g3-1" style="max-width:100px" maxlength="35"></td>
+        <td ><input type="text" name="g4-1" style="max-width:100px" maxlength="35"></td>
+        <td ><input type="text" name="g5-1" style="max-width:100px" maxlength="35"></td>
+        <td ><input type="text" name="g6-1" style="max-width:100px" maxlength="35"></td>
+        <td ><input type="text" name="g7-1" style="max-width:100px" maxlength="35"></td>
       </tr>
      </fieldset>
     </table>
@@ -80,13 +83,13 @@ $username = $_SESSION["username"];
         function ekle(){
             $('#programlist > tbody:last-child').append('' +
                 '<tr>' +
-                '<td><input type="text" name="g1-'+ $maxGun +'" style="max-width:100px"></td>' +
-                '<td><input type="text" name="g2-'+ $maxGun +'" style="max-width:100px"></td>' +
-                '<td><input type="text" name="g3-'+ $maxGun +'" style="max-width:100px"></td><' +
-                'td><input type="text" name="g4-'+ $maxGun +'" style="max-width:100px"></td>' +
-                '<td><input type="text" name="g5-'+ $maxGun +'" style="max-width:100px"></td>' +
-                '<td><input type="text" name="g6-'+ $maxGun +'" style="max-width:100px"></td>' +
-                '<td><input type="text" name="g7-'+ $maxGun +'" style="max-width:100px"></td>' +
+                '<td><input type="text" name="g1-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
+                '<td><input type="text" name="g2-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
+                '<td><input type="text" name="g3-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td><' +
+                'td><input type="text" name="g4-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
+                '<td><input type="text" name="g5-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
+                '<td><input type="text" name="g6-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
+                '<td><input type="text" name="g7-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
                 '</tr>');
 				$maxGun++;
                 $("#sizeOfTableRow").val($maxGun-1);

@@ -47,8 +47,109 @@ $username = $_SESSION["username"];
                         </select><br><br>
                         <input type="submit" class="brk-btn" value="Getir" name="getir">
                         <input type="submit" class="brk-btn" value="Sil" name="sil">
+                        <input type="submit" class="brk-btn" value="PDF Oluştur" name="pdf">
                         <br><br><br><br>
                         <?php
+                        if(isset($_POST['pdf']))
+                        {
+                        require('../fpdf.php');
+                        function turkce($k)
+                        {
+                            return iconv('utf-8','iso-8859-9',$k);
+                        }
+    
+                        $pdf = new FPDF();
+                        $pdf->AddPage();
+
+
+                        include "../baglan.php";
+                        $DiyetTabloId = $_POST['diyetlist'];
+                        $pdf->AddFont('arial_tr_bold','','arial_tr_bold.php');
+                        $pdf->SetFont('arial_tr_bold','',18);
+                        $pdf->Ln(15);
+                        $pdf->Cell(58);
+                        $pdf->Cell(100,10,turkce('Diyetin Güvende'));
+                        $pdf->Image('../images/logo.png',145,20,40,40);
+                        $pdf->AddFont('arial_tr','','arial_tr.php');
+                        $pdf->SetFont('arial_tr','',15);
+                        $say=0;
+                        $query = $db->query("SELECT * FROM diyettablosu WHERE Id=$DiyetTabloId", PDO::FETCH_ASSOC);
+                            if ( $query->rowCount() ){
+                                foreach( $query as $row ){
+                                $aciklama = $row['TabloAciklamasi'];
+                                $TabloAdi = $row['TabloAdi'];
+                                $DiyetTabloId = $row['Id'];
+                                $diyetisyen=$row['DiyetisyenId'];
+                                $diyetisyen1=$db-> query( "SELECT * FROM kullanici where Id=$diyetisyen", PDO::FETCH_ASSOC);
+                                if($diyetisyen1->rowCount()){
+                                    foreach ($diyetisyen1 as $key1) {
+                                       $pdf->ln(20);
+                                       $pdf->Cell(10);
+                                       $pdf->Cell(55,10,turkce('Diyetisyen Adı: '));
+                                       $pdf->Cell(20,10,turkce($key1['Ad']));
+                                       $pdf->Cell(50,10,turkce($key1['Soyad']));
+                                    }
+                                }
+                        $pdf->ln(15);
+                        $pdf->Cell(10);
+                        $pdf->Cell(55,10,turkce('Tablo Adı: '));
+                        $pdf->Cell(150,10,turkce($TabloAdi));
+                        $pdf->Ln(20);
+                        $pdf->Cell(10);
+                        $pdf->Cell(55,10,turkce('Tablo Açıklaması: '));
+                        $pdf->MultiCell(120,5, turkce($aciklama));
+                        $pdf->Ln(30);
+                           }
+                        }
+                        $pdf->AddFont('arial_tr','B','arial_tr.php');
+                        $pdf->SetFont('arial_tr','B',11);
+                        $pdf->Cell(10);
+                        $gun=$db->query("select * from programgun");
+                        if($gun->rowCount()){
+                            foreach ($gun as $gunler ) {
+                                $gunad=$gunler['Gun'];
+                                
+                                $pdf->Cell(25,10,turkce($gunad),1,0,'C');
+                                $say++;
+                               if($say==7){
+                                $pdf-> LN(10);
+                               $say=0;
+                               
+                                }
+                            }
+                        }
+                        $pdf->AddFont('arial_tr','','arial_tr.php');
+                        $pdf->SetFont('arial_tr','',9);
+
+
+                        $say=0;
+                        $pdf->Cell(10);
+                        $ilgilitablo = $db->query("SELECT * FROM diyettablosatir where DiyetTabloId=$DiyetTabloId", PDO::FETCH_ASSOC);
+                        if($ilgilitablo-> rowCount()){
+                            foreach ($ilgilitablo as $key) {
+                                $satir=$key['Aciklama'];
+                                $x=$pdf->GetX();
+                                $y=$pdf->GetY();
+                                $pdf->rect($x,$y,25,15)  ;
+                            
+                                $say++;
+                                $x+=25;     
+                                $pdf->MultiCell(25, 5,turkce($satir), 0);
+                                $pdf->SetXY($x,$y);
+
+                            
+                                if($say==7){
+                                $pdf->LN(15);
+                                $say=0;
+                                $pdf->Cell(10);
+                                }
+                            } 
+                        }
+
+                             $pdf->Output('F','Tablo.pdf');
+                            echo '<meta http-equiv="refresh" content="0;URL=Tablo.pdf">';
+                             
+                        }
                         $sayi=0;
                         if(isset($_POST['sil'])){
                             $DiyetTabloId = $_POST['diyetlist'];
@@ -60,7 +161,7 @@ $username = $_SESSION["username"];
                                 $sayi=0;
                                 }
                                 else{
-                                    $sayi=1;
+                                $sayi=1;
                                 }
                             }
                         }
@@ -68,7 +169,7 @@ $username = $_SESSION["username"];
                          echo " Seçmiş olduğunuz tablo bir hastanızda kayıtlı olduğu için silemezsiniz. Lütfen önce hastanızın tablosunu güncelleyin." ;
                             } 
                          else{
-                          $listelesatir = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$DiyetTabloId", PDO::FETCH_ASSOC);
+                                $listelesatir = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$DiyetTabloId", PDO::FETCH_ASSOC);
                                 if ( $listelesatir->rowCount() ){
                                 $sil=$db->exec("DELETE FROM diyettablosatir Where DiyetTabloId=$DiyetTabloId");
                                 $listele = $db->query("SELECT * FROM diyettablosu where Id=$DiyetTabloId", PDO::FETCH_ASSOC);
@@ -120,7 +221,7 @@ $username = $_SESSION["username"];
                                 $sira=1;
                                 foreach( $ilgilitablo as $gelenveri2 ){
                                         if($sayac==0)   echo '<tr>';
-                                        echo '<td><input type="text" name="g'.($sayac+1).'-'. $sira.'" value="'.$gelenveri2['Aciklama'].'" style="max-width:100px"></td>';
+                                        echo '<td><input type="text" name="g'.($sayac+1).'-'. $sira.'" value="'.$gelenveri2['Aciklama'].'" style="max-width:100px" maxlength="35"></td>';
                                         $sayac++;
                                         if($sayac==7){echo '</tr>'; $sayac=0;$sira++;}
 
@@ -150,13 +251,13 @@ $username = $_SESSION["username"];
             function ekle(){
                 $('#programlist > tbody:last-child').append('' +
                     '<tr>' +
-                    '<td><input type="text" name="g1-'+ $maxGun +'" style="max-width:100px"></td>' +
-                    '<td><input type="text" name="g2-'+ $maxGun +'" style="max-width:100px"></td>' +
-                    '<td><input type="text" name="g3-'+ $maxGun +'" style="max-width:100px"></td>' +
-                    '<td><input type="text" name="g4-'+ $maxGun +'" style="max-width:100px"></td>' +
-                    '<td><input type="text" name="g5-'+ $maxGun +'" style="max-width:100px"></td>' +
-                    '<td><input type="text" name="g6-'+ $maxGun +'" style="max-width:100px"></td>' +
-                    '<td><input type="text" name="g7-'+ $maxGun +'" style="max-width:100px"></td>' +
+                    '<td><input type="text" name="g1-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
+                    '<td><input type="text" name="g2-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
+                    '<td><input type="text" name="g3-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
+                    '<td><input type="text" name="g4-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
+                    '<td><input type="text" name="g5-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
+                    '<td><input type="text" name="g6-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
+                    '<td><input type="text" name="g7-'+ $maxGun +'" style="max-width:100px" maxlength="35"></td>' +
                     '</tr>');
                     $maxGun++;
                     $("#sizeOfTableRow").val($maxGun-1);

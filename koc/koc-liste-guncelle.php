@@ -1,6 +1,15 @@
 <?php
 session_start();
 ob_start();
+ if($_SESSION['PDF']!=null){
+                                unlink($_SESSION['PDF'].'.pdf');
+                                $_SESSION['PDF']=null;
+                            }
+                            if($_SESSION['PDF']==null){
+                                require('../fpdf18/fpdf.php'); 
+                            }
+
+
 $ad = $_SESSION["ad"];
 $username = $_SESSION["username"];
 ?>
@@ -46,24 +55,20 @@ $username = $_SESSION["username"];
                         </select><br><br>
                         <input type="submit" value="Getir" class="brk-btn" name="getir">
                         <input type="submit" class="brk-btn" value="Sil" name="sil">
-                         <input type="submit" class="brk-btn" value="PDF Oluştur" name="pdf">
+                        <input type="submit" class="brk-btn" value="PDF Oluştur" name="pdf">
                         <br><br><br><br>
                         <?php
                         if(isset($_POST['pdf']))
                         {
-
-                        require('../fpdf.php');
+                           
+                        
                         function turkce($k)
                         {
                             return iconv('utf-8','iso-8859-9',$k);
                         }
-    
+                        $SporTabloId = $_POST['sporList'];
                         $pdf = new FPDF();
                         $pdf->AddPage();
-
-
-                        include "../baglan.php";
-                        $SporTabloId = $_POST['sporList'];
                         $pdf->AddFont('arial_tr_bold','','arial_tr_bold.php');
                         $pdf->SetFont('arial_tr_bold','',18);
                         $pdf->Ln(15);
@@ -127,6 +132,7 @@ $username = $_SESSION["username"];
                         $ilgilitablo = $db->query("SELECT * FROM sportablosatir where SporTabloId=$SporTabloId", PDO::FETCH_ASSOC);
                         if($ilgilitablo-> rowCount()){
                             foreach ($ilgilitablo as $key) {
+                                $tablo=$key['Id'];
                                 $satir=$key['Aciklama'];
                                 $x=$pdf->GetX();
                                 $y=$pdf->GetY();
@@ -145,9 +151,12 @@ $username = $_SESSION["username"];
                                 }
                             } 
                         }
+                        $sayi=rand(1,10000000);
+                        $_SESSION['PDF']=$sayi;
 
-                             $pdf->Output('F','Tablo.pdf');
-                            echo '<meta http-equiv="refresh" content="0;URL=Tablo.pdf">';
+                          $pdf->Output('F',$sayi.'.pdf');
+                          
+                                        echo '<meta http-equiv="refresh" content="0;URL='.$sayi.'.pdf">';
                              
                         }
                         $sayi=0;

@@ -206,7 +206,7 @@ $username = $_SESSION["username"];
                                     </div>
                                     <div class="card-body msg_card_body">
                                         <?php
-                                        $query = $db->query("SELECT * FROM kullanicimesaj WHERE GonderenId= $gonderilenId AND AlanId= $id OR GonderenId= $id AND AlanId= $gonderilenId", PDO::FETCH_ASSOC);
+                                        $query = $db->query("SELECT * FROM kullanicimesaj WHERE GonderenId= $gonderilenId AND AlanId= $id OR GonderenId= $id AND AlanId= $gonderilenId order by GonderilmeTarihi ASC ", PDO::FETCH_ASSOC);
                                         if ( $query->rowCount() ){
                                             foreach( $query as $mesaj ){
                                                 if($mesaj['AlanId']!=$id){
@@ -235,10 +235,8 @@ $username = $_SESSION["username"];
                                         </div>
                                     ';
                                                 }
-
+                                              }
                                             }
-                                        }
-
 
                                         ?>
                                     </div>
@@ -250,7 +248,7 @@ $username = $_SESSION["username"];
                                             <div class="input-group-append">
                                                 <input class="brk-btn" type="submit" onclick="refresh()" value="Gönder">
                                             </div>
-
+                                            
                                             <!--<div class="input-group-append">
                                                 <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
                                             </div> Gelecekte eklenecek-->
@@ -262,7 +260,15 @@ $username = $_SESSION["username"];
                             </div>
                         </div>
                     </div>
+                    <br>
+
+                    <form action="" method="Post">
+                <input type="submit" class="brk-btn" value="Mesajları Temizle" name="sil" style= 'margin-left:80%;' onclick="return window.confirm('Bu kullanıcı ile olan mesajlarınızı silmek istediğinizden emin misiniz?')">
+                </form>
+              
+                
                 </div>
+                
 		</section>
 
 		<div class="clear"></div>
@@ -280,6 +286,7 @@ $username = $_SESSION["username"];
 </script>
 </html>
 <?php
+
 if(isset($_GET['msg'])){
     if($_GET['msg'] != ""){
     $msg = $_GET['msg'];
@@ -287,5 +294,9 @@ if(isset($_GET['msg'])){
     $insert = $query->execute(array($id, $gonderilenId,$msg, date("Y-m-d H:i:s")));
     }
     echo '<meta http-equiv="refresh" content="0;URL=mesajlar.php?kullaniciId='.$gonderilenId.'">';
+}
+if(isset($_POST['sil'])){
+      $delete = $db-> exec("DELETE from kullanicimesaj where(GonderenId='$id' and AlanId='$gonderilenId') or (GonderenId='$gonderilenId' and AlanId='$id')");
+      echo '<meta http-equiv="refresh" content="0;URL=mesajlar.php?kullaniciId='.$gonderilenId.'">';
 }
 ?>

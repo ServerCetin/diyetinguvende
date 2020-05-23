@@ -1,7 +1,13 @@
 <?php
 session_start();
 ob_start();
-
+ if($_SESSION['PDF']!=null){
+                                unlink($_SESSION['PDF'].'.pdf');
+                                $_SESSION['PDF']=null;
+                            }
+                            if($_SESSION['PDF']==null){
+                                require('../fpdf18/fpdf.php'); 
+                            }
 $ad = $_SESSION["ad"];
 $username = $_SESSION["username"];
 ?>
@@ -145,9 +151,13 @@ $username = $_SESSION["username"];
                                 }
                             } 
                         }
+                        $sayi=rand(1,10000000);
+                        $_SESSION['PDF']=$sayi;
 
-                             $pdf->Output('F','Tablo.pdf');
-                            echo '<meta http-equiv="refresh" content="0;URL=Tablo.pdf">';
+                          $pdf->Output('F',$sayi.'.pdf');
+                          
+                                        echo '<meta http-equiv="refresh" content="0;URL='.$sayi.'.pdf">';
+                             
                              
                         }
                         $sayi=0;

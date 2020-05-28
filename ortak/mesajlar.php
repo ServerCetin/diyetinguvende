@@ -210,10 +210,8 @@ $username = $_SESSION["username"];
                                         $countOfQuery = $query->rowCount();
                                         $state = 0;
 
-                                        if ( $query->rowCount() ){
                                             foreach( $query as $mesaj ){
                                                 $state++;
-                                                echo $state;
                                                 if($state!=$countOfQuery){
                                                     if($mesaj['AlanId']!=$id){
                                                         print '
@@ -271,7 +269,6 @@ $username = $_SESSION["username"];
                                                     }
                                                 }
                                               }
-                                            }
 
                                         ?>
                                     </div>

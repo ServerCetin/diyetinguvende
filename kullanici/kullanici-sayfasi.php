@@ -57,21 +57,63 @@ ob_start();
 
                         $today = date('N');
 						if($today == 7) $tomorrow =1;
-						else $tomorrow = date('N')+1;
+						else $tomorrow = $today+1;
                         
                         $listele = $db->query("SELECT * FROM diyettablosatir WHERE DiyetTabloId=$diyetTabloId AND (ProgramGunId = $today OR ProgramGunId = $tomorrow) order by GunSira ASC,ProgramGunId ASC ", PDO::FETCH_ASSOC);
 
-                        if ( $listele->rowCount() )
-                        {
-                            $sayac = 0;
-                            $gün = 0;
+                        $sayac = 0;
+                        $gün = 0;
+
+
+                        if($today==7){
+                            // variables of sunday
+                            $state = 0;
+                            $lastValue = '';
+
+                            $countOfQuery =  $listele->rowCount();
+
+                            foreach( $listele as $gelenveri )
+                            {
+                                $Tablo=$db->prepare("select * from diyetyaptimi where kullaniciId='$id' AND sira='".$gelenveri['GunSira']."' AND gunId='".$gelenveri['ProgramGunId']."'");
+                                $Tablo->execute(array('kullaniciId'));
+                                $Tablo1=$Tablo->fetch();
+                                $state++;
+                                if($state>=1){
+                                    if($today==$gelenveri['ProgramGunId']){
+                                        echo '<tr>';
+                                        if(!empty($gelenveri['Aciklama'])){
+                                            echo "<td>".$gelenveri['Aciklama'];
+                                            if(empty($Tablo1['yaptiMi'])){
+                                                echo" <input type='checkbox' name='yaptimi[]' value='".$gelenveri['Id']."'>  -Tamamlanmadı ✖️</td>";  }
+                                            else{
+                                                echo" - &#x2714;</td>";}
+                                        }
+                                        else
+                                            echo '<td></td>';
+                                    }
+                                    elseif($state>2 && $state != 12){
+                                        if(!empty($lastValue)){
+                                            echo "<td>".$lastValue;
+                                        }
+                                        else
+                                            echo '<td></td>';
+                                        echo '</tr>';
+                                    }
+                                    if($state%2==1 || $state==1){
+                                        $lastValue=$gelenveri['Aciklama'];
+                                    }
+                                }
+                            }
+                            echo "<td>".$lastValue."<td></tr>";
+                        }
+                        else{
                             foreach( $listele as $gelenveri )
                             {
                                 $Tablo=$db->prepare("select * from diyetyaptimi where kullaniciId='$id' AND sira='".$gelenveri['GunSira']."' AND gunId='".$gelenveri['ProgramGunId']."'");
                                 $Tablo->execute(array('kullaniciId'));
                                 $Tablo1=$Tablo->fetch();
 
-                                if(date('N')==$gelenveri['ProgramGunId']){
+                                if($today==$gelenveri['ProgramGunId']){
                                     echo '<tr>';
                                     if(!empty($gelenveri['Aciklama'])){
                                         echo "<td>".$gelenveri['Aciklama'];

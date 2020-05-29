@@ -207,36 +207,68 @@ $username = $_SESSION["username"];
                                     <div class="card-body msg_card_body">
                                         <?php
                                         $query = $db->query("SELECT * FROM kullanicimesaj WHERE GonderenId= $gonderilenId AND AlanId= $id OR GonderenId= $id AND AlanId= $gonderilenId order by GonderilmeTarihi ASC ", PDO::FETCH_ASSOC);
-                                        if ( $query->rowCount() ){
+                                        $countOfQuery = $query->rowCount();
+                                        $state = 0;
+
                                             foreach( $query as $mesaj ){
-                                                if($mesaj['AlanId']!=$id){
-                                                    print '
-                                        <div class="d-flex justify-content-end mb-4">
-                                            <div class="msg_cotainer_send">
-                                                '.$mesaj["Mesaj"].'
-                                                 <!-- <span class="msg_time_send">8:55 AM, Today</span> -->
-                                            </div>
-                                            <div class="img_cont_msg">
-                                                <img src="/ortak/resimler/'.$_SESSION['photo'].'" class="rounded-circle user_img_msg">
-                                            </div>
-                                        </div>
-                                        ';
+                                                $state++;
+                                                if($state!=$countOfQuery){
+                                                    if($mesaj['AlanId']!=$id){
+                                                        print '
+                                                        <div class="d-flex justify-content-end mb-4">
+                                                            <div class="msg_cotainer_send">
+                                                                '.$mesaj["Mesaj"].'
+                                                                 <!-- <span class="msg_time_send">8:55 AM, Today</span> -->
+                                                            </div>
+                                                            <div class="img_cont_msg">
+                                                                <img src="/ortak/resimler/'.$_SESSION['photo'].'" class="rounded-circle user_img_msg">
+                                                            </div>
+                                                        </div>
+                                                        ';
+                                                    }
+                                                    else{
+                                                        print '
+                                                           <div class="d-flex justify-content-start mb-4">
+                                                                <div class="img_cont_msg">
+                                                                    <img src="/ortak/resimler/'.$karsi["pfoto"].'" class="rounded-circle user_img_msg">
+                                                                </div>
+                                                                <div class="msg_cotainer">
+                                                                    '.$mesaj['Mesaj'].'
+                                                                    <!-- <span class="msg_time_send">8:55 AM, Today</span> -->
+                                                                </div>
+                                                            </div>
+                                                        ';
+                                                    }
                                                 }
                                                 else{
-                                                    print '
-                                       <div class="d-flex justify-content-start mb-4">
-                                            <div class="img_cont_msg">
-                                                <img src="/ortak/resimler/'.$karsi["pfoto"].'" class="rounded-circle user_img_msg">
-                                            </div>
-                                            <div class="msg_cotainer">
-                                                '.$mesaj['Mesaj'].'
-                                                <!-- <span class="msg_time_send">8:55 AM, Today</span> -->
-                                            </div>
-                                        </div>
-                                    ';
+                                                    if($mesaj['AlanId']!=$id){
+                                                        print '
+                                                        <div class="d-flex justify-content-end mb-4" id="lastMessage">
+                                                            <div class="msg_cotainer_send">
+                                                                '.$mesaj["Mesaj"].'
+                                                                 <!-- <span class="msg_time_send">8:55 AM, Today</span> -->
+                                                            </div>
+                                                            <div class="img_cont_msg">
+                                                                <img src="/ortak/resimler/'.$_SESSION['photo'].'" class="rounded-circle user_img_msg">
+                                                            </div>
+                                                        </div>
+                                                        ';
+                                                    }
+                                                    else{
+                                                        print '
+                                                           <div class="d-flex justify-content-start mb-4"  id="lastMessage">
+                                                                <div class="img_cont_msg">
+                                                                    <img src="/ortak/resimler/'.$karsi["pfoto"].'" class="rounded-circle user_img_msg">
+                                                                </div>
+                                                                <div class="msg_cotainer">
+                                                                    '.$mesaj['Mesaj'].'
+                                                                    <!-- <span class="msg_time_send">8:55 AM, Today</span> -->
+                                                                </div>
+                                                            </div>
+                                                        ';
+                                                    }
                                                 }
                                               }
-                                            }
 
                                         ?>
                                     </div>
@@ -283,6 +315,9 @@ $username = $_SESSION["username"];
 	 {
 	  location.reload();
 	 }
+    var x = document.getElementById('lastMessage');
+    x.setAttribute("tabindex", 1);
+    x.focus()
 </script>
 </html>
 <?php

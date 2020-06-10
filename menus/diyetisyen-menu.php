@@ -5,8 +5,11 @@ $name = $_SESSION["ad"];
 $soyad = $_SESSION["soyad"];
 $id = $_SESSION['Id'];
 $path = $_SERVER['REQUEST_URI'];
-if($_SESSION['kId']!=null){
-$kullaniciId=$_SESSION['kId'];
+if(!empty($_SESSION['kId'])){
+    $kullaniciId=$_SESSION['kId'];
+}
+else{
+    $kullaniciId=null;
 }
 
 

@@ -1,13 +1,13 @@
 <?php
 session_start();
 ob_start();
- if($_SESSION['PDF']!=null){
-                                unlink($_SESSION['PDF'].'.pdf');
-                                $_SESSION['PDF']=null;
-                            }
-                            if($_SESSION['PDF']==null){
-                                require('../fpdf18/fpdf.php'); 
-                            }
+if(isset($_SESSION['PDF'])){
+        unlink($_SESSION['PDF'].'.pdf');
+        $_SESSION['PDF']=null;
+    }
+    else{
+        require('../fpdf18/fpdf.php'); 
+    } 
 $ad = $_SESSION["ad"];
 $username = $_SESSION["username"];
 ?>
@@ -58,7 +58,6 @@ $username = $_SESSION["username"];
                         <?php
                         if(isset($_POST['pdf']))
                         {
-                        require('../fpdf.php');
                         function turkce($k)
                         {
                             return iconv('utf-8','iso-8859-9',$k);

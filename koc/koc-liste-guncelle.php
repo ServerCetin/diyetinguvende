@@ -1,13 +1,13 @@
 <?php
 session_start();
 ob_start();
-if(isset($_SESSION['PDF'])){
-        unlink($_SESSION['PDF'].'.pdf');
-        $_SESSION['PDF']=null;
-    }
-    else{
-        require('../fpdf18/fpdf.php'); 
-    } 
+	if(isset($_SESSION['PDF'])){
+		unlink($_SESSION['PDF'].'.pdf');
+		$_SESSION['PDF']=null;
+	}
+	else{
+		require('../fpdf18/fpdf.php'); 
+	}
 
 
 $ad = $_SESSION["ad"];
@@ -334,7 +334,7 @@ $username = $_SESSION["username"];
         else if($addedrow<$tablesize){
             $deletequery = $db->prepare("DELETE FROM sportablosatir 
         WHERE SporTabloId = :id 
-        and GunSira = :i");
+        and GunSira = :GunSira");
 
             for($i=$tablesize;$i>$addedrow;$i--){
                 $delete = $deletequery->execute(array(

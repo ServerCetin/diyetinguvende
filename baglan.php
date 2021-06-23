@@ -1,10 +1,8 @@
 <?php
 try{
-    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende", "root", '');
-	$db->query("SET CHARACTER SET utf8");
+    $db = new PDO("mysql:host=localhost;dbname=diyetinguvende;charset=UTF8","root","");
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}catch(PDOException $HataMesaji){
+    echo $HataMesaji->getMessage();
+    die();
 }
-catch (PDOException $e){
- echo $e ->getMessage();
-}
-
-?>

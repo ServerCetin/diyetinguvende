@@ -1,4 +1,6 @@
 <?php
+require_once 'settings/controls.php';
+require_once 'settings/functions.php';
 session_start();
 ob_start();
 ?>
@@ -125,15 +127,15 @@ ob_start();
 <?php
 if(isset($_POST['ad'],$_POST['soyad'],$_POST['kullanici_adi'],$_POST['pass'],$_POST['pass'],
     $_POST['mail'],$_POST['cinsiyet'],$_POST['tel'],$_POST['dogum'],$_POST['slct'])){
-    $ad=$_POST['ad'];
-    $soyad = $_POST['soyad'];
-    $username = $_POST['kullanici_adi'];
-    $sifre = $_POST['pass'];
-    $mail = $_POST['mail'];
-    $cinsiyet= $_POST['cinsiyet'];
-    $tel= $_POST['tel'];
-    $dogum= $_POST['dogum'];
-    $Secim= $_POST['slct'];
+    $ad= Guvenlik($_POST['ad']);
+    $soyad = Guvenlik($_POST['soyad']);
+    $username = Guvenlik($_POST['kullanici_adi']);
+    $sifre = Guvenlik($_POST['pass']);
+    $mail = Guvenlik($_POST['mail']);
+    $cinsiyet= Guvenlik($_POST['cinsiyet']);
+    $tel= Guvenlik($_POST['tel']);
+    $dogum= Guvenlik($_POST['dogum']);
+    $Secim= Guvenlik($_POST['slct']);
 	$pfoto = 'profil.png';
 
     include "baglan.php";

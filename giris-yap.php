@@ -1,4 +1,6 @@
 <?php
+require_once 'settings/controls.php';
+require_once 'settings/functions.php';
 session_start();
 ob_start();
 
@@ -40,8 +42,8 @@ if(isset($_SESSION["kullaniciTur"]))
 <?php
 
 if(isset($_POST['username'],$_POST['password'])){
-    $username = $_POST['username'];
-    $sifre = $_POST['password'];
+    $username = Guvenlik($_POST['username']);
+    $sifre = Guvenlik($_POST['password']);
     include "baglan.php";
     $islem1=null;
     if (!$username|| !$sifre) {
